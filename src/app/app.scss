@@ -1,0 +1,89 @@
+// http://ionicframework.com/docs/v2/theming/
+.menu-inner{
+  .item-ios {
+    padding-left: 16px;
+    border-radius: 0;
+    position: relative;
+    font-size: 1.7rem;
+    color: #000;
+    background-color: transparent;
+    transition: background-color 200ms linear;
+}
+.fuentePrimaria {
+    font-size: 1,5rem;
+    font-weight: 100 !important;
+    color:#FDFDFF;
+}
+
+.fuenteSecundaria {
+    color:#9FA1AD;
+}
+
+.menuSeven {
+    font-size:1.0rem;
+}
+.input-wrapper
+{
+    font-weight: 200;
+}
+
+.item-ios.item-block .item-inner{
+    border-bottom: 0px !important;
+}
+.list-ios > .item-block:first-child, .list-ios > .item-wrapper:last-child .item-block  {
+      border-bottom: 0px !important;
+}
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px !important;
+}
+.toolbar-title-ios {
+    font-weight: 200;
+}
+.item-md.item-block .item-inner {
+    border-bottom: 0px !important;
+}
+.card-md p {
+  color:white;
+}
+.item-md {
+  background-color: transparent;
+}
+.list-md .item-input:last-child{
+  border-bottom: 0px !important;
+}
+.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+  color:white;
+}
+
+.item-ios p {
+    overflow: inherit;
+    font-size: 1.4rem;
+    line-height: normal;
+    text-overflow: inherit;
+    color: grey;
+    margin: 0 0 2px;
+}
+.input-wrapper {
+    font-weight: 500 !important;
+}
+.toolbar-title-ios {
+  font-weight: 600;
+}
+}
+ion-content {
+background-image: url('../assets/nogalclub.jpg');
+}
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.

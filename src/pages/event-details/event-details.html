@@ -1,0 +1,80 @@
+<!--
+  Generated template for the EventDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>{{thisEvent.rev_desc}}</ion-title>
+     <button color="light" ion-button icon-only menuToggle>
+  <ion-icon color="primary" name="menu"></ion-icon>
+</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <ion-card>
+     <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
+    <div class="card-title">{{thisEvent.rev_desc}}</div>
+    <div class="card-subtitle">{{thisEvent.rev_luga}}</div>
+
+        <ion-card-content>
+
+          <p text-justify>
+            {{thisEvent.rev_obse}}
+    </p>
+
+<ion-grid>
+        <ion-row text-center>
+          <ion-col col-6>
+            <ion-item (click)="goAgenda()">
+            <ion-icon color="light" name='ios-book' item-start></ion-icon>
+              Agenda
+          </ion-item>
+
+          </ion-col>
+          <ion-col col-6>
+            <ion-item  (click)="goPonents()">
+              <ion-icon color="light" name='md-contacts' item-start></ion-icon>
+              Conferencistas
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      <ion-row text-center>
+          <ion-col col-6 *ngIf="loggued">
+            <ion-item (click)="goChat()">
+        <ion-icon color="light" name='ios-chatboxes' item-start></ion-icon>
+          Chat
+    </ion-item>
+          </ion-col>
+            <ion-col col-6 *ngIf="loggued">
+              <ion-item (click)="goEncuesta()">
+          <ion-icon color="light" name='ios-help' item-start></ion-icon>
+            Encuesta
+          </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+        <!-- <ion-item-sliding  >
+
+        </ion-item-sliding>
+          <ion-item-sliding  ">
+
+      </ion-item-sliding>
+          <ion-item-sliding  *ngIf="loggued">
+
+      </ion-item-sliding> -->
+      </ion-card-content>
+    </ion-card>
+    <marquee style="width:100%;height:75px;" scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
+          <img src="assets/patrocinadores/digital.png">
+          <img src="assets/patrocinadores/avianca.png">
+          <img src="assets/patrocinadores/itau.png">
+            <img src="assets/patrocinadores/sphera.png">
+              <img src="assets/patrocinadores/dinero.png">
+    </marquee>
+
+</ion-content>

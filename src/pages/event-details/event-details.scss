@@ -1,0 +1,95 @@
+page-event-details{
+  .content-ios{
+    background-color:#f2f2f2 !important;
+  }
+ion-content{
+
+    background-image:none !important;
+}
+  marquee{
+    img{
+      height:75px;
+      max-width:160px;
+       animation: marquee 20s linear infinite;
+       background-color: #f2f2f2;
+    }
+
+  }
+[col-6] {
+
+  background-color: #861316;
+  border:1px solid #f2f2f2;
+  border-radius: 5px;
+ion-label{
+  color:white;
+}
+.item-md{
+ background-color: #861316 !important;
+}
+}
+  .card-md p {
+    color: black;
+    font-size: 12pt;
+    font-family: arial;
+}
+  .card-ios {
+       margin: 0px;
+      /* border-radius: 2px; */
+      width: 100%;
+      /* font-size: 1.4rem; */
+      background: #f2f2f2;
+      box-shadow: none;
+  }
+
+  .item-ios{
+
+padding-left: 16px;
+border-radius: 0;
+position: relative;
+font-size: 1.7rem;
+color: black;
+background-color: transparent;
+transition: background-color 200ms
+  }
+  .card-ios p {
+      margin: 0 0 2px;
+      font-size: 1.4rem;
+      font-family: sans-serif;
+      color: black;
+  }
+  .card-md {
+      margin: 0px;
+      min-width: 100%;
+      font-size: 1.4rem;
+      background: #F2F2F2;
+      box-shadow:none;
+  }
+
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 20%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 32%;
+    width: 100%;
+    color: #fff;
+  }
+  .item > ion-icon, .item-inner > ion-icon{
+    font-size: 45px;
+  }
+}
+}

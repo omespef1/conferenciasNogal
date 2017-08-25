@@ -1,0 +1,44 @@
+
+
+<ion-menu id="loggedInMenu" [content]="content" >
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-title>NOGAL CONFERENCIAS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-item>
+       <ion-avatar item-start>
+       <img src="assets/user.jpg">
+       </ion-avatar>
+       <h2>{{user}}</h2>
+    <p>Digital Ware S.A</p>
+     </ion-item>
+    <ion-list>
+      <div padding>
+     </div>
+      <button  *ngFor="let menu of pages" ion-item (click)="abrirPagina(menu)">
+        <ion-icon name='{{menu.icon}}' color="negro"></ion-icon>&nbsp;{{menu.name}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-menu id="loggedOutMenu" [content]="content" >
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <div padding>
+     </div>
+      <button  *ngFor="let menu of pagesOut" ion-item (click)="abrirPagina(menu)">
+        <ion-icon name='{{menu.icon}}' color="negro"></ion-icon>&nbsp;{{menu.name}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-footer>
+</ion-footer>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

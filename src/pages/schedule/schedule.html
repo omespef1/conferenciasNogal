@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Agenda</ion-title>
+    <button color="light" ion-button icon-only menuToggle>
+  <ion-icon name="menu"></ion-icon>
+</button>
+  </ion-navbar>
+</ion-header>
+<ion-content class="fondoSolido">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item-group *ngFor="let schedule of schedules">
+      <ion-item-divider sticky>
+        <ion-label class="HourSeparator">
+          {{schedule.age_hori}}
+        </ion-label>
+      </ion-item-divider>
+      <ion-item>
+          <h3>  {{schedule.age_acti}}</h3>
+          <p>
+           Hasta las {{schedule.age_horf}}
+          </p>
+      </ion-item>
+      <ion-item-sliding  [hidden] ="schedule.ter_codi==0" (click)="openSpeaker(schedule)">
+        <button ion-item class="itemSpeaker">
+        <ion-avatar item-start>
+        <img [src]="'data:image/jpg;base64,'+schedule.con_foto | image" />
+        </ion-avatar>
+        <h3>{{schedule.ter_noco}}</h3>
+      </button>
+      </ion-item-sliding>
+    </ion-item-group>
+
+
+
+  </ion-list>
+
+
+
+
+</ion-content>

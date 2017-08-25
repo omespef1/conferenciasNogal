@@ -1,0 +1,54 @@
+page-login {
+
+	.item-md{
+		background-color: transparent;
+	}
+	.scroll-content {
+		align-content: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+	.item-ios {
+    padding-left: 16px;
+    border-radius: 0;
+    position: relative;
+    font-size: 1.7rem;
+    color: white;
+    background-color: transparent;
+    transition: background-color 200ms linear;
+}
+.button-outline-ios-light {
+    border-color: #f4f4f4;
+    color: black;
+    background-color: transparent;
+}
+
+img {
+	max-width: 70%;
+margin-top: 0px;
+}
+#divLogo {
+	top:0px;
+	position: absolute;
+}
+	ion-card.card {
+		box-shadow: none;
+		background: rgba(0, 0, 0, 0.5);
+		border-radius: 5px;
+	}
+
+	a, p,
+	ion-card-header.card-header {
+		color: #fff!important;
+	}
+
+	.list > .item-block:first-child {
+		border: medium none;
+	}
+input {
+	font-weight: 400;
+}
+
+}

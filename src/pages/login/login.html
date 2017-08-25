@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Login</ion-title>
+     <button ion-button icon-only menuToggle>
+  <ion-icon name="menu"></ion-icon>
+</button>
+  </ion-navbar>
+</ion-header>
+<ion-content class="background">
+  <div id="divLogo" text-center>
+  <img src="assets/Logo_Club.png">
+</div>
+	<ion-card>
+		<ion-card-header>
+  			Eventos y Conferencias
+		</ion-card-header>
+		<ion-card-content>
+			<ion-list no-line>
+				<ion-item class="transparent">
+					<ion-label floating>Usuario(Número de identificación)</ion-label>
+    			<ion-input type="text"  [(ngModel)]="login.username"></ion-input>
+				</ion-item>
+				<ion-item class="transparent">
+					<ion-label floating>contraseña</ion-label>
+					<ion-input type="password" [(ngModel)]="login.password" ></ion-input>
+				</ion-item>
+				<button ion-button block outline color="light" (click)="loginUser()">Ingresar</button>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+	<button class="bottom" (click)="openRegister()" ion-button clear full color="negro">No tienes cuenta aún? Regístrate</button>
+</ion-content>

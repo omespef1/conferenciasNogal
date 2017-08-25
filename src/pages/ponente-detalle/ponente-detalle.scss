@@ -1,0 +1,82 @@
+page-ponente-detalle {
+  ion-content{
+    background-color: #F1F2F2;
+  }
+.item-ios{
+  padding-left: 16px;
+  border-radius: 0;
+  position: relative;
+  font-size: 1.7rem;
+  color: #000;
+  background-color: transparent;
+  transition: background-color 200ms;
+}
+
+.card-background-page {
+}
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+.divAvatar{
+  background-color: #9E5475;
+text-align: center;
+img {
+  max-width: 100%;
+border-radius: 50%;
+margin-top:10px;
+  font-family: fantasy;
+}
+h2{
+margin-top: 1.8rem;
+font-size: 2.4rem;
+font-family: fantasy;
+margin-bottom: 0;
+color:white;
+font-weight: 600;
+}
+}
+.container {
+  background-color: #F1F2F2;
+  color:black;
+  font-family: fantasy;
+  p{
+    font-family:arial;
+    color:black
+  }
+  .input-wrapper{
+    text-align: center;
+  }
+}
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+p{
+  color:#9FA1AD;
+}
+ul {
+  padding: 0px;
+
+  &.rating li {
+    padding: 5px 10px !important;
+    background: none;
+    color: black;
+    ion-icon {
+      font-size: 40px;
+    }
+  }
+}
+}
