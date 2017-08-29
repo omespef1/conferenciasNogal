@@ -6,32 +6,37 @@
 </button>
   </ion-navbar>
 </ion-header>
-<ion-content class="fondoSolido">
+<ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content>
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
     <ion-item-group *ngFor="let schedule of schedules">
+      <div class="element">
+        <ion-label>{{schedule.date}}</ion-label>
+      </div>
+      <div *ngFor="let activity of schedule.agendas">
       <ion-item-divider sticky>
         <ion-label class="HourSeparator">
-          {{schedule.age_hori}}
+          {{activity.age_hori}}
         </ion-label>
       </ion-item-divider>
-      <ion-item>
-          <h3>  {{schedule.age_acti}}</h3>
+      <ion-item tappable (click)="openSchedule(activity)">
+          <h3>  {{activity.age_acti}}</h3>
           <p>
-           Hasta las {{schedule.age_horf}}
+           Hasta las {{activity.age_horf}}
           </p>
       </ion-item>
-      <ion-item-sliding  [hidden] ="schedule.ter_codi==0" (click)="openSpeaker(schedule)">
+      <ion-item-sliding  [hidden] ="activity.ter_codi==0" (click)="openSpeaker(activity)">
         <button ion-item class="itemSpeaker">
         <ion-avatar item-start>
-        <img [src]="'data:image/jpg;base64,'+schedule.con_foto | image" />
+        <img [src]="'data:image/jpg;base64,'+activity.con_foto | image" />
         </ion-avatar>
-        <h3>{{schedule.ter_noco}}</h3>
+        <h3>{{activity.ter_noco}}</h3>
       </button>
       </ion-item-sliding>
+      </div>
     </ion-item-group>
 
 

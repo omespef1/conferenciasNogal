@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform ,MenuController,NavParams,Events,AlertController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {AskPage , CalendarioPage,LoginPage,PonentesPage,RegisterPage,SettingsPage,EventDetailsPage} from '../shared/pagesPackage';
+import {CalendarioPage,LoginPage,PonentesPage,RegisterPage,SettingsPage,EventDetailsPage} from '../shared/pagesPackage';
 import {page} from '../shared/models';
 import {UserDataProvider} from '../providers/user-data/user-data';
 import {SevenProvider} from '../providers/seven/seven';
@@ -18,7 +18,6 @@ export class MyApp {
   pageCalendario = CalendarioPage;
   pageSettings = SettingsPage;
   pageRegister = RegisterPage;
-  pageAsk = AskPage;
   pageEventDetails = EventDetailsPage;
    public userData:string;
    public user:string;
@@ -43,7 +42,7 @@ export class MyApp {
 this.pages = [
   new page('Inicio','home',false,CalendarioPage),
   new page('Eventos','md-calendar',false,CalendarioPage),
-  new page('Encuestas','ios-help',false,AskPage),
+  new page('Encuestas','ios-help',false,LoginPage),
   new page('Salir','ios-log-out',true,LoginPage),
 ]
 this.pagesOut = [
@@ -69,7 +68,6 @@ this.pagesOut = [
        this.events.subscribe('user:login', () => {
          this.enableMenu(true);
          this.userdata.getUserInfo().then(user=>{
-           console.log(`${user} es el usuario de esta app`)
            this.user=user;
          })
        });
@@ -90,9 +88,8 @@ validLogin(){
           this.userdata.login(user,info);
         })
       });
-      this.rootPage=CalendarioPage;
-
     }
+      this.rootPage=CalendarioPage;
   })
 }
 

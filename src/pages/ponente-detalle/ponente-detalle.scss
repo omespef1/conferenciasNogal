@@ -1,4 +1,7 @@
 page-ponente-detalle {
+  .item-md{
+    background-color: transparent !important;
+  }
   ion-content{
     background-color: #F1F2F2;
   }
@@ -28,18 +31,19 @@ page-ponente-detalle {
     color: #fff;
   }
 .divAvatar{
-  background-color: #9E5475;
+  background-color: #49afbc;
 text-align: center;
+max-height: 55%;
 img {
   max-width: 100%;
 border-radius: 50%;
 margin-top:10px;
-  font-family: fantasy;
+  font-family: sans-serif;
 }
 h2{
-margin-top: 1.8rem;
+margin-top: 0px;
 font-size: 2.4rem;
-font-family: fantasy;
+font-family: arial;
 margin-bottom: 0;
 color:white;
 font-weight: 600;
@@ -48,7 +52,7 @@ font-weight: 600;
 .container {
   background-color: #F1F2F2;
   color:black;
-  font-family: fantasy;
+  font-family: inherit;
   p{
     font-family:arial;
     color:black
@@ -73,10 +77,11 @@ ul {
   &.rating li {
     padding: 5px 10px !important;
     background: none;
-    color: black;
+    color: #002063;
     ion-icon {
       font-size: 40px;
     }
   }
+
 }
 }

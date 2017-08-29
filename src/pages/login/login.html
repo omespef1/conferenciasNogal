@@ -6,27 +6,26 @@
 </button>
   </ion-navbar>
 </ion-header>
-<ion-content class="background">
-  <div id="divLogo" text-center>
+<ion-content>
+  <div class="logo">
   <img src="assets/Logo_Club.png">
 </div>
-	<ion-card>
-		<ion-card-header>
-  			Eventos y Conferencias
-		</ion-card-header>
-		<ion-card-content>
-			<ion-list no-line>
-				<ion-item class="transparent">
+
+
+			<ion-list no-lines>
+				<ion-item>
 					<ion-label floating>Usuario(Número de identificación)</ion-label>
-    			<ion-input type="text"  [(ngModel)]="login.username"></ion-input>
+    			<ion-input type="text"  class="inputLogin" [(ngModel)]="login.username" autocapitalize="off"></ion-input>
 				</ion-item>
 				<ion-item class="transparent">
 					<ion-label floating>contraseña</ion-label>
-					<ion-input type="password" [(ngModel)]="login.password" ></ion-input>
+					<ion-input type="password" class="inputLogin" [(ngModel)]="login.password" ></ion-input>
 				</ion-item>
-				<button ion-button block outline color="light" (click)="loginUser()">Ingresar</button>
+				<button ion-button block outline color="dark" (click)="loginUser()">Ingresar</button>
 			</ion-list>
-		</ion-card-content>
-	</ion-card>
+      <div class="logoSeven">
+      <img src="assets/seven.png">
+    </div>
+
 	<button class="bottom" (click)="openRegister()" ion-button clear full color="negro">No tienes cuenta aún? Regístrate</button>
 </ion-content>

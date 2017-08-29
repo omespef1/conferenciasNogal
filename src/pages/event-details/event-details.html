@@ -16,22 +16,22 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card>
-     <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
+  <ion-card id="encabezado">
+    <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
     <div class="card-title">{{thisEvent.rev_desc}}</div>
     <div class="card-subtitle">{{thisEvent.rev_luga}}</div>
+</ion-card>
+<ion-card>
+  <ion-card-content>
 
-        <ion-card-content>
-
-          <p text-justify>
-            {{thisEvent.rev_obse}}
-    </p>
-
+      <p text-justify>
+        {{thisEvent.rev_obse}}
+</p>
 <ion-grid>
         <ion-row text-center>
           <ion-col col-6>
             <ion-item (click)="goAgenda()">
-            <ion-icon color="light" name='ios-book' item-start></ion-icon>
+            <ion-icon start color="light" name='ios-book' item-start></ion-icon>
               Agenda
           </ion-item>
 
@@ -39,7 +39,7 @@
           <ion-col col-6>
             <ion-item  (click)="goPonents()">
               <ion-icon color="light" name='md-contacts' item-start></ion-icon>
-              Conferencistas
+              Ponentes
             </ion-item>
           </ion-col>
         </ion-row>
@@ -58,6 +58,7 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+
         <!-- <ion-item-sliding  >
 
         </ion-item-sliding>

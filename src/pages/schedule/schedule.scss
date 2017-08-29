@@ -1,15 +1,25 @@
-// page-schedule {
-// .itemSpeaker{
-//   background-color: skyblue;
-// }
-// .item-divider-md {
-//     padding-left: 16px;
-//     border-bottom: 1px solid #dedede;
-//     font-size: 1.4rem;
-//     color: gray;
-//     background-color: whitesmoke;
-// }
-// }
-.HourSeparator{
-  font-weight: bold;
+page-schedule {
+  .HourSeparator{
+    font-weight: bold;
+  }
+  .element {
+    font-weight: bold;
+padding-left: 5px;
+height: 40px;
+background-color: #49afbc;
+color: white;
+font-size: 20px;
+  }
+  ion-label{
+    margin:0px !important;
+    padding-top: 5px;
+
+  }
+  .item-divider-md {
+    padding-left: 16px;
+    border-bottom: 1px solid #dedede;
+    font-size: 1.3em;
+    color: black;
+    background-color: #f7f7f7;
 }
+ }

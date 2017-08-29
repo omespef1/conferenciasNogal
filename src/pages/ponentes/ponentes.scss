@@ -1,18 +1,27 @@
 page-ponentes {
+  ion-avatar{
+    img{
+      width:60px !important;
+      height:60px !important;
+    }
+  }
   .content-ios {
       color: #000;
   background-color: transparent;
   }
-  .item-ios {
-    background-color:rgba(0, 0, 0, 0.6) !important;
+ .item-ios {
+      background-color: #49afbc;
+      p{
+        color:black;
+      }
   }
-  .list-md ion-item-sliding {
-  background-color:rgba(0, 0, 0, 0.6) !important;
-}
+  ion-item-sliding{
+    background-color: #49afbc !important;
+  }
   .list-ios ion-item-sliding{
     margin-top: 2px;
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 0px;
     h1{
       color:white;
     }
@@ -39,6 +48,6 @@ page-ponentes {
     font-size: 1.4rem;
     line-height: normal;
     text-overflow: inherit;
-    color: white;
+    color: black;
 }
 }

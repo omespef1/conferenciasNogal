@@ -41,8 +41,12 @@ let loading = this.loading.create({
 loading.present();
     this.seven.getSpeakers(this.event.rev_cont)
       .then(data => {
-        this.speakers = data;
-
+        if (data==undefined){
+          this.showMessage("No hay conferencistas para este evento!");
+          loading.dismiss();
+          return;
+        }
+          this.speakers = data;
         console.log(data);
         console.log(this.speakers[0].con_foto);
         this.imgPreview = 'data:image/jpeg;base64,' + this.speakers[0].con_foto;
@@ -50,6 +54,7 @@ loading.present();
       })
       .catch(error =>{
         console.error(error);
+          loading.dismiss();
       })
   }
 

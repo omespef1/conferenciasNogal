@@ -34,11 +34,16 @@ export class LoginPage {
     this.rutaImg = "assets/icon/seven.png";
   }
   loginUser(){
-    if(/^[a-zA-Z0-9]+$/.test(this.login.username) && this.login.password!=""){
+    if(this.login.user!="" && this.login.password!=""){
+    if(/^[a-zA-Z0-9]+$/.test(this.login.username)){
     this.validUser();
+  }
+  else {
+      this.showAlert('Usuario inválido, verifique!','Error');
+  }
     }
     else {
-      this.showAlert('Datos no válidos, por favor verifique!','Error');
+      this.showAlert('Debe especificar usuario y contraseña!','Error');
     }
   }
   openRegister(){

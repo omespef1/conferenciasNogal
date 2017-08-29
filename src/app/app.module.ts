@@ -10,10 +10,10 @@ import {PonenteDetallePage} from '../pages/ponente-detalle/ponente-detalle';
 import {CalendarioPage} from '../pages/calendario/calendario';
 import {SettingsPage} from '../pages/settings/settings';
 import {RegisterPage} from '../pages/register/register';
-import {AskPage} from '../pages/ask/ask';
 import {EventDetailsPage} from '../pages/event-details/event-details';
 import {ChatPage} from '../pages/chat/chat';
 import {SchedulePage} from '../pages/schedule/schedule';
+import {ScheduleDetailsPage} from '../pages/schedule-details/schedule-details';
 import { HttpModule} from '@angular/http';
 import { Ionic2RatingModule } from 'ionic2-rating';
 //providers
@@ -48,11 +48,11 @@ var config = {
     CalendarioPage,
     SettingsPage,
     RegisterPage,
-    AskPage,
     EventDetailsPage,
     ChatPage,
     SchedulePage,
     ImagePipe,
+    ScheduleDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -76,10 +76,10 @@ var config = {
     CalendarioPage,
     SettingsPage,
     RegisterPage,
-    AskPage,
     EventDetailsPage,
     ChatPage,
-    SchedulePage
+    SchedulePage,
+    ScheduleDetailsPage
   ],
   providers: [
     StatusBar,

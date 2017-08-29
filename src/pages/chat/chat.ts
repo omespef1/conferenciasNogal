@@ -38,7 +38,7 @@ export class ChatPage {
         username: this.username,
         message: this.message,
         rev_cont:this.ee_revet.rev_cont,
-        time:new Date().toLocaleDateString()
+        time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
       }).then( () => {
         // message is sent
       }).catch( () => {
@@ -76,7 +76,7 @@ export class ChatPage {
       specialMessage: true,
       message: `${this.username} ha ingresado  la conversación del evento.`,
       rev_cont: this.ee_revet.rev_cont,
-      time:new Date().toLocaleDateString()
+      time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
     });
     this.scrollToBottom();
   }

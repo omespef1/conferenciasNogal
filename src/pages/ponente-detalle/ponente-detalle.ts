@@ -75,10 +75,8 @@ private loading:LoadingController) {
     this.ee_calco.rev_cont = this.speaker.rev_cont;
     this.ee_calco.ter_codi = this.speaker.ter_codi;
     this.ee_calco.cal_valo = this.rate;
-    console.log(this.rate);
     this.seven.setCalco(this.ee_calco).then(resp=>{
       load.dismiss();
-      console.log(resp);
       if(resp===0){
       this.showToast("Hemos recibido tu valoración!")
       }

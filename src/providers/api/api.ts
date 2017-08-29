@@ -17,8 +17,11 @@ export class ApiProvider {
 
     console.log('Hello ApiProvider Provider');
   }
- chargue(){
+ chargue(rutaDefault:string){
   return this.http.get('assets/data/data.json').subscribe(res=>{
+    if(res==undefined){
+      this.data = rutaDefault;
+    }
      this.data= res.json();
    })
  }
