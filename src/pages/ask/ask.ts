@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,AlertController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,AlertController,LoadingController} from 'ionic-angular';
+//providers
+import {SevenProvider} from '../../providers/seven/seven';
+//models
+import {eerevet} from '../../shared/models';
 
 /**
  * Generated class for the AskPage page.
@@ -13,22 +17,30 @@ import { IonicPage, NavController, NavParams ,AlertController} from 'ionic-angul
   templateUrl: 'ask.html',
 })
 export class AskPage {
-  Edad:number;
-  Cargo:string;
-  Patrocinador:string;
-  expextativas:string;
-  conocimiento:string;
-  Recomienda:string;
-
-testRadioResult;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+ public questions: any[];
+ public event: eerevet;
+  constructor(private seven:SevenProvider, private nav:NavParams,
+  private loadingCtrl:LoadingController) {
+  this.event =  this.nav.get('event');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AskPage');
+    this.GetEeEncev();
   }
 
+  GetEeEncev(){
+    let loading = this.loadingCtrl.create({
+      content:'Cargando...'
+    });
+    loading.present();
+    this.seven.getEeEncev(this.event.rev_cont).then(resp=>{
+      console.log(resp);
+      this.questions = resp;
+      loading.dismiss();
+    }).catch(err=>{
 
+      loading.dismiss();
+    })
+  }
 
 }

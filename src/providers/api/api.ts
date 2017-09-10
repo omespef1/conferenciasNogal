@@ -22,7 +22,11 @@ export class ApiProvider {
     if(res==undefined){
       this.data = rutaDefault;
     }
+    else {
+      console.log(res.json());
      this.data= res.json();
+    }
+
    })
  }
   load(): any {

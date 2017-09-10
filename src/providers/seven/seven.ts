@@ -12,7 +12,7 @@ import {ApiProvider} from '../api/api';
 */
 @Injectable()
 export class SevenProvider {
-  private apiUrl:string =  "http://erp.clubelnogal.com/NogalEventosApi/api/";
+  private apiUrl:string = "http://192.168.137.1/NogalConferencesApi/api/";
    private apiAction :string;
   constructor(private http: Http,
   private _api:ApiProvider) {
@@ -39,7 +39,10 @@ export class SevenProvider {
           this.apiAction = 'eeagend/days?rev_cont='+event;
           return this.requestGet(this.apiAction);
         }
-
+    getEeEncev(rev_cont:number){
+      this.apiAction = 'eeencev?id='+rev_cont;
+      return this.requestGet(this.apiAction);
+    }
     getAsiste(asi_codi:string){
       this.apiAction = 'eeasise/'+asi_codi;
       return this.requestGet(this.apiAction);
@@ -64,8 +67,9 @@ export class SevenProvider {
         return  this.requestPost(this.apiAction,body);
     }
     requestGet(url:string){
-      console.log(this._api.data.api+ this.apiAction);
-      return this.http.get(this._api.data.api + this.apiAction)
+      let api = this._api.data.api + this.apiAction;
+      console.log(api);
+      return this.http.get(api)
       .map(res => res.json())
       .toPromise();
         }

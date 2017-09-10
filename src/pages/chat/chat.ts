@@ -86,7 +86,7 @@ export class ChatPage {
       specialMessage: true,
       message: `${this.username} ha abandonado  la conversación del evento.`,
       rev_cont:this.ee_revet.rev_cont,
-      time:new Date().toLocaleDateString()
+      time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
     });
   }
   loadMessagues(){

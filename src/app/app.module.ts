@@ -10,6 +10,7 @@ import {PonenteDetallePage} from '../pages/ponente-detalle/ponente-detalle';
 import {CalendarioPage} from '../pages/calendario/calendario';
 import {SettingsPage} from '../pages/settings/settings';
 import {RegisterPage} from '../pages/register/register';
+import {AskPage} from '../pages/ask/ask';
 import {EventDetailsPage} from '../pages/event-details/event-details';
 import {ChatPage} from '../pages/chat/chat';
 import {SchedulePage} from '../pages/schedule/schedule';
@@ -52,7 +53,8 @@ var config = {
     ChatPage,
     SchedulePage,
     ImagePipe,
-    ScheduleDetailsPage
+    ScheduleDetailsPage,
+    AskPage
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,8 @@ var config = {
     EventDetailsPage,
     ChatPage,
     SchedulePage,
-    ScheduleDetailsPage
+    ScheduleDetailsPage,
+    AskPage
   ],
   providers: [
     StatusBar,

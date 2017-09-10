@@ -44,7 +44,7 @@ export class EventDetailsPage {
   }
   goEncuesta(){
     console.log(this.thisEvent)
-      this.navCtrl.push(AskPage);
+      this.navCtrl.push(AskPage,{'event':this.thisEvent});
   }
 
 }

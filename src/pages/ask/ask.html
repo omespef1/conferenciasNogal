@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="dark">
-    <ion-title>Encuesta de satisfacción</ion-title>
+    <ion-title>Encuesta</ion-title>
      <button ion-button icon-only menuToggle>
   <ion-icon name="menu"></ion-icon>
 </button>
@@ -14,96 +14,22 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-  <ion-item-group>
-<ion-item-divider>Información Personal</ion-item-divider>
-  <ion-item>
-   <ion-label stacked>Nombre</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item >
-   <ion-label stacked>Email</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-       <ion-label stacked>Edad</ion-label>
-       <ion-select [(ngModel)]="Edad">
-         <ion-option value="<35">Menor a 35</ion-option>
-         <ion-option value="35-44">Entre 35 y 44</ion-option>
-          <ion-option value="45-54">Entre 45 y 54</ion-option>
-          <ion-option value="55-64">Entre 55 y 64</ion-option>
-          <ion-option value="<65">Mayor a 65</ion-option>
-       </ion-select>
-     </ion-item>
+    <ion-item-group *ngFor="let question of questions">
+      <div class="element">
+
+        <ion-label>{{question.enc_preg}}</ion-label>
+
+      </div>
+      <div *ngFor="let option of question.options">
+        <ion-item group>
+          <ion-label>{{option.dep_opci}}</ion-label>
+            <ion-checkbox color="dark" checked="false"></ion-checkbox>
+          </ion-item>
+      </div>
+    </ion-item-group>
 
 
-     <ion-item>
-          <ion-label stacked>¿Cual es su rol actual?</ion-label>
-          <ion-select [(ngModel)]="Cargo">
-            <ion-option value="<D">Dueño</ion-option>
-            <ion-option value="V">Vicepresidente</ion-option>
-             <ion-option value="G">Gerente</ion-option>
-             <ion-option value="P">Presidente o CEO</ion-option>
-             <ion-option value="C">Coordinador</ion-option>
-              <ion-option value="O">Otro</ion-option>
-
-          </ion-select>
-        </ion-item>
-  </ion-item-group>
-        <ion-item-group>
-            <ion-item-divider>Información del Evento</ion-item-divider>
-        <ion-item >
-             <ion-label stacked>¿Quién costeó su participación?</ion-label>
-             <ion-select [(ngModel)]="Patrocinador">
-               <ion-option value="1">Yo mismo</ion-option>
-               <ion-option value="2">departamento de RRHH</ion-option>
-                <ion-option value="3">Departamento de mercadeo</ion-option>
-                <ion-option value="4">Invitacón</ion-option>
-                <ion-option value="5">Otro</ion-option>
-
-
-             </ion-select>
-           </ion-item>
-
-           <ion-item>
-                <ion-label stacked>¿Sus expectativas han sido?</ion-label>
-                <ion-select [(ngModel)]="expextativas">
-                  <ion-option value="1">Superadas</ion-option>
-                  <ion-option value="2">Planamente atendidas</ion-option>
-                   <ion-option value="3">Parcialmente atendidas</ion-option>
-                   <ion-option value="4">No fueron atendidas</ion-option>
-
-                </ion-select>
-              </ion-item>
-              <ion-item >
-                   <ion-label stacked>¿Como se enteró del evento?</ion-label>
-                   <ion-select [(ngModel)]="conocimiento">
-                     <ion-option value="1">Folleto</ion-option>
-                     <ion-option value="2">Publicidad</ion-option>
-                      <ion-option value="3">Internet</ion-option>
-                      <ion-option value="4">Redes sociales</ion-option>
-                        <ion-option value="5">Recomendación</ion-option>
-                          <ion-option value="6">Invitación</ion-option>
-
-                   </ion-select>
-                 </ion-item>
-
-                 <ion-item>
-                      <ion-label stacked>¿Recomendaría el evento?</ion-label>
-                      <ion-select [(ngModel)]="Recomienda">
-                        <ion-option value="S">Si</ion-option>
-                        <ion-option value="N">No</ion-option>
-
-
-                      </ion-select>
-                    </ion-item>
-
-  </ion-item-group>
-
-
-<div text-center>
-  <button  color ="dark" ion-button text-center (click)="showAlert('Su opinión ha sido enviada','Gracias!')">Enviar Encuesta</button>
-  </div>
 
 </ion-content>
