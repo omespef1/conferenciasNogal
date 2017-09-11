@@ -13,39 +13,12 @@ import 'rxjs/add/observable/of';
 export class ApiProvider {
   data: any;
   constructor(public http: Http) {
-
-
-    console.log('Hello ApiProvider Provider');
+    this.chargue();
   }
- chargue(rutaDefault:string){
-  return this.http.get('assets/data/data.json').subscribe(res=>{
-    if(res==undefined){
-      this.data = rutaDefault;
-    }
-    else {
-      console.log(res.json());
+ chargue(){
+    this.http.get('assets/data/data.json').subscribe(res=>{
      this.data= res.json();
-    }
-
    })
  }
-  load(): any {
-    if (this.data) {
-      return Observable.of(this.data);
-    } else {
-      return this.http.get('assets/data/data.json')
-        .map(this.processData, this);
-    }
-  }
-  processData(data: any) {
-  // just some good 'ol JS fun with objects and arrays
-  // build up the data by linking speakers to sessions
-  this.data = data.json();
-  return this.data;
-}
-getApi() {
-  return this.load().map((data: any) => {
-    return data;
-  });
-}
+
 }

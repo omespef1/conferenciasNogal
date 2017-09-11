@@ -16,7 +16,7 @@ export class SevenProvider {
    private apiAction :string;
   constructor(private http: Http,
   private _api:ApiProvider) {
-  this._api.chargue(this.apiUrl);
+     this._api.chargue();
   }
 
   getEvents() {
@@ -88,7 +88,6 @@ postAsise(body:any){
   			headers: headers
   		});
       let body:any = param;
-      console.log(body);
       return this.http.post(this._api.data.api+ this.apiAction,body,options)
       .toPromise()
 			.then(response => {

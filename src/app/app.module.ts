@@ -26,6 +26,7 @@ import { UserDataProvider } from '../providers/user-data/user-data';
 import { Storage, IonicStorageModule } from '@ionic/storage';
 import { ImagePipe } from '../pipes/image/image';
 import { ApiProvider } from '../providers/api/api';
+import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 
 
 
@@ -90,7 +91,8 @@ var config = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SevenProvider,
     UserDataProvider,
-    ApiProvider
+    ApiProvider,
+    FingerprintAIO
   ]
 })
 export class AppModule {}
