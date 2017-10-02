@@ -4,6 +4,9 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import {eecalco} from '../../shared/models';
 import {ApiProvider} from '../api/api';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
 /*
   Generated class for the SevenProvider provider.
 
@@ -12,6 +15,7 @@ import {ApiProvider} from '../api/api';
 */
 @Injectable()
 export class SevenProvider {
+  data: any;
   private apiUrl:string = "http://192.168.137.1/NogalConferencesApi/api/";
    private apiAction :string;
   constructor(private http: Http,
@@ -95,4 +99,23 @@ postAsise(body:any){
            return error.json().message || 'Error en el servicio, intente más tarde';
          });
     }
+    getMap() {
+  return this.load().map((data: any) => {
+    return data.map;
+  });
+}
+load(): any {
+  if (this.data) {
+    return Observable.of(this.data);
+  } else {
+    return this.http.get('assets/data/data.json')
+      .map(this.processData,this);
+  }
+}
+  processData(data: any) {
+  this.data = data.json();
+    return this.data;
+  }
+
+
 }

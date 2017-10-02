@@ -38,9 +38,7 @@ export class AskPage {
       this.questions = resp;
       loading.dismiss();
     }).catch(err=>{
-
       loading.dismiss();
     })
   }
-
 }

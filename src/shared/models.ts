@@ -77,3 +77,25 @@ constructor(
 }
 
 }
+
+export class social{
+  constructor(
+public type:string,
+public link:string
+
+  ){
+
+  }
+}
+
+
+export class sponsors {
+  constructor(
+    public name :string,
+    public description:string,
+    public image:string,
+    public social : social[]
+  ){
+
+  }
+}

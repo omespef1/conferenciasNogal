@@ -22,12 +22,14 @@
         <ion-label>{{question.enc_preg}}</ion-label>
 
       </div>
+        <ion-list radio-group>
       <div *ngFor="let option of question.options">
-        <ion-item group>
-          <ion-label>{{option.dep_opci}}</ion-label>
-            <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        <ion-item>
+           <ion-label>{{option.dep_opci}}</ion-label>
+            <ion-radio color="dark" checked="false" value = {{option.den_cont}}></ion-radio>
           </ion-item>
       </div>
+    </ion-list>
     </ion-item-group>
 
 

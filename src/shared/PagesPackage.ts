@@ -6,3 +6,4 @@ export {SettingsPage} from '../pages/settings/settings';
 export {RegisterPage} from '../pages/register/register';
 export {AskPage} from '../pages/ask/ask';
 export {EventDetailsPage} from '../pages/event-details/event-details';
+export {SponsorsPage} from '../pages/sponsors/sponsors';

@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import {LoginPage} from '../pages/login/login';
 import {PonentesPage} from '../pages/ponentes/ponentes';
 import {PonenteDetallePage} from '../pages/ponente-detalle/ponente-detalle';
@@ -13,10 +14,12 @@ import {RegisterPage} from '../pages/register/register';
 import {AskPage} from '../pages/ask/ask';
 import {EventDetailsPage} from '../pages/event-details/event-details';
 import {ChatPage} from '../pages/chat/chat';
+import {SponsorsPage} from '../pages/sponsors/sponsors';
 import {SchedulePage} from '../pages/schedule/schedule';
 import {ScheduleDetailsPage} from '../pages/schedule-details/schedule-details';
 import { HttpModule} from '@angular/http';
 import { Ionic2RatingModule } from 'ionic2-rating';
+import {LocationPage} from '../pages/location/location';
 //providers
 import { SevenProvider } from '../providers/seven/seven';
 import {AngularFireModule} from 'angularfire2';
@@ -55,7 +58,9 @@ var config = {
     SchedulePage,
     ImagePipe,
     ScheduleDetailsPage,
-    AskPage
+    AskPage,
+    LocationPage,
+    SponsorsPage
   ],
   imports: [
     BrowserModule,
@@ -83,7 +88,9 @@ var config = {
     ChatPage,
     SchedulePage,
     ScheduleDetailsPage,
-    AskPage
+    AskPage,
+    LocationPage,
+    SponsorsPage
   ],
   providers: [
     StatusBar,
@@ -92,7 +99,7 @@ var config = {
     SevenProvider,
     UserDataProvider,
     ApiProvider,
-    FingerprintAIO
+InAppBrowser
   ]
 })
 export class AppModule {}

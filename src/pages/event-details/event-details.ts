@@ -7,6 +7,7 @@ import {ChatPage} from '../chat/chat';
 import {AskPage} from '../ask/ask';
 import {UserDataProvider} from '../../providers/user-data/user-data';
 import {ImagePipe} from '../../pipes/image/image';
+import {LocationPage} from '../location/location';
 /**
  * Generated class for the EventDetailsPage page.
  *
@@ -45,6 +46,9 @@ export class EventDetailsPage {
   goEncuesta(){
     console.log(this.thisEvent)
       this.navCtrl.push(AskPage,{'event':this.thisEvent});
+  }
+  goLocation(){
+      this.navCtrl.push(LocationPage);
   }
 
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform ,MenuController,NavParams,Events,AlertController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {CalendarioPage,LoginPage,PonentesPage,RegisterPage,SettingsPage,EventDetailsPage} from '../shared/pagesPackage';
+import {CalendarioPage,LoginPage,PonentesPage,RegisterPage,SettingsPage,EventDetailsPage,SponsorsPage} from '../shared/pagesPackage';
 import {page} from '../shared/models';
 import {UserDataProvider} from '../providers/user-data/user-data';
 import {SevenProvider} from '../providers/seven/seven';
@@ -19,6 +19,7 @@ export class MyApp {
   pageSettings = SettingsPage;
   pageRegister = RegisterPage;
   pageEventDetails = EventDetailsPage;
+  pageSponsors: SponsorsPage;
    public userData:string;
    public user:string;
  public pages:page[];
@@ -52,6 +53,7 @@ this.pagesOut = [
   new page('Calendario','md-calendar',false,CalendarioPage),
   new page('Chat de eventos','ios-chatboxes',false,LoginPage),
   new page('Encuestas','ios-help',false,LoginPage),
+  new page ('Patrocinadores', 'ios-help',false,SponsorsPage)
 ]
     });
 

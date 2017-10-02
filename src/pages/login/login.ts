@@ -6,7 +6,6 @@ import  {RegisterPage} from '../register/register';
 import {SevenProvider} from '../../providers/seven/seven';
 import  {asise} from '../../shared/models';
 import {UserDataProvider} from '../../providers/user-data/user-data';
-import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 /**
  * Generated class for the LoginPage page.
  *
@@ -29,7 +28,7 @@ export class LoginPage {
     private alertCtrl:AlertController,
     private seven:SevenProvider,
     private userdata :UserDataProvider,
-    private faio: FingerprintAIO
+
   ) {
   }
   ionViewDidLoad() {
@@ -88,19 +87,5 @@ let loading=    this.load.create({
     alert.present();
 
   }
-async  showFinger(){
-  const available = await this.faio.isAvailable();
-  if(available==="OK"){
-    this.faio.show({
-    clientId: 'Fingerprint-Demo',
-    clientSecret: 'password', //Only necessary for Android
-    disableBackup:true,  //Only for Android(optional)
-    localizedFallbackTitle: 'Use Pin', //Only for iOS
-    localizedReason: 'Auntentíquese con TouchID para ingresar directamente.' //Only for iOS
-}).then(result=>{
-  console.log(result);
-})
-  }
 
-  }
 }
