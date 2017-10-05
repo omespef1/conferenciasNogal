@@ -1,3 +1,14 @@
 page-sponsors {
+  ion-content{
+    background-color: #F1F2F2 !important;
+    background-image: none;
+    ion-item{
+      background-color: transparent !important;
+    }
+  }
+
+ion-list-header{
+  background: color($colors,secondarydw) !important;
+}
 
 }

@@ -46,9 +46,16 @@ vimeo:      #23b6ea,
 facebook:   #3b5998,
 botonPrimario:red,
 negro: black,
+primarydw:#8E8B82,
+secondarydw:#343434,
+thirddw:#E9DCBE,
+fourthdw:#F3F3F3,
+linesdw:#F8B195,
+fontprimary:#4A4A4A,
+
 );
 
-
+$item-ios-detail-push-color :#a84b74;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -76,7 +83,58 @@ negro: black,
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
-
+@font-face {
+ font-family: 'PtSans';
+ src:url('../assets/PTC55F.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'PtSans1';
+ src:url('../assets/PTC75F.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'PtSans2';
+ src:url('../assets/PTN57F.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'PtSans3';
+ src:url('../assets/PTN77F.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'PtSans4';
+ src:url('../assets/PTS55F.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'PtSans5';
+ src:url('../assets/PTS56F.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'PtSans6';
+ src:url('../assets/PTS57F.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'PtSans7';
+ src:url('../assets/PTS76F.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+$font-family-base: "PtSans";
+$font-family-ios-base: $font-family-base;
+$font-family-md-base: $font-family-base;
+$font-family-wp-base: $font-family-base;
 @import "ionic.theme.default";
 
 

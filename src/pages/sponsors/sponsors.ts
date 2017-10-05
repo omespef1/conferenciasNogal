@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController ,LoadingController} from 'ionic-angular';
 import {sponsors} from '../../shared/models';
+import {SevenProvider} from '../../providers/seven/seven';
+import {eerevet} from '../../shared/models';
+import {ImagePipe} from '../../pipes/image/image';
+import {SponsorDetaillPage} from '../sponsor-detaill/sponsor-detaill';
+/**
 
 /**
  * Generated class for the SponsorsPage page.
@@ -14,14 +19,45 @@ import {sponsors} from '../../shared/models';
   templateUrl: 'sponsors.html',
 })
 export class SponsorsPage {
-  public sponsor:sponsors;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+  public sponsors:sponsors[];
+  private event:eerevet;
+  constructor(private seven:SevenProvider, private nav:NavParams,private toast:ToastController,
+  private navCtrl:NavController, private loading:LoadingController) {
+   this.event   = this.nav.get('event');
   }
 
   ionViewDidLoad() {
-    this.sponsor = { name: 'Bancolombia', description: 'Prueba' , image:'www.google.es' , social:[{link:'WWW.GOOGLE.ES',type:'f'}]};
-    console.log(this.sponsor);
+  this.getSponsors();
+  }
+
+  getSponsors(){
+    let load = this.loading.create({
+      content:'Cargando...'
+    });
+   load.present();
+    this.seven.getPatre(this.event.rev_cont).then(resp=>{
+   if (resp==undefined){
+    load.dismiss();
+    this.showMessage("No hay patrocinadores para este evento.")
+return;
+  }
+  console.log(resp);
+     this.sponsors= resp;
+     load.dismiss();
+   }).catch(err=>{
+     load.dismiss();
+       this.showMessage(err);
+   })
+
+  }
+  showMessage(msg:string){
+    const toast = this.toast.create({
+     message: msg,
+     duration: 3000
+   }).present();
+  }
+  goSponsor(sponsor:sponsors){
+    this.navCtrl.push(SponsorDetaillPage, {'sponsor':sponsor})
   }
 
 }

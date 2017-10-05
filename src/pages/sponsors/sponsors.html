@@ -1,42 +1,23 @@
-<!--
-  Generated template for the SponsorsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>sponsor.name</ion-title>
+  <ion-navbar color="primarydw">
   </ion-navbar>
-
 </ion-header>
 
+<ion-content>
 
-<ion-content class="cards-bg">
-  <ion-card>
-    <img src="http://www.innovarweb.com/wp-content/uploads/2015/06/bancolombia.png"/>
-    <ion-card-content>
-      <ion-card-title>
-        Nine Inch Nails Live
-      </ion-card-title>
-      <p>
-      sponsor.description
-      </p>
-    </ion-card-content>
-    <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='logo-facebook'></ion-icon>
-          Facebook
-        </button>
-      </ion-col>
-      <ion-col text-center>
-        <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='logo-twitter'></ion-icon>
-          Twitter
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card>
+
+  <ion-list-header>
+Patrocinado por
+</ion-list-header>
+    <button ion-item *ngFor="let sponsor of sponsors" (click)="goSponsor(sponsor)">
+      <ion-avatar item-start *ngIf="sponsor.pat_foto">
+     <img [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" />
+      </ion-avatar>
+      <h1>{{sponsor.pat_nomb}}</h1>
+       <p>{{sponsor.pat_desc}}</p>
+    </button>
+
+
+
+
 </ion-content>

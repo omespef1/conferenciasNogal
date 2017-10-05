@@ -1,9 +1,8 @@
-import { Component ,ViewChild, ElementRef} from '@angular/core';
-import { Platform } from 'ionic-angular';
-import {SevenProvider} from '../../providers/seven/seven';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
-declare var google: any;
-
+declare var google;
 /**
  * Generated class for the LocationPage page.
  *
@@ -15,38 +14,23 @@ declare var google: any;
   templateUrl: 'location.html',
 })
 export class LocationPage {
-@ViewChild('mapCanvas') mapElement: ElementRef;
-  constructor(private seven:SevenProvider,public platform: Platform) {
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+  constructor(public navCtrl: NavController) {
   }
 
   ionViewDidLoad() {
-
-      this.seven.getMap().subscribe((mapData: any) => {
-        let mapEle = this.mapElement.nativeElement;
-
-        let map = new google.maps.Map(mapEle, {
-          center: mapData.find((d: any) => d.center),
-          zoom: 16
-        });
-        mapData.forEach((markerData: any) => {
-          let infoWindow = new google.maps.InfoWindow({
-            content: `<h5>${markerData.name}</h5>`
-          });
-          let marker = new google.maps.Marker({
-            position: markerData,
-            map: map,
-            title: markerData.name
-          });
-          marker.addListener('click', () => {
-            infoWindow.open(map, marker);
-          });
-        });
-        google.maps.event.addListenerOnce(map, 'idle', () => {
-          mapEle.classList.add('show-map');
-        });
-
-      });
-
-  }
-
+    this.initMap();
+}
+initMap(){
+  this.map = new google.maps.Map(this.mapElement.nativeElement, {
+      zoom: 15,
+      center: {lat: 4.66018, lng: -74.05073}
+    });
+    var marker = new google.maps.Marker({
+         position: {lat: 4.66018, lng: -74.05073},
+         map: this.map,
+         title: 'Club el Nogal'
+       });
+}
 }

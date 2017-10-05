@@ -5,8 +5,8 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Eventos</ion-title>
+  <ion-toolbar color="primarydw">
+    <ion-title>EVENTOS DISPONIBLES</ion-title>
     <button color="light" ion-button icon-only menuToggle>
   <ion-icon name="menu"></ion-icon>
 </button>
@@ -25,8 +25,8 @@
   <ion-card (click)="goDetails(event)">
     <!-- <img src="assets/icon/card-saopaolo.png"/> -->
    <img [src]="'data:image/jpg;base64,'+event.rev_foto | image" />
-    <div class="card-title">{{event.rev_desc}}</div>
-    <div class="card-subtitle">{{event.rev_luga}}</div>
+    <!-- <div class="card-title">{{event.rev_desc}}</div>
+    <div class="card-subtitle">{{event.rev_luga}}</div> -->
   </ion-card>
 </div>
 </ion-content>

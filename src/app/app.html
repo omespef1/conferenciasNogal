@@ -2,7 +2,7 @@
 
 <ion-menu id="loggedInMenu" [content]="content" >
   <ion-header>
-    <ion-toolbar color="dark">
+    <ion-toolbar color="primarydw">
       <ion-title>NOGAL CONFERENCIAS</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -25,7 +25,7 @@
 </ion-menu>
 <ion-menu id="loggedOutMenu" [content]="content" >
   <ion-header>
-    <ion-toolbar color="dark">
+    <ion-toolbar color="primarydw">
       <ion-title></ion-title>
     </ion-toolbar>
   </ion-header>
@@ -34,7 +34,9 @@
       <div padding>
      </div>
       <button  *ngFor="let menu of pagesOut" ion-item (click)="abrirPagina(menu)">
+        <div class="divIcon">
         <ion-icon name='{{menu.icon}}' color="negro"></ion-icon>&nbsp;{{menu.name}}
+      </div>
       </button>
     </ion-list>
     <div class="logoSeven">
@@ -45,5 +47,8 @@
   </ion-content>
 </ion-menu>
 <ion-footer>
+  <div class="dw-footer">
+  SEVEN-ERP 1992-2017 Digital Ware
+</div>
 </ion-footer>
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

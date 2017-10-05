@@ -1,78 +1,137 @@
 page-login {
-	.inputLogin{
-		color:black
+	.logo{
+		min-width: 250px;
 	}
-	label-floating .text-input {
-    margin-left: 0;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    width: calc(100% - 8px);
-    color: black !important;
-}
-	.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-    color: black;
-
-}
-.label-ios[floating] {
-	color:#861316 !important;
-}
-	.logo {
-    padding: 20px 0;
-    min-height: 200px;
-    text-align: center;
-
-    img {
-      max-width: 250px;
-    }
-  }
-	.logoSeven{
-		text-align: center;
-		img{
-			min-width:200px;
+	.login-content {
+		ion-icon {
+		    display: inline-block;
+		    font-size: 1.8em;
 		}
-	}
-	.item-md{
-		background-color: transparent;
-	}
-	.item-ios {
-    padding-left: 16px;
-    border-radius: 0;
-    position: relative;
-    font-size: 1.7rem;
-    color: white;
-    background-color: transparent;
-    transition: background-color 200ms linear;
-}
-.button-outline-ios-light {
-    border-color: #f4f4f4;
-    color: black;
-    background-color: transparent;
-}
+    .logo-row {
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
 
-img {
-	max-width: 70%;
+    .login-box {
+			padding: 20px 20px 0px 20px;
 margin-top: 0px;
-}
-#divLogo {
-	top:0px;
-	position: absolute;
-}
-	ion-card.card {
-		box-shadow: none;
-		background: rgba(0, 0, 0, 0.5);
-		border-radius: 5px;
-	}
+background-color: rgba(144,120,66,0.5);
+border-radius: 20px;
+    }
 
-	a, p,
-	ion-card-header.card-header {
-		color: #fff!important;
-	}
+    ion-row {
+       align-items: center;
+       text-align: center;
+     }
 
-	.list > .item-block:first-child {
-		border: medium none;
-	}
-input {
-	font-weight: 400;
-}
+     ion-item {
+         border-radius: 30px !important;
+         padding-left: 30px !important;
+         font-size: 0.9em;
+         margin-bottom: 10px;
+         border: 1px solid #ffffff;
+         border-bottom: 0px !important;
+         box-shadow: none !important;
+     }
+
+     .signup-col {
+       margin: 0px 16px 0px 16px;
+       padding-bottom: 20px;
+     }
+
+     .item-inner {
+       border-bottom-color: #ffffff !important;
+       box-shadow: none !important;
+     }
+
+     .submit-btn {
+       background: #EBCBAE;
+       border-radius: 30px !important;
+			 color:#8F8787 !important;
+     }
+		 button[disabled], [ion-button][disabled] {
+		     opacity: 0.8 !important;
+		 }
+     .register-btn {
+       color: #ffffff;
+       font-size: 0.8em;
+			 text-decoration: underline;
+     }
+  }
+// 	.inputLogin{
+// 		color:black
+// 	}
+// 	label-floating .text-input {
+//     margin-left: 0;
+//     margin-top: 8px;
+//     margin-bottom: 8px;
+//     width: calc(100% - 8px);
+//     color: black !important;
+// }
+// 	.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+//     color: black;
+//
+// }
+// .label-ios[floating] {
+// 	color:#861316 !important;
+// }
+// 	.logo {
+//     padding: 20px 0;
+//     min-height: 200px;
+//     text-align: center;
+//
+//     img {
+//       max-width: 250px;
+//     }
+//   }
+// 	.logoSeven{
+// 		text-align: center;
+// 		img{
+// 			min-width:200px;
+// 		}
+// 	}
+// 	.item-md{
+// 		background-color: transparent;
+// 	}
+// 	.item-ios {
+//     padding-left: 16px;
+//     border-radius: 0;
+//     position: relative;
+//     font-size: 1.7rem;
+//     color: white;
+//     background-color: transparent;
+//     transition: background-color 200ms linear;
+// }
+// .button-outline-ios-light {
+//     border-color: #f4f4f4;
+//     color: black;
+//     background-color: transparent;
+// }
+//
+// img {
+// 	max-width: 70%;
+// margin-top: 0px;
+// }
+// #divLogo {
+// 	top:0px;
+// 	position: absolute;
+// }
+// 	ion-card.card {
+// 		box-shadow: none;
+// 		background: rgba(0, 0, 0, 0.5);
+// 		border-radius: 5px;
+// 	}
+//
+// 	a, p,
+// 	ion-card-header.card-header {
+// 		color: #fff!important;
+// 	}
+//
+// 	.list > .item-block:first-child {
+// 		border: medium none;
+// 	}
+// input {
+// 	font-weight: 400;
+// }
 
 }

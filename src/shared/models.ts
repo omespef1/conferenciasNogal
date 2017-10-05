@@ -91,10 +91,35 @@ public link:string
 
 export class sponsors {
   constructor(
-    public name :string,
-    public description:string,
-    public image:string,
-    public social : social[]
+    public rev_cont :number,
+    public pat_cont:number,
+    public pat_codi:string,
+    public pat_nomb:string,
+    public pat_desc :string,
+    public pat_foto:string,
+    public lin_link:eelinke[]
+  ){
+
+  }
+}
+
+export class eelinke {
+  constructor(
+  public lin_cont:number,
+  public lin_urla:string,
+  public lin_nomb:string,
+)
+{
+
+}
+}
+export class eerspas{
+  constructor(
+    public rev_cont:number,
+    public enc_cont:number,
+    public asi_codi:string,
+    public den_cont:number,
+    public cab_cont:number,
   ){
 
   }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http,RequestOptions,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-import {eecalco} from '../../shared/models';
+import {eecalco,eerspas} from '../../shared/models';
 import {ApiProvider} from '../api/api';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -51,6 +51,10 @@ export class SevenProvider {
       this.apiAction = 'eeasise/'+asi_codi;
       return this.requestGet(this.apiAction);
     }
+    getPatre(rev_cont:number){
+      this.apiAction = 'eepatre?rev_cont='+rev_cont;
+      return this.requestGet(this.apiAction);
+    }
     getCalco(calco:eecalco){
       let body:any = JSON.stringify({
         asi_codi:calco.asi_codi,
@@ -78,7 +82,14 @@ export class SevenProvider {
       .toPromise();
         }
 
-
+setEeRspas(rspas:eerspas[]){
+  let body:any = JSON.stringify({
+     rspas
+  });
+  body = JSON.parse(body);
+  this.apiAction='eerspas';
+    return  this.requestPost(this.apiAction,body);
+}
 postAsise(body:any){
   this.apiAction='eeasise';
   return  this.requestPost(this.apiAction,body);
@@ -92,6 +103,7 @@ postAsise(body:any){
   			headers: headers
   		});
       let body:any = param;
+      console.log(body);
       return this.http.post(this._api.data.api+ this.apiAction,body,options)
       .toPromise()
 			.then(response => {

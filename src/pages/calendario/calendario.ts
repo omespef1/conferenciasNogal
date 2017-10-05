@@ -41,7 +41,8 @@ public listEvents :eerevet[]=[];
        load.dismiss();
       })
       .catch(error =>{
-        console.error(error);
+        load.dismiss();
+          this.showMessage(error);
       })
   }
   goDetails (event:eerevet){
@@ -57,7 +58,7 @@ public listEvents :eerevet[]=[];
           this.showMessage("Eventos actualizados!");
       })
       .catch(error =>{
-        console.error(error);
+        this.showMessage(error);
       })
 
     }

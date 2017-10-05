@@ -41,16 +41,14 @@ export class MyApp {
         this.listenToLoginEvents();
         this.validLogin();
 this.pages = [
-  new page('Inicio','home',false,CalendarioPage),
-  new page('Eventos','md-calendar',false,CalendarioPage),
+  new page('Calendario de eventos','md-calendar',false,CalendarioPage),
   new page('Encuestas','ios-help',false,LoginPage),
   new page('Salir','ios-log-out',true,LoginPage),
 ]
 this.pagesOut = [
-  new page('Inicio','home',false,CalendarioPage),
   new page('Login','ios-lock',false,LoginPage),
   new page('Registro','ios-person-add',false,RegisterPage),
-  new page('Calendario','md-calendar',false,CalendarioPage),
+  new page('Calendario de eventos','md-calendar',false,CalendarioPage),
   new page('Chat de eventos','ios-chatboxes',false,LoginPage),
   new page('Encuestas','ios-help',false,LoginPage),
   new page ('Patrocinadores', 'ios-help',false,SponsorsPage)

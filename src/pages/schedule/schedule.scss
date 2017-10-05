@@ -1,25 +1,24 @@
 page-schedule {
+  h3{
+    color:color($colors,fontprimary) !important;
+  }
   .HourSeparator{
     font-weight: bold;
+    color:color($colors,secondarydw) !important;
   }
   .element {
-    font-weight: bold;
+font-weight: bold;
 padding-left: 5px;
 height: 40px;
-background-color: #49afbc;
-color: white;
+background-color: color($colors,secondarydw);
 font-size: 20px;
+color:color($colors,fourthdw) !important;
   }
   ion-label{
     margin:0px !important;
     padding-top: 5px;
-
   }
-  .item-divider-md {
-    padding-left: 16px;
-    border-bottom: 1px solid #dedede;
-    font-size: 1.3em;
-    color: black;
-    background-color: #f7f7f7;
-}
+  ion-item-divider{
+    background-color: color($colors,fourthdw) !important;
+  }
  }

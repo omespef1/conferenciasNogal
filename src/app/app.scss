@@ -1,11 +1,11 @@
 // http://ionicframework.com/docs/v2/theming/
+
 .menu-inner{
   .item-ios {
     padding-left: 16px;
     border-radius: 0;
     position: relative;
     font-size: 1.7rem;
-    color: #000;
     background-color: transparent;
     transition: background-color 200ms linear;
 }
@@ -14,15 +14,6 @@
   img{
     min-width:200px;
   }
-}
-.fuentePrimaria {
-    font-size: 1,5rem;
-    font-weight: 100 !important;
-    color:#FDFDFF;
-}
-
-.fuenteSecundaria {
-    color:#9FA1AD;
 }
 
 .menuSeven {
@@ -48,25 +39,19 @@
 .item-md.item-block .item-inner {
     border-bottom: 0px !important;
 }
-.card-md p {
-  color:white;
-}
 .item-md {
   background-color: transparent;
 }
 .list-md .item-input:last-child{
   border-bottom: 0px !important;
 }
-.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-  color:white;
-}
+
 
 .item-ios p {
     overflow: inherit;
     font-size: 1.4rem;
     line-height: normal;
     text-overflow: inherit;
-    color: grey;
     margin: 0 0 2px;
 }
 .input-wrapper {
@@ -77,9 +62,28 @@
 }
 }
 ion-content {
-background-image: url('../assets/nogalclub.jpg');
+background-image: url('../assets/fondo1.jpg');
 }
-
+.dw-footer{
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 7pt;
+}
+.faGreen {
+   color: #28a54c;
+}
+.faOrange {
+   color: #ff6600;
+}
+.faLightBlue {
+   color: #31C0E6;
+}
+.faYellow{
+   color: #f2c100;
+}
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

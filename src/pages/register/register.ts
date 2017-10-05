@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
 import {SevenProvider} from '../../providers/seven/seven';
 import {asise} from '../../shared/models';
+import {LoginPage} from '../login/login';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -21,7 +22,8 @@ export class RegisterPage {
  asi_codi:string;
   constructor(private alertCtrl: AlertController,
   private seven:SevenProvider,
-  private loadingCtrl:LoadingController
+  private loadingCtrl:LoadingController,
+  private navCtrl:NavController
   ) {
   }
 
@@ -84,6 +86,8 @@ export class RegisterPage {
         console.error(error);
       })
   }
-
+openLogin(){
+  this.navCtrl.push(LoginPage);
+}
 
 }

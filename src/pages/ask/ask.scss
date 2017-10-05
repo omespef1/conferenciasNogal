@@ -3,8 +3,8 @@ page-ask {
     font-weight: bold;
 padding-left: 5px;
 min-height: 40px;
-background-color: #49afbc;
-color: white;
+background-color: color($colors,secondarydw);
+color: color($colors,fourthdw);
 font-size: 20px;
 ion-label{
   margin:0px !important;
@@ -12,5 +12,16 @@ ion-label{
   white-space: normal;
 
 }
+  }
+  ion-list{
+    margin:0px !important;
+  }
+  ion-item{
+    background-color: color($colors,fourthdw) !important;
+  }
+  .submit-btn {
+    background: #EBCBAE;
+    border-radius: 30px !important;
+    color:#8F8787 !important;
   }
 }

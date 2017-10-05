@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="dark">
+  <ion-navbar color="primarydw">
     <ion-title>Encuesta</ion-title>
      <button ion-button icon-only menuToggle>
   <ion-icon name="menu"></ion-icon>
@@ -15,23 +15,22 @@
 
 
 <ion-content>
-
-    <ion-item-group *ngFor="let question of questions">
+    <ion-item-group *ngFor="let question of questions;let i=index">
       <div class="element">
-
         <ion-label>{{question.enc_preg}}</ion-label>
-
       </div>
-        <ion-list radio-group>
+        <ion-list radio-group [(ngModel)]="rspas[i]">
       <div *ngFor="let option of question.options">
         <ion-item>
            <ion-label>{{option.dep_opci}}</ion-label>
-            <ion-radio color="dark" checked="false" value = {{option.den_cont}}></ion-radio>
+            <ion-radio color="primarydw" checked="false" value = {{option.den_cont}}></ion-radio>
           </ion-item>
       </div>
     </ion-list>
     </ion-item-group>
-
+  <button ion-button class="submit-btn" full (click)="send()">Enviar
+<ion-icon name="ios-send"></ion-icon>
+  </button>
 
 
 </ion-content>

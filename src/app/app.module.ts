@@ -20,6 +20,7 @@ import {ScheduleDetailsPage} from '../pages/schedule-details/schedule-details';
 import { HttpModule} from '@angular/http';
 import { Ionic2RatingModule } from 'ionic2-rating';
 import {LocationPage} from '../pages/location/location';
+import {SponsorDetaillPage} from '../pages/sponsor-detaill/sponsor-detaill';
 //providers
 import { SevenProvider } from '../providers/seven/seven';
 import {AngularFireModule} from 'angularfire2';
@@ -30,7 +31,9 @@ import { Storage, IonicStorageModule } from '@ionic/storage';
 import { ImagePipe } from '../pipes/image/image';
 import { ApiProvider } from '../providers/api/api';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
-
+import { SocialPipe } from '../pipes/social/social';
+import { BrowserTab } from '@ionic-native/browser-tab';
+import { ColorsPipe } from '../pipes/colors/colors';
 
 
 var config = {
@@ -60,7 +63,10 @@ var config = {
     ScheduleDetailsPage,
     AskPage,
     LocationPage,
-    SponsorsPage
+    SponsorsPage,
+    SponsorDetaillPage,
+    SocialPipe,
+    ColorsPipe
   ],
   imports: [
     BrowserModule,
@@ -90,7 +96,8 @@ var config = {
     ScheduleDetailsPage,
     AskPage,
     LocationPage,
-    SponsorsPage
+    SponsorsPage,
+    SponsorDetaillPage
   ],
   providers: [
     StatusBar,
@@ -99,7 +106,8 @@ var config = {
     SevenProvider,
     UserDataProvider,
     ApiProvider,
-InAppBrowser
+    InAppBrowser,
+    BrowserTab
   ]
 })
 export class AppModule {}

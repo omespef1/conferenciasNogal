@@ -46,10 +46,7 @@ loading.present();
           loading.dismiss();
           return;
         }
-          this.speakers = data;
-        console.log(data);
-        console.log(this.speakers[0].con_foto);
-        this.imgPreview = 'data:image/jpeg;base64,' + this.speakers[0].con_foto;
+        this.speakers = data;
       loading.dismiss();
       })
       .catch(error =>{

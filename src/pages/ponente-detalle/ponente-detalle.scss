@@ -1,75 +1,40 @@
 page-ponente-detalle {
-  .item-md{
-    background-color: transparent !important;
-  }
+
   ion-content{
-    background-color: #F1F2F2;
-  }
-.item-ios{
-  padding-left: 16px;
-  border-radius: 0;
-  position: relative;
-  font-size: 1.7rem;
-  color: #000;
-  background-color: transparent;
-  transition: background-color 200ms;
-}
-
-.card-background-page {
-}
-  ion-card {
-    position: relative;
-    text-align: center;
+    background-color: #F1F2F2 !important;
+    background-image: none;
   }
 
-  .card-title {
-    position: absolute;
-    top: 36%;
-    font-size: 2.0em;
-    width: 100%;
-    font-weight: bold;
-    color: #fff;
-  }
+
+
+
 .divAvatar{
-  background-color: #49afbc;
+background-color: color($colors,secondarydw);
 text-align: center;
 max-height: 55%;
 img {
-  max-width: 100%;
-border-radius: 50%;
-margin-top:10px;
-  font-family: sans-serif;
+  width: 150px;
+      height: 150px;
+      margin-top: 10px;
+      border-radius: 50%;
+      border: 5px solid white;
 }
 h2{
 margin-top: 0px;
 font-size: 2.4rem;
-font-family: arial;
 margin-bottom: 0;
-color:white;
-font-weight: 600;
+font-weight: bold;
+color:color($colors,fourthdw) !important;
 }
+
 }
 .container {
-  background-color: #F1F2F2;
-  color:black;
-  font-family: inherit;
-  p{
-    font-family:arial;
-    color:black
-  }
   .input-wrapper{
     text-align: center;
   }
 }
-  .card-subtitle {
-    font-size: 1.0em;
-    position: absolute;
-    top: 52%;
-    width: 100%;
-    color: #fff;
-  }
 p{
-  color:#9FA1AD;
+  color:color($colors,fontprimary) !important;
 }
 ul {
   padding: 0px;
@@ -77,10 +42,11 @@ ul {
   &.rating li {
     padding: 5px 10px !important;
     background: none;
-    color: #002063;
+    color: color($colors,primarydw) !important;
     ion-icon {
       font-size: 40px;
     }
+
   }
 
 }

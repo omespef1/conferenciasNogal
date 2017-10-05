@@ -8,7 +8,7 @@
 
 
 <ion-header>
-  <ion-navbar color="dark">
+  <ion-navbar color="primarydw">
     <ion-title>Conferencistas</ion-title>
      <button color="light" ion-button icon-only menuToggle>
   <ion-icon name="menu"></ion-icon>
@@ -22,14 +22,14 @@
     </ion-refresher-content>
   </ion-refresher>
 <ion-list>
-  <ion-item-sliding *ngFor="let speaker of speakers" (click)="goToDetalle(speaker)">
-      <button ion-item>
-    <ion-avatar item-start *ngIf="imgPreview">
-  <img [src]="'data:image/jpg;base64,'+speaker.con_foto | image" />
+
+  <button ion-item *ngFor="let speaker of speakers" (click)="goToDetalle(speaker)">
+    <ion-avatar item-start *ngIf="speaker.con_foto">
+      <img [src]="'data:image/jpg;base64,'+speaker.con_foto | image" />
     </ion-avatar>
-    <h1>{{speaker.ter_noco}}</h1>
+    <h2>{{speaker.ter_noco}}</h2>
      <p>{{speaker.con_perf}}</p>
   </button>
-  </ion-item-sliding>
+
 </ion-list>
 </ion-content>
