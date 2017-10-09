@@ -33,7 +33,7 @@ export class SponsorDetaillPage {
       if (isAvailable) {
         this.browserTab.openUrl(url);
       } else {
-      console.log("browser no disponible")
+      
       }
 
  })
