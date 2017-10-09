@@ -34,6 +34,8 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 import { SocialPipe } from '../pipes/social/social';
 import { BrowserTab } from '@ionic-native/browser-tab';
 import { ColorsPipe } from '../pipes/colors/colors';
+import { KeychainTouchId } from '@ionic-native/keychain-touch-id';
+import { Keychain } from '@ionic-native/keychain';
 
 
 var config = {
@@ -107,7 +109,9 @@ var config = {
     UserDataProvider,
     ApiProvider,
     InAppBrowser,
-    BrowserTab
+    BrowserTab,
+    Keychain,
+    KeychainTouchId
   ]
 })
 export class AppModule {}

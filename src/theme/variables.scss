@@ -35,21 +35,21 @@ $app-direction: ltr;
 
 $colors: (
 primary:    #488aff,
-secondary:  #32db64,
-danger:     #f53d3d,
-light:      #f4f4f4,
-dark:       #002063,
-favorite:   #69BB7B,
+// secondary:  #32db64,
+// danger:     #f53d3d,
+// light:      #f4f4f4,
+// dark:       #002063,
+// favorite:   #69BB7B,
 twitter:    #1da1f4,
 google:     #dc4a38,
 vimeo:      #23b6ea,
 facebook:   #3b5998,
-botonPrimario:red,
-negro: black,
-primarydw:#8E8B82,
-secondarydw:#343434,
+// botonPrimario:red,
+// negro: black,
+primarydw:#910000,
+secondarydw:#8F6D43,
 thirddw:#E9DCBE,
-fourthdw:#F3F3F3,
+fourthdw:#E0E0E0,
 linesdw:#F8B195,
 fontprimary:#4A4A4A,
 
@@ -90,48 +90,42 @@ $item-ios-detail-push-color :#a84b74;
  font-style: normal;
 }
 @font-face {
- font-family: 'PtSans1';
- src:url('../assets/PTC75F.ttf') format('truetype');
+ font-family: 'Yellowtail';
+ src:url('../assets/Yellowtail-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
 @font-face {
- font-family: 'PtSans2';
- src:url('../assets/PTN57F.ttf') format('truetype');
+ font-family: 'ArimaMadurai';
+ src:url('../assets/ArimaMadurai-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
 @font-face {
- font-family: 'PtSans3';
- src:url('../assets/PTN77F.ttf') format('truetype');
+ font-family: 'BadScript';
+ src:url('../assets/BadScript-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
 @font-face {
- font-family: 'PtSans4';
- src:url('../assets/PTS55F.ttf') format('truetype');
+ font-family: 'Caveat';
+ src:url('../assets/Caveat-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
 @font-face {
- font-family: 'PtSans5';
- src:url('../assets/PTS56F.ttf') format('truetype');
+ font-family: 'Handlee';
+ src:url('../assets/Handlee-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
 @font-face {
- font-family: 'PtSans6';
- src:url('../assets/PTS57F.ttf') format('truetype');
+ font-family: 'Tangerine';
+ src:url('../assets/Tangerine-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
-@font-face {
- font-family: 'PtSans7';
- src:url('../assets/PTS76F.ttf') format('truetype');
- font-weight: normal;
- font-style: normal;
-}
-$font-family-base: "PtSans";
+$font-family-base: "Handlee";
 $font-family-ios-base: $font-family-base;
 $font-family-md-base: $font-family-base;
 $font-family-wp-base: $font-family-base;

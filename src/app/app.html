@@ -3,10 +3,17 @@
 <ion-menu id="loggedInMenu" [content]="content" >
   <ion-header>
     <ion-toolbar color="primarydw">
-      <ion-title>NOGAL CONFERENCIAS</ion-title>
+      <ion-title>Club El Nogal</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
+    <div class="logoSeven">
+      <div class="logoSevenApp">
+      <img src="assets/digital.png">
+
+    </div>
+
+    </div>
     <ion-item>
        <ion-avatar item-start>
        <img src="assets/user.jpg">
@@ -14,41 +21,45 @@
        <h2>{{user}}</h2>
     <p>Club El Nogal</p>
      </ion-item>
-    <ion-list>
+    <ion-list no-lines>
       <div padding>
      </div>
       <button  *ngFor="let menu of pages" ion-item (click)="abrirPagina(menu)">
-        <ion-icon name='{{menu.icon}}' color="negro"></ion-icon>&nbsp;{{menu.name}}
+        <ion-icon name='{{menu.icon}}' color="negro" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
+
   </ion-content>
 </ion-menu>
 <ion-menu id="loggedOutMenu" [content]="content" >
   <ion-header>
     <ion-toolbar color="primarydw">
-      <ion-title></ion-title>
+      <ion-title>Club El Nogal</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-list>
+    <div class="logoSeven">
+      <div class="logoSevenApp">
+      <img src="assets/digital.png">
+
+    </div>
+
+    </div>
+    <ion-list no-lines>
       <div padding>
      </div>
       <button  *ngFor="let menu of pagesOut" ion-item (click)="abrirPagina(menu)">
-        <div class="divIcon">
-        <ion-icon name='{{menu.icon}}' color="negro"></ion-icon>&nbsp;{{menu.name}}
-      </div>
+        <ion-icon name='{{menu.icon}}' color="negro" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
-    <div class="logoSeven">
-      <div class="logoSevenApp">
-      <img src="assets/seven.png">
-    </div>
-    </div>
+
   </ion-content>
 </ion-menu>
 <ion-footer>
   <div class="dw-footer">
-  SEVEN-ERP 1992-2017 Digital Ware
+    <div class="copyright">
+        <img src="assets/digital.png">
+    </div>
 </div>
 </ion-footer>
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -51,7 +51,8 @@ constructor(
   public name:string,
   public icon:string,
   public logOut:boolean,
-  public pageOpen:any
+  public pageOpen:any,
+  public isActive:boolean
 ){
 }
 }

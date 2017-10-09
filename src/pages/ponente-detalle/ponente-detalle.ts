@@ -34,7 +34,6 @@ private loading:LoadingController) {
     this.speaker = this.navParams.get('speaker');
     this.imgPreview = 'data:image/jpeg;base64,' + this.speaker.con_foto;
   }
-
   ionViewDidLoad() {
     this.userdata.getUsername().then(user=>{
      this.ee_calco.asi_codi= user;})
@@ -42,36 +41,18 @@ private loading:LoadingController) {
        this.loggued=login;
      })
   }
-
-  // getCalco(){
-  //    this.userdata.getUsername().then(user=>{
-  //     this.ee_calco.asi_codi= user;
-  //     this.ee_calco.rev_cont = this.speaker.rev_cont;
-  //     this.ee_calco.ter_codi = this.speaker.ter_codi;
-  //     this.seven.getCalco(this.ee_calco).then(resp=>{
-  //       this.ee_calco.cal_valo = resp.cal_valo;
-  //       if (this.ee_calco.cal_valo>0){
-  //           this.rate = this.ee_calco.cal_valo;
-  //       }
-  //     }).catch(err=>{
-  //           this.showToast(err);
-  //     })
-  //   });
-  // }
   showToast(msg:string){
     const toast = this.toast.create({
      message: msg,
      duration: 3000
    }).present();
   }
-
   setCalco(){
     console.log('entro a enviar');
     let load = this.loading.create({
       'content':'Enviando...',
     });
     load.present();
-
     this.ee_calco.rev_cont = this.speaker.rev_cont;
     this.ee_calco.ter_codi = this.speaker.ter_codi;
     this.ee_calco.cal_valo = this.rate;
@@ -88,13 +69,11 @@ private loading:LoadingController) {
       this.showToast(err);
     })
   }
-
   showConfirm(title:string,msg:string){
     let confirm = this.alert.create({
       title:title,
       message:msg,
       buttons: [
-
        {
          text: 'Cancelar',
          handler: () => {
@@ -111,7 +90,6 @@ private loading:LoadingController) {
    });
    confirm.present();
   }
-
   onModelChange(){
     console.log('entro');
     this.showConfirm('Enviar valoración','¿Deseas enviar esta calificación,? Si ya habías calificado a este ponente, tu calificación se actualizará.')

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform ,MenuController,NavParams,Events,AlertController} from 'ionic-angular';
+import { Platform ,MenuController,NavParams,Events,AlertController,ToastController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {CalendarioPage,LoginPage,PonentesPage,RegisterPage,SettingsPage,EventDetailsPage,SponsorsPage} from '../shared/pagesPackage';
@@ -29,7 +29,8 @@ export class MyApp {
     public events: Events,
     private alertCtrl:AlertController,
     private userdata:UserDataProvider,
-    private seven:SevenProvider
+    private seven:SevenProvider,
+    private toast:ToastController
   ) {
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -41,17 +42,17 @@ export class MyApp {
         this.listenToLoginEvents();
         this.validLogin();
 this.pages = [
-  new page('Calendario de eventos','md-calendar',false,CalendarioPage),
-  new page('Encuestas','ios-help',false,LoginPage),
-  new page('Salir','ios-log-out',true,LoginPage),
+  new page('Calendario de eventos','md-calendar',false,CalendarioPage,true),
+  new page('Encuestas','ios-help',false,LoginPage,true),
+  new page('Salir','ios-log-out',true,LoginPage,true),
 ]
 this.pagesOut = [
-  new page('Login','ios-lock',false,LoginPage),
-  new page('Registro','ios-person-add',false,RegisterPage),
-  new page('Calendario de eventos','md-calendar',false,CalendarioPage),
-  new page('Chat de eventos','ios-chatboxes',false,LoginPage),
-  new page('Encuestas','ios-help',false,LoginPage),
-  new page ('Patrocinadores', 'ios-help',false,SponsorsPage)
+  new page('Login','lock',false,LoginPage,true),
+  new page('Registro','person-add',false,RegisterPage,true),
+  new page('Calendario de eventos','calendar',false,CalendarioPage,true),
+  new page('Chat de eventos','chatboxes',false,LoginPage,true),
+  new page('Encuestas','help',false,LoginPage,false),
+  new page ('Patrocinadores', 'help',false,SponsorsPage,true)
 ]
     });
 
@@ -59,7 +60,7 @@ this.pagesOut = [
   abrirPagina(pagina:page){
   if(pagina.logOut===true){
    this.userdata.logout();
-   this.showAlert('Su sesión se ha cerrado!','Logout')
+   this.showMessage('Su sesión se ha cerrado!');
   }
   this.rootPage = pagina.pageOpen;
   this.menu.close();
@@ -100,6 +101,11 @@ showAlert(mensaje:string, titulo:string) {
     buttons: ['OK']
   });
   alert.present();
-
+}
+showMessage(msg:string){
+  const toast = this.toast.create({
+   message: msg,
+   duration: 3000
+ }).present();
 }
 }

@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="primarydw">
-    <ion-title>{{speaker.ter_noco}}</ion-title>
+
   </ion-navbar>
 </ion-header>
 <ion-content no-bounce class="card-background-page">
@@ -17,7 +17,7 @@
         </div>
   </div>
   <div class="container">
-    <ion-item *ngIf="loggued">
+    <ion-item *ngIf="loggued" class="rating">
         Calificación
     <rating [(ngModel)]="rate"
             readOnly="false"

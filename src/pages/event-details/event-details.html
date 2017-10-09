@@ -6,20 +6,21 @@
 -->
 
 <ion-header>
-  <ion-navbar color="primarydw">
+  <!-- <ion-navbar color="secondarydw">
     <ion-title>{{thisEvent.rev_desc}}</ion-title>
-     <button color="light" ion-button icon-only menuToggle>
+     <button color="light" ion-button menuToggle>
   <ion-icon color="primary" name="menu"></ion-icon>
 </button>
-  </ion-navbar>
-</ion-header>
-
-<ion-content no-bounce class="card-background-page">
-
+  </ion-navbar> -->
   <ion-card id="encabezado">
     <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
 
 </ion-card>
+</ion-header>
+
+<ion-content no-bounce class="card-background-page">
+
+
 <div class="mar-border-up">
   <div class="mar-power">
     Powered By DigitalWare ©1992-2017
@@ -36,7 +37,7 @@
 </marquee>
 <div class="mar-border-up">
     <div class="mar-sponsors">
-  MENÚ DEL EVENTO
+<h3>Menù de evento</h3>
 </div>
 </div>
 <ion-grid>
@@ -44,7 +45,7 @@
           <ion-col col-4 class="col-left-up">
             <button ion-item detail-none (click)="goAgenda()">
               <div>
-            <ion-icon color="twitter" name='ios-book'></ion-icon>
+          <i class="fa fa-book fa-3x" aria-hidden="true"></i>
         <br>
           <label class="menu">Agenda</label>
           </div>
@@ -54,7 +55,7 @@
           <ion-col col-4 class="center-up">
             <button ion-item detail-none  (click)="goPonents()">
               <div>
-              <ion-icon color="twitter" name='md-contacts'></ion-icon>
+            <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
               <br>
               <label class="menu">Ponentes</label>
 
@@ -64,7 +65,7 @@
           <ion-col col-4 class="col-right-up">
             <button ion-item detail-none (click)="goLocation()">
               <div>
-        <ion-icon color="twitter" name='md-locate'></ion-icon>
+         <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i>
         <br>
         <label class="menu">Ubicación</label>
 
@@ -76,7 +77,7 @@
             <ion-col col-4 class="col-left-down">
               <button ion-item detail-none (click)="goSponsors()">
                     <div>
-                  <i class="fa fa-handshake-o faLightBlue" aria-hidden="true"></i>
+                  <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
                   <br>
                   <label class="menu">Patrocinadores</label>
                   </div>
@@ -86,7 +87,7 @@
 
             <button ion-item detail-none (click)="goChat()">
               <div>
-            <ion-icon color="twitter" name='ios-chatboxes'></ion-icon>
+          <i class="fa fa-weixin fa-3x" aria-hidden="true"></i>
             <br>
             <label class="menu">Chat</label>
             </div>
@@ -95,7 +96,7 @@
             <ion-col col-4 *ngIf="loggued" class="col-right-down">
               <button ion-item detail-none (click)="goEncuesta()">
               <div>
-              <ion-icon color="twitter" name='ios-help'></ion-icon>
+              <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
               <br>
               <label class="menu">Encuesta</label>
               </div>

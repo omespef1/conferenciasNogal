@@ -1,5 +1,5 @@
 {
-  "api":"http://192.168.137.1/NogalConferencesApi/api/",
+  "api":"http://erp.clubelnogal.com/NogalEventosApi/api/",
   "map": [{
   "name": "Club El nogal",
   "lat": 43.071584,

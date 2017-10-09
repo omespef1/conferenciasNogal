@@ -59,14 +59,15 @@ for (var _i = 0; _i < this.rspas.length; _i++) {
   answer.enc_cont = Number(_i +1);
   answer.den_cont = Number(this.rspas[_i]);
   answer.cab_cont = this.questions[0].cab_cont;
-  answers.push(answer);
-}
-  this.seven.setEeRspas(answers).then(resp=>{
+  this.seven.setEeRspas(answer).then(resp=>{
     if(resp=="0")
      this.showToast("Hemos recibido tu encuesta! Gracias!")
   }).catch(err=>{
     this.showToast(err);
   })
+
+}
+
   }
 
   showConfirm(title:string,msg:string){

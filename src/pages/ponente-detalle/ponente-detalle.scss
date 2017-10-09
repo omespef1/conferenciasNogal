@@ -4,7 +4,9 @@ page-ponente-detalle {
     background-color: #F1F2F2 !important;
     background-image: none;
   }
-
+.rating{
+  background-color: transparent !important;
+}
 
 
 
@@ -29,6 +31,7 @@ color:color($colors,fourthdw) !important;
 
 }
 .container {
+  overflow: scroll;
   .input-wrapper{
     text-align: center;
   }

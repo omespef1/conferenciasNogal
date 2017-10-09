@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController ,AlertController} from 'ionic-angular';
+import { IonicPage, NavController ,AlertController,Platform,ToastController} from 'ionic-angular';
 import {CalendarioPage} from '../../pages/calendario/calendario';
 import { LoadingController } from 'ionic-angular';
 import  {RegisterPage} from '../register/register';
 import {SevenProvider} from '../../providers/seven/seven';
 import  {asise} from '../../shared/models';
 import {UserDataProvider} from '../../providers/user-data/user-data';
+import { KeychainTouchId } from '@ionic-native/keychain-touch-id';
+import { Keychain } from '@ionic-native/keychain';
 /**
  * Generated class for the LoginPage page.
  *
@@ -28,25 +30,24 @@ export class LoginPage {
     private alertCtrl:AlertController,
     private seven:SevenProvider,
     private userdata :UserDataProvider,
-
-  ) {
+    private keychainTouchId: KeychainTouchId,
+    private keychain: Keychain,
+    private platform:Platform,
+    private toast:ToastController
+  )
+  {
   }
   ionViewDidLoad() {
     this.rutaImg = "assets/icon/seven.png";
-    // this.showFinger();
-
+    this.getAccessTouchId();
   }
   loginUser(){
-    if(this.login.user!="" && this.login.password!=""){
     if(/^[a-zA-Z0-9]+$/.test(this.login.username)){
     this.validUser();
-  }
-  else {
-      this.showAlert('Usuario inválido, verifique!','Error');
-  }
     }
     else {
-      this.showAlert('Debe especificar usuario y contraseña!','Error');
+    this.showAlert('Usuario inválido, verifique!','Error');
+    return;
     }
   }
   openRegister(){
@@ -54,8 +55,8 @@ export class LoginPage {
   }
 
   validUser(){
-let loading=    this.load.create({
-      content:'Validando información...'
+    let loading=    this.load.create({
+    content:'Validando información...'
     });
     loading.present();
     this.seven.getAsiste(this.login.username).then(resp=>{
@@ -72,6 +73,7 @@ let loading=    this.load.create({
       }
       loading.dismiss();
       this.userdata.login(this.login.username,this.returnedAsise.asi_nomb + ' ' + this.returnedAsise.asi_apel);
+      this.showConfirmTouchID();
       this.navCtrl.push(CalendarioPage);
     }).catch(resp=>{
       loading.dismiss();
@@ -85,7 +87,77 @@ let loading=    this.load.create({
       buttons: ['OK']
     });
     alert.present();
+  }
+ getAccessTouchId(){
+   if(this.platform.is("ios")){
+     this.keychainTouchId.has("passwordCodeAssistant").then(()=>{
+       this.keychainTouchId.verify("passwordCodeAssistant","Ingrese su huella dactilar para ingresar").then(pass=>{
+          this.login.password = pass;
+          this.keychain.get("username").then(user=>{
+            this.login.username =user;
+             this.validUser();
+          })
+       })
+     }
+   ).catch(err=>{
+     console.log(err);
+   })
+   }
+ }
+
+ setTouchIdAccess(){
+   try{
+     console.log("TouchID disponible, se guardará el password");
+     this.keychain.set("username",this.login.username,false);
+     this.keychainTouchId.save("passwordCodeAssistant",this.login.password);
+     console.log("se guardó el password");
+   }
+   catch(ex){
+     this.showAlert(ex,"Error");
+   }
 
   }
+  showConfirmTouchID() {
+console.log("verificando..");
+    try{
+      let confirm = this.alertCtrl.create({
+        title: 'TouchID',
+        message: '¿Deseas acceder a la aplicación con TouchID?',
+        buttons: [
+          {
+            text: 'Si',
+            handler: () => {
+              this.setTouchIdAccess();
+            }
+          },
+          {
+            text: 'No',
+            handler: () => {
+              console.log('No');
+            }
+          }
+        ]
+      });
 
+        if(this.platform.is("ios") && this.platform.is("cordova") ){
+              this.keychainTouchId.has("passwordCodeAssistant").catch(err=>{
+                this.keychainTouchId.isAvailable().then(()=>{
+                    confirm.present();
+                })
+
+              })
+        }
+    }
+    catch(ex){
+
+      this.showAlert(ex,"Error")
+    }
+
+   }
+   showMessage(msg:string){
+     const toast = this.toast.create({
+      message: msg,
+      duration: 3000
+    }).present();
+   }
 }

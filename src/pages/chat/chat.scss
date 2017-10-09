@@ -73,7 +73,7 @@ page-chat {
 	.message.special .innerMessage:before{
 		content: '';
 		height: 2px;
-		background: color($colors,"secondary");
+		background: color($colors,"secondarydw");
 		display: block;
 		top: 50%;
 		position: absolute;

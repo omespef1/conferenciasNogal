@@ -59,13 +59,13 @@ export class ChatPage {
       loading.present();
       this.userdata.getUserInfo().then(nomb=>{
        this.username = nomb;
-         this.hasLogginChat();
+      //   this.hasLogginChat();
          this.loadMessagues();
          loading.dismiss();
      })
     }
     ionViewWillLeave(){
-        this.hasLogOutChat();
+      //  this.hasLogOutChat();
     }
     scrollToBottom() {
     this.content.scrollToBottom(300);

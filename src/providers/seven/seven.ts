@@ -25,7 +25,7 @@ export class SevenProvider {
 
   getEvents() {
       this.apiAction = 'eerevet'
-      return this.requestGet(this.apiAction);
+return this.requestGet(this.apiAction);
       }
       getBackground() {
           this.apiAction = 'background';
@@ -82,11 +82,10 @@ export class SevenProvider {
       .toPromise();
         }
 
-setEeRspas(rspas:eerspas[]){
+setEeRspas(rspas:eerspas){
   let body:any = JSON.stringify({
      rspas
   });
-  body = JSON.parse(body);
   this.apiAction='eerspas';
     return  this.requestPost(this.apiAction,body);
 }

@@ -16,8 +16,10 @@ import {ImagePipe} from '../../pipes/image/image';
   templateUrl: 'ponentes.html',
 })
 export class PonentesPage {
+  value = '';
   public event:eerevet;
   public speakers:eeConfe[]=[];
+  public speakerList :eeConfe[]=[];
   public imgPreview:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
   private seven:SevenProvider,private toast:ToastController,private loading:LoadingController
@@ -47,6 +49,7 @@ loading.present();
           return;
         }
         this.speakers = data;
+        this.initializeItems();
       loading.dismiss();
       })
       .catch(error =>{
@@ -56,7 +59,6 @@ loading.present();
   }
 
   doRefresh(refresher: Refresher) {
-
     this.seven.getSpeakers(this.event.rev_cont)
       .then(data => {
         this.speakers = data;
@@ -74,4 +76,18 @@ loading.present();
        duration: 3000
      }).present();
     }
+    initializeItems(): void {
+  this.speakerList = this.speakers;
+}
+    getItems(q: string) {
+  // Reset items back to all of the items
+  this.initializeItems();
+
+  // if the value is an empty string don't filter the items
+  if (!q || q.trim() === '') {
+    return;
+  }
+
+  this.speakerList = this.speakerList.filter((v) =>  v.ter_noco.toLowerCase().indexOf(q.toLowerCase()) > -1);
+}
 }
