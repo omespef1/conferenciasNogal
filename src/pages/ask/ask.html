@@ -15,6 +15,10 @@
 
 
 <ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
     <ion-item-group *ngFor="let question of questions;let i=index">
       <div class="element">
         <ion-label>{{question.enc_preg}}</ion-label>
@@ -28,7 +32,7 @@
       </div>
     </ion-list>
     </ion-item-group>
-  <button ion-button class="submit-btn" full (click)="send()">Enviar
+  <button ion-button color="primarydw"  full (click)="send()">Enviar
 <ion-icon name="ios-send"></ion-icon>
   </button>
 

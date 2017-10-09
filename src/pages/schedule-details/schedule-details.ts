@@ -20,7 +20,6 @@ export class ScheduleDetailsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ScheduleDetailsPage');
   }
 
 }

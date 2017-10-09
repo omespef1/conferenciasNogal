@@ -16,7 +16,12 @@ public rev_luga:string,
 public rev_fini:string,
 public rev_ffin:string,
 public rev_foto:string,
-public rev_obse:string
+public rev_obse:string,
+public sponsors :sponsors[],
+public speakers:eeConfe[],
+public ask: any[],
+public agend : ee_agend[]
+
 )
 {}
 }

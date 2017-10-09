@@ -4,12 +4,17 @@
 </ion-header>
 
 <ion-content>
-
-
-  <ion-list-header>
-Patrocinado por
-</ion-list-header>
-    <button ion-item *ngFor="let sponsor of sponsors" (click)="goSponsor(sponsor)">
+  <ion-searchbar
+  [(ngModel)]="value"
+  (ionChange)="getItems($event.value)"
+  [showCancelButton]="shouldShowCancel"
+  placeholder="Buscar patrocinador">
+</ion-searchbar>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+    <button ion-item *ngFor="let sponsor of sponsorsList" (click)="goSponsor(sponsor)">
       <ion-avatar item-start *ngIf="sponsor.pat_foto">
      <img [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" />
       </ion-avatar>

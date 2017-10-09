@@ -3,11 +3,10 @@ page-sponsor-detaill {
       background-color: #F1F2F2 !important;
       background-image: none;
   }
+  ion-item{
+    background-color: transparent !important;
+  }
 
-ion-item{
-  background-color: transparent !important;
-  border-bottom: 0px !important;
-}
   .profile-media {
     min-height: 250px;
   overflow: hidden;
@@ -22,10 +21,10 @@ ion-item{
           border-radius: 50%;
           border: 5px solid white;
     }
-    h2{
-    font-weight: 600;
-    color: color($colors,fourthdw);
-    }
+    // h2{
+    // font-weight: 600;
+    // color: color($colors,fourthdw);
+    // }
 
     }
   }

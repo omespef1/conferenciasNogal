@@ -107,10 +107,8 @@ export class LoginPage {
 
  setTouchIdAccess(){
    try{
-     console.log("TouchID disponible, se guardará el password");
      this.keychain.set("username",this.login.username,false);
      this.keychainTouchId.save("passwordCodeAssistant",this.login.password);
-     console.log("se guardó el password");
    }
    catch(ex){
      this.showAlert(ex,"Error");
@@ -118,7 +116,6 @@ export class LoginPage {
 
   }
   showConfirmTouchID() {
-console.log("verificando..");
     try{
       let confirm = this.alertCtrl.create({
         title: 'TouchID',
@@ -133,7 +130,6 @@ console.log("verificando..");
           {
             text: 'No',
             handler: () => {
-              console.log('No');
             }
           }
         ]

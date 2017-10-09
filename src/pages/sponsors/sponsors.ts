@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ToastController ,LoadingController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController ,LoadingController,Refresher} from 'ionic-angular';
 import {sponsors} from '../../shared/models';
 import {SevenProvider} from '../../providers/seven/seven';
 import {eerevet} from '../../shared/models';
 import {ImagePipe} from '../../pipes/image/image';
 import {SponsorDetaillPage} from '../sponsor-detaill/sponsor-detaill';
+import {UserDataProvider} from '../../providers/user-data/user-data'
 /**
 
 /**
@@ -20,9 +21,12 @@ import {SponsorDetaillPage} from '../sponsor-detaill/sponsor-detaill';
 })
 export class SponsorsPage {
   public sponsors:sponsors[];
+  public sponsorsList:sponsors[];
   private event:eerevet;
+  public value:string;
   constructor(private seven:SevenProvider, private nav:NavParams,private toast:ToastController,
-  private navCtrl:NavController, private loading:LoadingController) {
+  private navCtrl:NavController, private loading:LoadingController,
+private userdata:UserDataProvider) {
    this.event   = this.nav.get('event');
   }
 
@@ -35,20 +39,13 @@ export class SponsorsPage {
       content:'Cargando...'
     });
    load.present();
-    this.seven.getPatre(this.event.rev_cont).then(resp=>{
-   if (resp==undefined){
-    load.dismiss();
-    this.showMessage("No hay patrocinadores para este evento.")
-return;
-  }
-  console.log(resp);
-     this.sponsors= resp;
+   this.userdata.getDataSponsors(this.event.rev_cont).then(data=>{
+     this.sponsors = data;
+     this.initializeItems();
      load.dismiss();
-   }).catch(err=>{
-     load.dismiss();
-       this.showMessage(err);
+     if(this.sponsors==null)
+      this.showMessage("No hay patrocinadores para este evento!");
    })
-
   }
   showMessage(msg:string){
     const toast = this.toast.create({
@@ -59,5 +56,27 @@ return;
   goSponsor(sponsor:sponsors){
     this.navCtrl.push(SponsorDetaillPage, {'sponsor':sponsor})
   }
-
+    doRefresh(refresher: Refresher) {
+     this.userdata.getDataSponsors(this.event.rev_cont,true).then(data=>{
+     this.sponsors = data;
+        this.initializeItems();
+     refresher.complete();
+     if(this.sponsors==null)
+     this.showMessage("No hay patrocinadores para este evento.");
+   })
+    }
+    initializeItems():void{
+      this.sponsorsList = this.sponsors;
+    }
+    getItems(q: string) {
+      console.log(q);
+      //Reseteo los items a su estado original
+      this.initializeItems();
+    //Si el valor es vacío ni filtra ndada
+      if (!q || q.trim() === '') {
+      return;
+      }
+      //Realiza el filtrado
+      this.sponsorsList = this.sponsorsList.filter((v) =>  v.pat_nomb.toLowerCase().indexOf(q.toLowerCase()) > -1);
+}
 }

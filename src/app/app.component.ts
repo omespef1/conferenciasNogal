@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Platform ,MenuController,NavParams,Events,AlertController,ToastController} from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Platform ,MenuController,NavParams,Events,AlertController,ToastController,Nav} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {CalendarioPage,LoginPage,PonentesPage,RegisterPage,SettingsPage,EventDetailsPage,SponsorsPage} from '../shared/pagesPackage';
@@ -12,6 +12,7 @@ import {SevenProvider} from '../providers/seven/seven';
 })
 
 export class MyApp {
+  @ViewChild(Nav) nav: Nav
   rootPage:any = LoginPage ;
   pagePonientes = PonentesPage;
   pageLogin = LoginPage;
@@ -30,17 +31,18 @@ export class MyApp {
     private alertCtrl:AlertController,
     private userdata:UserDataProvider,
     private seven:SevenProvider,
-    private toast:ToastController
+    private toast:ToastController,
   ) {
-    platform.ready().then(() => {
+      platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
       this.userdata.hasLoggedIn().then((hasLoggedIn) => {
           this.enableMenu(hasLoggedIn === true);
+          this.enableMenu(true);
+          this.listenToLoginEvents();
+          this.validLogin();
         });
-        this.enableMenu(true);
-        this.listenToLoginEvents();
-        this.validLogin();
+
 this.pages = [
   new page('Calendario de eventos','md-calendar',false,CalendarioPage,true),
   new page('Encuestas','ios-help',false,LoginPage,true),
@@ -62,7 +64,9 @@ this.pagesOut = [
    this.userdata.logout();
    this.showMessage('Su sesión se ha cerrado!');
   }
-  this.rootPage = pagina.pageOpen;
+  console.log(pagina.name);
+  //this.rootPage = pagina.pageOpen;
+  this.nav.setRoot(pagina.pageOpen);
   this.menu.close();
 }
    listenToLoginEvents() {

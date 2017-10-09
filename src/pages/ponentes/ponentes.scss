@@ -3,10 +3,6 @@ page-ponentes {
     background-color: #F2F2F2 !important;
     background-image: none !important;
   }
-  .item-block{
-    border-bottom: 1px solid #CCCCCC !important;
-        min-height: 8.4rem !important;
-  }
 
   ion-avatar{
     img{
@@ -20,5 +16,10 @@ page-ponentes {
       padding-right: 8px;
       border-bottom: 0px !important;
   }
+  .item-block{
+    border-bottom: 1px solid #CCCCCC !important;
+        min-height: 8.4rem !important;
+  }
+
 
 }

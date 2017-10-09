@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,Refresher,ToastController ,LoadingC
 import { EventDetailsPage } from '../event-details/event-details';
 import {eerevet} from '../../shared/models';
 import {SevenProvider} from '../../providers/seven/seven';
+import{UserDataProvider} from '../../providers/user-data/user-data';
 import {ImagePipe} from '../../pipes/image/image';
 
 
@@ -23,7 +24,8 @@ public listEvents :eerevet[]=[];
     public navParams: NavParams,
     private sevenProvider: SevenProvider,
     private toast:ToastController,
-    private loading:LoadingController
+    private loading:LoadingController,
+    private userdata:UserDataProvider
   ) {
   }
 
@@ -35,18 +37,22 @@ public listEvents :eerevet[]=[];
       content:'Cargando...'
     })
     load.present();
-    this.sevenProvider.getEvents()
-      .then(data => {
-        this.listEvents = data;
-       load.dismiss();
-      })
-      .catch(error =>{
-        load.dismiss();
-          this.showMessage(error);
-      })
+    this.userdata.getDataCalendar().then((data)=>{
+    this.listEvents = data;
+    load.dismiss();
+
+    })
+    // this.sevenProvider.getEvents()
+    //   .then(data => {
+    //     this.listEvents = data;
+    //    load.dismiss();
+    //   })
+    //   .catch(error =>{
+    //     load.dismiss();
+    //       this.showMessage(error);
+    //   })
   }
   goDetails (event:eerevet){
-    console.log(event);
    this.navCtrl.push(EventDetailsPage,{'event':event});
   }
   doRefresh(refresher: Refresher) {

@@ -69,6 +69,7 @@ export class ChatPage {
     }
     scrollToBottom() {
     this.content.scrollToBottom(300);
+
   }
 
   hasLogginChat(){
@@ -97,8 +98,9 @@ export class ChatPage {
       }
     }).subscribe( data => {
      this.messages = data;
-      console.log("cargue el chat");
+
       this.scrollToBottom();
+
     });
 
   }

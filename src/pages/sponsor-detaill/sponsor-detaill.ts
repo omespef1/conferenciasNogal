@@ -22,11 +22,9 @@ export class SponsorDetaillPage {
  public sponsor:sponsors;
   constructor(public navParams: NavParams,private browserTab: BrowserTab) {
   this.sponsor=  navParams.get("sponsor");
-  console.log(this.sponsor.lin_link)
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SponsorDetaillPage');
   }
  openUrl(url:string){
 

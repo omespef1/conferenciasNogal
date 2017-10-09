@@ -48,7 +48,6 @@ private loading:LoadingController) {
    }).present();
   }
   setCalco(){
-    console.log('entro a enviar');
     let load = this.loading.create({
       'content':'Enviando...',
     });
@@ -77,7 +76,6 @@ private loading:LoadingController) {
        {
          text: 'Cancelar',
          handler: () => {
-           console.log('Agree clicked');
          }
        },
        {
@@ -91,7 +89,6 @@ private loading:LoadingController) {
    confirm.present();
   }
   onModelChange(){
-    console.log('entro');
     this.showConfirm('Enviar valoración','¿Deseas enviar esta calificación,? Si ya habías calificado a este ponente, tu calificación se actualizará.')
   }
 }

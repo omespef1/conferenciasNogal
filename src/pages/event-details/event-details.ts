@@ -32,25 +32,33 @@ export class EventDetailsPage {
     this.thisEvent = this.navParams.get("event");
   }
   ionViewDidLoad() {
+    this.load();
+  }
+  load(){
+    let load = this.loading.create({
+      content:'Cargando...'
+    });
+   load.present();
     this.userdata.hasLoggedIn().then(login=>{
       this.loggued=login;
-      this.getSponsors();
     })
-    console.log('ionViewDidLoad EventDetailsPage');
+    this.userdata.setDataAgend(this.thisEvent.agend);
+    this.userdata.setDataSpekaers(this.thisEvent.speakers);
+    this.userdata.setDataSponsors(this.thisEvent.sponsors);
+    this.userdata.setDataAsk(this.thisEvent.ask);
+    this.getSponsors();
+    load.dismiss();
   }
   goPonents(){
-    console.log("enviando..." + this.thisEvent)
     this.navCtrl.push(PonentesPage,{'event':this.thisEvent});
   }
   goAgenda(){
     this.navCtrl.push(SchedulePage,{'event':this.thisEvent});
   }
   goChat(){
-    console.log(this.thisEvent)
       this.navCtrl.push(ChatPage,{'event':this.thisEvent});
   }
   goEncuesta(){
-    console.log(this.thisEvent)
       this.navCtrl.push(AskPage,{'event':this.thisEvent});
   }
   goLocation(){
@@ -60,24 +68,9 @@ export class EventDetailsPage {
       this.navCtrl.push(SponsorsPage,{'event':this.thisEvent});
   }
   getSponsors(){
-    let load = this.loading.create({
-      content:'Cargando...'
-    });
-   load.present();
-    this.seven.getPatre(this.thisEvent.rev_cont).then(resp=>{
-   if (resp==undefined){
-    load.dismiss();
-    this.showMessage("No hay patrocinadores para este evento.")
-return;
-  }
-  console.log(resp);
-     this.sponsors= resp;
-     load.dismiss();
-   }).catch(err=>{
-     load.dismiss();
-       this.showMessage(err);
-   })
-
+    this.userdata.getDataSponsors(this.thisEvent.rev_cont).then(data=>{
+      this.sponsors= data;
+    })
   }
   showMessage(msg:string){
     const toast = this.toast.create({

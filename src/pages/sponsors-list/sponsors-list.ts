@@ -18,7 +18,6 @@ export class SponsorsListPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SponsorsListPage');
   }
 
 }

@@ -17,16 +17,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content>
-    </ion-refresher-content>
-  </ion-refresher>
   <ion-searchbar
   [(ngModel)]="value"
   (ionChange)="getItems($event.value)"
   [showCancelButton]="shouldShowCancel"
   placeholder="Buscar Speaker">
 </ion-searchbar>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+
 <ion-list>
 
   <button ion-item *ngFor="let speaker of speakerList" (click)="goToDetalle(speaker)">

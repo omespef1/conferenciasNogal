@@ -82,12 +82,10 @@ return this.requestGet(this.apiAction);
       .toPromise();
         }
 
-setEeRspas(rspas:eerspas){
-  let body:any = JSON.stringify({
-     rspas
-  });
+setEeRspas(rspas:any[]){
+
   this.apiAction='eerspas';
-    return  this.requestPost(this.apiAction,body);
+    return  this.requestPost(this.apiAction,rspas);
 }
 postAsise(body:any){
   this.apiAction='eeasise';
@@ -102,7 +100,6 @@ postAsise(body:any){
   			headers: headers
   		});
       let body:any = param;
-      console.log(body);
       return this.http.post(this._api.data.api+ this.apiAction,body,options)
       .toPromise()
 			.then(response => {

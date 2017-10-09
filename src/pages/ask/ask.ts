@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,AlertController,LoadingController,ToastController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,AlertController,LoadingController,ToastController,Refresher} from 'ionic-angular';
 //providers
 import {SevenProvider} from '../../providers/seven/seven';
 //models
@@ -40,34 +40,29 @@ export class AskPage {
       content:'Cargando...'
     });
     loading.present();
-    this.seven.getEeEncev(this.event.rev_cont).then(resp=>{
-      this.questions = resp;
-      loading.dismiss();
-    }).catch(err=>{
-      loading.dismiss();
+    this.userdata.getDataAsk(this.event.rev_cont).then(data=>{
+    this.questions= data;
+    loading.dismiss();
     })
   }
 
   send(){
-console.log(this.rspas)
-var answers:eerspas[]=[];
+var answers:any[]=[];
 for (var _i = 0; _i < this.rspas.length; _i++) {
   // let answer: eerspas={rev_cont:0,asi_codi:"0",enc_cont:0,den_cont:0};
-  let answer: eerspas={rev_cont:0,asi_codi:"0",enc_cont:0,den_cont:0,cab_cont:0};
-  answer.rev_cont = this.event.rev_cont;
-  answer.asi_codi = this.asi_codi;
-  answer.enc_cont = Number(_i +1);
-  answer.den_cont = Number(this.rspas[_i]);
-  answer.cab_cont = this.questions[0].cab_cont;
-  this.seven.setEeRspas(answer).then(resp=>{
-    if(resp=="0")
-     this.showToast("Hemos recibido tu encuesta! Gracias!")
-  }).catch(err=>{
-    this.showToast(err);
-  })
-
+  let answer:any = {'rev_cont': `${this.event.rev_cont}`,  'asi_codi':`${this.asi_codi}`,'enc_cont':`${Number(_i +1)}`,'den_cont':`${Number(this.rspas[_i])}`,'cab_cont':`${this.questions[0].cab_cont}`};
+  answers.push(answer);
 }
 
+this.seven.setEeRspas(answers).then(resp=>{
+ if(resp.retorno==1){
+     this.showToast(resp.txtError);
+     return;
+ }
+ this.showToast("Gracias!");
+}).catch(err=>{
+  this.showToast(err);
+})
   }
 
   showConfirm(title:string,msg:string){
@@ -78,7 +73,6 @@ for (var _i = 0; _i < this.rspas.length; _i++) {
        {
          text: 'Cancelar',
          handler: () => {
-           console.log('Agree clicked');
          }
        },
        {
@@ -97,4 +91,12 @@ for (var _i = 0; _i < this.rspas.length; _i++) {
      duration: 3000
    }).present();
   }
+    doRefresh(refresher: Refresher) {
+      this.userdata.getDataAsk(this.event.rev_cont,true).then(data=>{
+        this.questions = data;
+        refresher.complete();
+      })
+
+     }
+
 }

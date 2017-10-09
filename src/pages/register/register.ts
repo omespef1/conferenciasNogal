@@ -56,7 +56,6 @@ export class RegisterPage {
     loading.present();
   this.seven.getAsiste(this.signup.username)
       .then(data => {
-        console.log(data[0]);
         this.asistant = data[0];
         if (this.asistant==null){
           loading.dismiss();

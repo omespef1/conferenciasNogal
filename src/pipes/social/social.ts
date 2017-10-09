@@ -14,7 +14,6 @@ export class SocialPipe implements PipeTransform {
    * Takes a value and makes it lowercase.
    */
   transform(value: string) {
-    console.log(value);
     if(value.indexOf("twitter")>0)
         return "logo-twitter";
         if(value.indexOf("facebook")>0)

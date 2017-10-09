@@ -27,4 +27,7 @@ color:color($colors,fourthdw) !important;
   ion-item-divider{
     background-color: color($colors,fourthdw) !important;
   }
+  .item-inner{
+    border-bottom: 0px !important;
+  }
  }

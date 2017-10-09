@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Refresher,ToastController,LoadingController } from 'ionic-angular';
 import {ee_agend,eerevet,eeConfe} from '../../shared/models';
 import {SevenProvider} from '../../providers/seven/seven';
+import { UserDataProvider} from '../../providers/user-data/user-data'
 import {PonenteDetallePage} from '../ponente-detalle/ponente-detalle';
 import {ScheduleDetailsPage} from '../schedule-details/schedule-details';
 import {ImagePipe} from '../../pipes/image/image';
@@ -21,54 +22,42 @@ export class SchedulePage {
   nav:NavParams,
   private navCtrl:NavController,
    private toast:ToastController,
-   private loading:LoadingController
+   private loading:LoadingController,
+   private userdata:UserDataProvider
 ) {
   this.event =  nav.get('event')
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SchedulePage');
     this.getShedule();
   }
   getShedule(){
-    let load = this.loading.create({
+      let load = this.loading.create({
       content:"Cargando",
-    });
-    load.present();
-    this.seven.getShedule(this.event.rev_cont)
-      .then(data => {
-        this.schedules = data;
-          load.dismiss();
-      })
-      .catch(error =>{
-          load.dismiss();
-        console.error(error);
-      })
+      });
+      load.present();
+      this.userdata.getDataAgend(this.event.rev_cont).then(data=>{
+      this.schedules = data;
+      load.dismiss();
+      });
   }
   doRefresh(refresher: Refresher) {
-
-    this.seven.getShedule(this.event.rev_cont)
-      .then(data => {
+        this.userdata.getDataAgend(this.event.rev_cont,true).then(data=>{
         this.schedules = data;
         refresher.complete();
-        this.showMessage("La agenda ha sido actualizada");
-        console.log(data);
-      })
-      .catch(error =>{
-        console.error(error);
-      })
+        });
+        this.showMessage("La agenda ha sido actualizada!");
     }
     showMessage(msg:string){
-      const toast = this.toast.create({
-       message: msg,
-       duration: 3000
-     }).present();
+          const toast = this.toast.create({
+          message: msg,
+          duration: 3000
+          }).present();
     }
 openSpeaker(schedule:ee_agend){
-  console.log(schedule);
-  let speaker:eeConfe= {rev_cont:schedule.rev_cont, ter_codi:schedule.ter_codi,con_perf:schedule.con_perf,
-ter_noco : schedule.ter_noco,con_foto:schedule.con_foto
-  };
+      let speaker:eeConfe= {rev_cont:schedule.rev_cont, ter_codi:schedule.ter_codi,con_perf:schedule.con_perf,
+      ter_noco : schedule.ter_noco,con_foto:schedule.con_foto
+      };
       this.navCtrl.push(PonenteDetallePage,{'speaker':speaker})
 }
 

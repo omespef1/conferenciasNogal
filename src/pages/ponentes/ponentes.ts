@@ -4,6 +4,7 @@ import {eeConfe,eerevet} from '../../shared/models';
 import {PonenteDetallePage} from '../../pages/ponente-detalle/ponente-detalle';
 import {SevenProvider} from '../../providers/seven/seven';
 import {ImagePipe} from '../../pipes/image/image';
+import {UserDataProvider} from '../../providers/user-data/user-data'
 /**
  * Generated class for the PonentesPage page.
  *
@@ -22,9 +23,10 @@ export class PonentesPage {
   public speakerList :eeConfe[]=[];
   public imgPreview:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  private seven:SevenProvider,private toast:ToastController,private loading:LoadingController
+  private seven:SevenProvider,private toast:ToastController,
+  private loading:LoadingController,
+  private userdata:UserDataProvider
   ) {
-  console.log(this.navParams.get('event'));
   this.event   =   this.navParams.get('event')
   }
 
@@ -33,42 +35,31 @@ export class PonentesPage {
   }
 
   goToDetalle(speaker:eeConfe){
-    console.log(speaker);
 this.navCtrl.push(PonenteDetallePage,{'speaker':speaker})
   }
   getSpeakers(){
-let loading = this.loading.create({
-  content:'Cargando...'
-})
-loading.present();
-    this.seven.getSpeakers(this.event.rev_cont)
-      .then(data => {
-        if (data==undefined){
-          this.showMessage("No hay conferencistas para este evento!");
-          loading.dismiss();
-          return;
-        }
-        this.speakers = data;
-        this.initializeItems();
-      loading.dismiss();
+      let loading = this.loading.create({
+      content:'Cargando...'
       })
-      .catch(error =>{
-        console.error(error);
-          loading.dismiss();
+       loading.present();
+       this.userdata.getDataSpeakers(this.event.rev_cont).then(data=>{
+        this.speakers = data;
+        this.initializeItems()
+        loading.dismiss()
+        if(this.speakers==null)
+        this.showMessage("No hay conferencistas para este evento!");
       })
   }
 
   doRefresh(refresher: Refresher) {
-    this.seven.getSpeakers(this.event.rev_cont)
-      .then(data => {
+        this.userdata.getDataSpeakers(this.event.rev_cont,true).then(data=>{
         this.speakers = data;
+        this.initializeItems();
         refresher.complete();
-        this.showMessage("Los conferencistas han sido actualizados");
-        console.log(data);
-      })
-      .catch(error =>{
-        console.error(error);
-      })
+        this.showMessage("Speakers actualizados!");
+        }).catch(err=>{
+        this.showMessage(err);
+        })
     }
     showMessage(msg:string){
       const toast = this.toast.create({
@@ -80,14 +71,13 @@ loading.present();
   this.speakerList = this.speakers;
 }
     getItems(q: string) {
-  // Reset items back to all of the items
-  this.initializeItems();
-
-  // if the value is an empty string don't filter the items
-  if (!q || q.trim() === '') {
-    return;
-  }
-
-  this.speakerList = this.speakerList.filter((v) =>  v.ter_noco.toLowerCase().indexOf(q.toLowerCase()) > -1);
+      //Reseteo los items a su estado original
+      this.initializeItems();
+    //Si el valor es vacío ni filtra ndada
+      if (!q || q.trim() === '') {
+      return;
+      }
+      //Realiza el filtrado
+      this.speakerList = this.speakerList.filter((v) =>  v.ter_noco.toLowerCase().indexOf(q.toLowerCase()) > -1);
 }
 }
