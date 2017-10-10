@@ -44,19 +44,19 @@ export class MyApp {
         });
 
 this.pages = [
-  new page('Calendario de eventos','md-calendar',false,CalendarioPage,true),
-  new page('Encuestas','ios-help',false,LoginPage,true),
+  new page('Inicio','home',false,CalendarioPage,true),
   new page('Salir','ios-log-out',true,LoginPage,true),
 ]
 this.pagesOut = [
   new page('Login','lock',false,LoginPage,true),
-  new page('Registro','person-add',false,RegisterPage,true),
-  new page('Calendario de eventos','calendar',false,CalendarioPage,true),
+  new page('Registro','ios-key',false,RegisterPage,true),
+  new page('Inicio','home',false,CalendarioPage,true),
   new page('Chat de eventos','chatboxes',false,LoginPage,true),
-  new page('Encuestas','help',false,LoginPage,false),
-  new page ('Patrocinadores', 'help',false,SponsorsPage,true)
+  new page('Encuestas','help',false,LoginPage,true),
+  new page ('Patrocinadores', 'person',false,SponsorsPage,true)
 ]
     });
+
 
   }
   abrirPagina(pagina:page){

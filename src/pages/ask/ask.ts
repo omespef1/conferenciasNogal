@@ -95,6 +95,7 @@ this.seven.setEeRspas(answers).then(resp=>{
       this.userdata.getDataAsk(this.event.rev_cont,true).then(data=>{
         this.questions = data;
         refresher.complete();
+        this.showToast("Encuesta actualizada.")
       })
 
      }

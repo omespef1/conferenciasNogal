@@ -61,8 +61,7 @@ private userdata:UserDataProvider) {
      this.sponsors = data;
         this.initializeItems();
      refresher.complete();
-     if(this.sponsors==null)
-     this.showMessage("No hay patrocinadores para este evento.");
+     this.showMessage("Patrocinadores actualizados.");
    })
     }
     initializeItems():void{

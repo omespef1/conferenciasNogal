@@ -90,29 +90,19 @@ $item-ios-detail-push-color :#a84b74;
  font-style: normal;
 }
 @font-face {
- font-family: 'Yellowtail';
- src:url('../assets/Yellowtail-Regular.ttf') format('truetype');
+ font-family: 'Lobster';
+ src:url('../assets/Lobster-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
 @font-face {
- font-family: 'ArimaMadurai';
- src:url('../assets/ArimaMadurai-Regular.ttf') format('truetype');
+ font-family: 'DeliusSwashCaps';
+ src:url('../assets/DeliusSwashCaps-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
-@font-face {
- font-family: 'BadScript';
- src:url('../assets/BadScript-Regular.ttf') format('truetype');
- font-weight: normal;
- font-style: normal;
-}
-@font-face {
- font-family: 'Caveat';
- src:url('../assets/Caveat-Regular.ttf') format('truetype');
- font-weight: normal;
- font-style: normal;
-}
+
+
 @font-face {
  font-family: 'Handlee';
  src:url('../assets/Handlee-Regular.ttf') format('truetype');
@@ -120,12 +110,13 @@ $item-ios-detail-push-color :#a84b74;
  font-style: normal;
 }
 @font-face {
- font-family: 'Tangerine';
- src:url('../assets/Tangerine-Regular.ttf') format('truetype');
+ font-family: 'Poppins';
+ src:url('../assets/Poppins-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
-$font-family-base: "Handlee";
+
+$font-family-base: "Poppins";
 $font-family-ios-base: $font-family-base;
 $font-family-md-base: $font-family-base;
 $font-family-wp-base: $font-family-base;

@@ -1,11 +1,11 @@
 page-event-details{
 
 ion-content{
-  background-color:#f2f2f2 !important;
+  background-color:white !important;
   background-image: none !important;
 }
 i{
-  color:color($colors,secondarydw);
+  color:color($colors,primarydw);
 }
 ion-grid{
   margin-top: 30px;
@@ -36,10 +36,11 @@ border-radius: 0px !important;
     margin-bottom: 0px;
     h3{
     margin-top: -1px;
+    font-family: Lobster;
     }
   }
   marquee{
-    background-color: color($colors,secondarydw);
+    background-color: white;
     margin-bottom: -5px;
     img{
       height:55px;
@@ -54,7 +55,7 @@ border-radius: 0px !important;
 [col-4] {
 //  background: color($colors,secondarydw);
   border:1px solid;
-  border-color: color($colors,primarydw);
+  border-color: darkgray;
 }
 [col-4].col-left-up{
     border-left: 0px !important;
@@ -103,8 +104,10 @@ border-radius: 0px !important;
     color:color($colors,fontprimary) !important;
   }
   .menu{
-    font-family: ArimaMadurai !important;
+    font-family: DeliusSwashCaps !important;
     font-size: 1.3rem;
+    font-weight: bold;
+    color: darkgray;
   }
 
 }

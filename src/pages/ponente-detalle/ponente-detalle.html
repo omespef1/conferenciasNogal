@@ -8,17 +8,18 @@
   <ion-navbar color="primarydw">
 
   </ion-navbar>
-</ion-header>
-<ion-content no-bounce class="card-background-page">
   <div class="divAvatar">
         <img [src]="'data:image/jpg;base64,'+speaker.con_foto | image" />
         <div>
           <h2>{{speaker.ter_noco}}</h2>
         </div>
   </div>
+</ion-header>
+<ion-content no-bounce class="card-background-page">
+
   <div class="container">
     <ion-item *ngIf="loggued" class="rating">
-        Calificación
+        Califica al speaker
     <rating [(ngModel)]="rate"
             readOnly="false"
             max="5"
