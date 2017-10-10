@@ -7,11 +7,11 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <div class="logoSeven">
+    <!-- <div class="logoSeven">
       <div class="logoSevenApp">
       <img src="assets/digital.png">
     </div>
-    </div>
+    </div> -->
     <ion-item>
        <ion-avatar item-start>
        <img src="assets/user.jpg">
@@ -23,7 +23,7 @@
       <div padding>
      </div>
       <button  *ngFor="let menu of pages" ion-item (click)="abrirPagina(menu)">
-        <ion-icon name='{{menu.icon}}' color="negro" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
+        <ion-icon name='{{menu.icon}}' color="fourthdw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
 
@@ -36,18 +36,18 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <div class="logoSeven">
+    <!-- <div class="logoSeven">
       <div class="logoSevenApp">
       <img src="assets/digital.png">
 
     </div>
 
-    </div>
+    </div> -->
     <ion-list no-lines>
       <div padding>
      </div>
       <button  *ngFor="let menu of pagesOut" ion-item (click)="abrirPagina(menu)">
-        <ion-icon name='{{menu.icon}}' color="negro" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
+        <ion-icon name='{{menu.icon}}' color="fourthdw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
 

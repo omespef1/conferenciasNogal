@@ -54,19 +54,21 @@ hasLoggedIn(): Promise<boolean> {
   });
 };
 setDataCalendar(calendars:any):void{
+  console.log("Calendarios cargados en memoria");
   this.storage.set('calendarevents',calendars)
 }
 
-getDataCalendar(): Promise<any>{
+getDataCalendar(refresh:boolean=false): Promise<any>{
   return this.storage.get('calendarevents').then((value)=>{
-    console.log(value);
-  if(value !=undefined){
+
+  if(value !=undefined && !refresh){
+      console.log("Calendario leído from session");
     return value;
   }
   return  this.sevenProvider.getEvents()
     .then(data => {
       this.setDataCalendar(data);
-      console.log(data);
+      console.log("calendario leido from db");
       return data;
     })
     .catch(error =>{
@@ -77,13 +79,11 @@ getDataCalendar(): Promise<any>{
 
 };
 setDataAgend(agend:any):void{
-  console.log("agenda seteada por primera vez es ");
-  console.log(agend);
+  console.log("Agenda guardada en sesion");
   this.storage.set("dataAgend",agend);
 }
 getDataAgend(rev_cont:number,refresh:boolean=false):Promise<any>{
   return this.storage.get("dataAgend").then(value=>{
-    console.log(refresh);
     console.log(value);
     if(value!=undefined && !refresh){
       console.log("agenda cargada");
@@ -130,7 +130,7 @@ setDataSponsors(data:any):void{
 }
 getDataSponsors(rev_cont:number,refresh:Boolean=false):Promise<any>{
   return this.storage.get("dataSponsors").then(value=>{
-    if ( value!=undefined && !refresh){
+    if (value!=undefined && !refresh){
       console.log("sponsors leídos de memoria");
     return value;
   }

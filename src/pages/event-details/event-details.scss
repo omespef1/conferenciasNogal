@@ -1,24 +1,33 @@
 page-event-details{
 
-ion-content{
-  background-color:white !important;
-  background-image: none !important;
-}
-i{
-  color:color($colors,primarydw);
-}
-ion-grid{
-  margin-top: 30px;
+
+.grid{
+padding: 0px;
+
 }
 ion-card{
-   margin: 0px !important ;
-border-radius: 0px !important;
+  border:0px !important;
+ margin: 0px !important ;
+ margin-top: 20px !important;
+ border-radius: 0px !important;
  width: 100% !important;
+ background-color: transparent !important;
+box-shadow: none !important;
+ img{
+   width: 100%;
+   border-radius: 40%;
+   border:5px solid;
+   border-color: color($colors,fourthdw);
+ }
 }
   .mar-border-up{
     width:100%;
     background-color: color($colors,primarydw);
     height: 25px;
+  }
+  .mar-border-down{
+    height: 5px;
+    background-color: color($colors,primarydw);
   }
   .mar-power{
     color: color($colors,fourthdw);
@@ -40,8 +49,10 @@ border-radius: 0px !important;
     }
   }
   marquee{
-    background-color: white;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
+background-color: color($colors,fourthdw);
+border-radius: 20px;
+margin-top: 5px;
     img{
       height:55px;
       max-width:160px;
@@ -52,40 +63,101 @@ border-radius: 0px !important;
   }
 
 
-[col-4] {
-//  background: color($colors,secondarydw);
-  border:1px solid;
-  border-color: darkgray;
+[col-4].agenda {
+  background-color: #84FFFF;
+  height: 70%;
+  padding: 0px;
+  .menuImage{
+    height: 70%;
+    i{
+      color:#89695E;
+    }
+  }
+  .menuTitle{
+    background-color: #03A9F4;
+    height: 30%;
+    color:white !important;
+  }
 }
-[col-4].col-left-up{
-    border-left: 0px !important;
-    border-top: 0px !important;
+[col-4].speakers {
+  background-color: #FF8A80;
+  height: 70%;
+  padding: 0px;
+  .menuImage{
+    height: 70%;
+    i{
+      color:#18FFFF;
+    }
+  }
+  .menuTitle{
+    background-color: #FF5252;
+    height: 30%;
+    color:white !important;
+  }
 }
-[col-4].col-left-down{
-    border-left: 0px !important;
-      border-bottom: 0px !important;
-      border-top: 0px !important;
+
+[col-4].location {
+  background-color: #FFFF8D;
+  height: 70%;
+  padding: 0px;
+  .menuImage{
+    height: 70%;
+    i{
+      color:#FF6E40;
+    }
+  }
+  .menuTitle{
+    background-color: #FFEB3B;
+    height: 30%;
+    color:#5A5B62 !important;
+  }
 }
-[col-4].center-up{
-      border-left:0px;
-      border-top: 0px !important;
+[col-4].sponsors {
+  background-color: #B9F6CA;
+  height: 70%;
+  padding: 0px;
+  .menuImage{
+    height: 70%;
+    i{
+      color:#8D6E63;
+    }
+  }
+  .menuTitle{
+    background-color: #1DE9B6;
+    height: 30%;
+    color:#5A5B62 !important;
+  }
 }
-[col-4].center-down{
-      border-left:0px;
-      border-top: 0px !important;
-      border-bottom: 0px !important;
-}
-[col-4].col-right-up{
-        border-right: 0px !important;
-        border-top: 0px !important;
-        border-left: 0px !important;
-}
-[col-4].col-right-down{
-        border-right: 0px !important;
-        border-bottom: 0px !important;
-          border-left: 0px !important;
-          border-top: 0px !important;
-}
+
+// [col-4].col-left-up{
+//     border-left: 0px !important;
+//     border-top: 0px !important;
+// }
+// [col-4].col-left-down{
+//     border-left: 0px !important;
+//       border-bottom: 0px !important;
+//       border-top: 0px !important;
+// }
+// [col-4].center-up{
+//       border-left:0px;
+//       border-top: 0px !important;
+// }
+// [col-4].center-down{
+//       border-left:0px;
+//       border-top: 0px !important;
+//       border-bottom: 0px !important;
+// }
+// [col-4].col-right-up{
+//         border-right: 0px !important;
+//         border-top: 0px !important;
+//         border-left: 0px !important;
+// }
+// [col-4].col-right-down{
+//         border-right: 0px !important;
+//         border-bottom: 0px !important;
+//           border-left: 0px !important;
+//           border-top: 0px !important;
+// }
 
   .item-ios.activated{
     background-color: transparent;
@@ -101,13 +173,11 @@ border-radius: 0px !important;
   }
 
   p{
-    color:color($colors,fontprimary) !important;
+    color:color($colors,fourthdw) !important;
   }
   .menu{
-    font-family: DeliusSwashCaps !important;
+    font-family: ptsans !important;
     font-size: 1.3rem;
-    font-weight: bold;
-    color: black;
   }
 
 }

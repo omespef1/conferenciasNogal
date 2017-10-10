@@ -1,4 +1,30 @@
 // http://ionicframework.com/docs/v2/theming/
+
+ion-menu{
+  ion-label{
+      color:color($colors,fourthdw) !important;
+  }
+p{
+  color: color($colors,fourthdw) !important;
+}
+}
+.login-box {
+ padding: 20px 20px 0px 20px;
+ margin-top: 0px;
+ background-color: color($colors,primarydw);
+ border-radius: 10px;
+}
+
+.submit-btn {
+  background-color: color($colors,secondarydw);
+ border-radius: 10px !important;
+ color: color($colors,fourthdw) !important;
+}
+.register-btn {
+ color: color($colors,fourthdw);
+font-size: 0.9em;
+text-decoration: underline;
+}
 ion-title{
   font-family: Lobster;
   font-weight: 400 !important;
@@ -10,7 +36,8 @@ body{
   font-size: 1.7rem;
 }
 p{
-  font-family: handlee;
+  font-family: Poppins;
+  text-align: justify;
 }
 .element{
   font-family: handlee;
@@ -53,7 +80,7 @@ p{
 }
 
 ion-content {
-background-image: url('../assets/fondo1.jpg');
+background-image: url('../assets/fondodigital3.jpg');
 }
 .dw-footer{
   font-family: ptSans;
@@ -88,6 +115,7 @@ background-image: url('../assets/fondo1.jpg');
 ion-footer{
   border-top: 1px solid lightgray;
 }
+
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

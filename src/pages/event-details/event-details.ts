@@ -30,6 +30,15 @@ export class EventDetailsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private userdata:UserDataProvider,
   private loading :LoadingController,private seven:SevenProvider,private toast:ToastController) {
     this.thisEvent = this.navParams.get("event");
+    this.userdata.hasLoggedIn().then(login=>{
+      this.loggued=login;
+    })
+    this.userdata.setDataAgend(this.thisEvent.agend);
+    console.log(this.thisEvent.agend);
+    this.userdata.setDataSpekaers(this.thisEvent.speakers);
+    this.userdata.setDataSponsors(this.thisEvent.sponsors);
+    this.userdata.setDataAsk(this.thisEvent.ask);
+
   }
   ionViewDidLoad() {
     this.load();
@@ -39,13 +48,6 @@ export class EventDetailsPage {
       content:'Cargando...'
     });
    load.present();
-    this.userdata.hasLoggedIn().then(login=>{
-      this.loggued=login;
-    })
-    this.userdata.setDataAgend(this.thisEvent.agend);
-    this.userdata.setDataSpekaers(this.thisEvent.speakers);
-    this.userdata.setDataSponsors(this.thisEvent.sponsors);
-    this.userdata.setDataAsk(this.thisEvent.ask);
     this.getSponsors();
     load.dismiss();
   }

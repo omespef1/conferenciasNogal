@@ -24,7 +24,7 @@ export class LocationPage {
 }
 initMap(){
   this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 15,
+      zoom: 18,
       center: {lat: 4.66018, lng: -74.05073}
     });
     var marker = new google.maps.Marker({

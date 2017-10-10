@@ -1,4 +1,7 @@
 page-schedule {
+  ion-content{
+    background-color: transparent !important;
+  }
   h3{
     color:color($colors,fontprimary) !important;
   }

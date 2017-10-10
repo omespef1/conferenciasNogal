@@ -8,7 +8,7 @@
   [(ngModel)]="value"
   (ionChange)="getItems($event.value)"
   [showCancelButton]="shouldShowCancel"
-  placeholder="Buscar patrocinador">
+  placeholder="Buscar">
 </ion-searchbar>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content>

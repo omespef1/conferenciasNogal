@@ -40,33 +40,17 @@ public listEvents :eerevet[]=[];
     this.userdata.getDataCalendar().then((data)=>{
     this.listEvents = data;
     load.dismiss();
-
     })
-    // this.sevenProvider.getEvents()
-    //   .then(data => {
-    //     this.listEvents = data;
-    //    load.dismiss();
-    //   })
-    //   .catch(error =>{
-    //     load.dismiss();
-    //       this.showMessage(error);
-    //   })
   }
   goDetails (event:eerevet){
    this.navCtrl.push(EventDetailsPage,{'event':event});
   }
   doRefresh(refresher: Refresher) {
 
-    this.sevenProvider.getEvents()
-      .then(data => {
+    this.userdata.getDataCalendar(true).then(data=>{
         this.listEvents = data;
         refresher.complete();
-          this.showMessage("Eventos actualizados!");
-      })
-      .catch(error =>{
-        this.showMessage(error);
-      })
-
+    })
     }
     showMessage(msg:string){
       const toast = this.toast.create({

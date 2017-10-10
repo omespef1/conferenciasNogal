@@ -7,17 +7,14 @@ page-register {
 		    display: inline-block;
 		    font-size: 1.8em;
 		}
-    .logo-row {
-      padding-top: 50px;
-      padding-bottom: 20px;
-    }
 
-    .login-box {
-padding: 20px 20px 0px 20px;
-margin-top: -10px;
-background-color: rgba(144,120,66,0.5);
-border-radius: 20px;
-    }
+//
+//     .login-box {
+// padding: 20px 20px 0px 20px;
+// margin-top: -10px;
+// background-color: rgba(144,120,66,0.5);
+// border-radius: 20px;
+//     }
 
     ion-row {
        align-items: center;
@@ -43,15 +40,16 @@ border-radius: 20px;
        box-shadow: none !important;
      }
 
-     .submit-btn {
-       background: #EBCBAE;
-       border-radius: 30px !important;
-			 color:#8F8787 !important;
-     }
+    //  .submit-btn {
+    //    background: #EBCBAE;
+    //    border-radius: 30px !important;
+		// 	 color:#8F8787 !important;
+    //  }
 		 button[disabled], [ion-button][disabled] {
 		     opacity: 0.8 !important;
 		 }
      .register-btn {
+       color: #ffffff;
        font-size: 0.8em;
 			 text-decoration: underline;
      }

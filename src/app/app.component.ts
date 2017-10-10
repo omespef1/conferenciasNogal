@@ -48,9 +48,9 @@ this.pages = [
   new page('Salir','ios-log-out',true,LoginPage,true),
 ]
 this.pagesOut = [
+  new page('Inicio','home',false,CalendarioPage,true),
   new page('Login','lock',false,LoginPage,true),
   new page('Registro','ios-key',false,RegisterPage,true),
-  new page('Inicio','home',false,CalendarioPage,true),
   new page('Chat de eventos','chatboxes',false,LoginPage,true),
   new page('Encuestas','help',false,LoginPage,true),
   new page ('Patrocinadores', 'person',false,SponsorsPage,true)

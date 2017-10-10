@@ -1,4 +1,7 @@
 page-sponsor-detaill {
+  h2{
+    color:color($colors,fourthdw) !important;
+  }
   ion-content {
       background-color: #F1F2F2 !important;
       background-image: none;
@@ -21,11 +24,6 @@ page-sponsor-detaill {
           border-radius: 50%;
           border: 5px solid white;
     }
-    // h2{
-    // font-weight: 600;
-    // color: color($colors,fourthdw);
-    // }
-
     }
   }
   .profile-body{

@@ -3,11 +3,12 @@
   <ion-row class="logo-row">
     <ion-col></ion-col>
     <ion-col width-67>
-      <img class="logo" src="assets/Logo_Club.png"/>
+      <img class="logo" src="assets/splash.png"/>
     </ion-col>
     <ion-col></ion-col>
   </ion-row>
   <div class="login-box">
+    <img src="assets/title.png">
     <form  #registerForm="ngForm">
       <ion-row>
         <ion-col>
@@ -29,7 +30,7 @@
 
       <ion-row>
         <ion-col class="signup-col">
-          <button ion-button class="submit-btn" full (click)="loginUser()" [disabled]="!registerForm.form.valid">Login</button>
+          <button ion-button class="submit-btn" full (click)="loginUser()" [disabled]="!registerForm.form.valid">Ingresar</button>
           <button ion-button class="register-btn" block clear (click)="openRegister()">Registro</button>
         </ion-col>
       </ion-row>

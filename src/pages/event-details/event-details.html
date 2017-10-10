@@ -6,23 +6,15 @@
 -->
 
 <ion-header>
-  <!-- <ion-navbar color="secondarydw">
+  <ion-navbar color="primarydw">
     <ion-title>{{thisEvent.rev_desc}}</ion-title>
-     <button color="light" ion-button menuToggle>
-  <ion-icon color="primary" name="menu"></ion-icon>
-</button>
-  </ion-navbar> -->
-  <ion-card id="encabezado">
+  </ion-navbar>
+  <ion-card id="encabezado" align-center>
     <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
-
 </ion-card>
 
 
-<div class="mar-border-up">
-  <div class="mar-power">
-    Powered By DigitalWare ©1992-2017
-  </div>
-</div>
+
 <marquee style="width:100%;height:55px;" scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
    <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
 </marquee>
@@ -33,73 +25,92 @@
 </div>
 <ion-grid>
         <ion-row text-center>
-          <ion-col col-4 class="col-left-up">
+          <ion-col col-4 class="agenda">
+            <div class="menuImage">
             <button ion-item detail-none (click)="goAgenda()">
               <div>
           <i class="fa fa-book fa-3x" aria-hidden="true"></i>
-        <br>
-          <label class="menu">Agenda</label>
+
           </div>
           </button>
+        </div>
+        <div class="menuTitle">
+            <label class="menu">Agenda</label>
+        </div>
+          </ion-col>
+          <ion-col col-4 class="speakers">
+              <div class="menuImage">
+                <button ion-item detail-none  (click)="goPonents()">
+                  <div>
+                <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                  <br>
+                </div>
+                </button>
+              </div>
+              <div class="menuTitle">
+                <label class="menu">Speakers</label>
+              </div>
 
           </ion-col>
-          <ion-col col-4 class="center-up">
-            <button ion-item detail-none  (click)="goPonents()">
-              <div>
-            <i class="fa fa-user fa-3x" aria-hidden="true"></i>
-              <br>
-              <label class="menu">Speakers</label>
-
-            </div>
-            </button>
-          </ion-col>
-          <ion-col col-4 class="col-right-up">
+          <ion-col col-4 class="location">
+            <div class="menuImage">
             <button ion-item detail-none (click)="goLocation()">
               <div>
          <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i>
         <br>
-        <label class="menu">Ubicación</label>
-
 </div>
     </button>
+  </div>
+    <div class="menuTitle">
+        <label class="menu">Ubicación</label>
+    </div>
           </ion-col>
         </ion-row>
         <ion-row text-center>
-            <ion-col col-4 class="col-left-down">
-              <button ion-item detail-none (click)="goSponsors()">
-                    <div>
-                  <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
-                  <br>
+            <ion-col col-4 class="sponsors">
+              <div class="menuImage">
+                <button ion-item detail-none (click)="goSponsors()">
+                      <div>
+                    <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
+                    </div>
+            </button>
+              </div>
+              <div class="menuTitle">
                   <label class="menu">Patrocinadores</label>
-                  </div>
-          </button>
-          </ion-col>
-          <ion-col col-4 class="center-down" *ngIf="loggued">
+              </div>
 
+          </ion-col>
+          <ion-col col-4 class="agenda" *ngIf="loggued">
+<div class="menuImage">
             <button ion-item detail-none (click)="goChat()">
               <div>
           <i class="fa fa-weixin fa-3x" aria-hidden="true"></i>
             <br>
-            <label class="menu">Chat</label>
+
             </div>
           </button>
+        </div>
+        <div class="menuTitle">
+            <label class="menu">Chat</label>
+        </div>
           </ion-col>
-            <ion-col col-4 *ngIf="loggued" class="col-right-down">
+            <ion-col col-4 *ngIf="loggued" class="speakers">
+              <div class="menuImage">
               <button ion-item detail-none (click)="goEncuesta()">
               <div>
               <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
-              <br>
-              <label class="menu">Encuesta</label>
               </div>
           </button>
+          </div>
+          <div class="menuTitle">
+              <label class="menu">Encuesta</label>
+          </div>
           </ion-col>
           </ion-row>
-
       </ion-grid>
 </ion-header>
 
 <ion-content no-bounce class="card-background-page">
-
 
 <div padding>
       <p text-justify>
@@ -107,15 +118,5 @@
 </p>
 
 </div>
-        <!-- <ion-item-sliding  >
-
-        </ion-item-sliding>
-          <ion-item-sliding  ">
-
-      </ion-item-sliding>
-          <ion-item-sliding  *ngIf="loggued">
-
-      </ion-item-sliding> -->
-
 
 </ion-content>

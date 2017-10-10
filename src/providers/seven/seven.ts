@@ -93,6 +93,7 @@ postAsise(body:any){
 }
  private  requestPost(url:string,param:any){
     this.apiAction = url;
+    console.log(this._api.data.api+ this.apiAction);
       let headers = new Headers({
 			'Content-Type': 'application/json'
 		});
