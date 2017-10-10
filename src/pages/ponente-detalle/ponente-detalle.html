@@ -15,11 +15,9 @@
         </div>
   </div>
 </ion-header>
-<ion-content no-bounce class="card-background-page">
-
-  <div class="container">
+<ion-content no-bounce>
     <ion-item *ngIf="loggued" class="rating">
-  
+
     <rating [(ngModel)]="rate"
             readOnly="false"
             max="5"
@@ -36,7 +34,4 @@
       </p>
 </ion-card-content>
 
-
-
-</div>
 </ion-content>

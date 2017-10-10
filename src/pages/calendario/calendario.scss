@@ -13,7 +13,7 @@ ion-label{
 }
   }
 ion-content{
-  background-color: transparent !important;
+  background-color: COLOR($colors,secondarydw) !important;
   .card-md {
     width: 100%;
     margin:0px;

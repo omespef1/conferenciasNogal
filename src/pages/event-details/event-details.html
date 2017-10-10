@@ -9,9 +9,9 @@
   <ion-navbar color="primarydw">
     <ion-title>{{thisEvent.rev_desc}}</ion-title>
   </ion-navbar>
-  <ion-card id="encabezado" align-center>
+  <!-- <ion-card>
     <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
-</ion-card>
+</ion-card> -->
 
 
 
@@ -19,9 +19,9 @@
    <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
 </marquee>
 <div class="mar-border-up">
-    <div class="mar-sponsors">
+    <!-- <div class="mar-sponsors">
 <h3>Menú de evento</h3>
-</div>
+</div> -->
 </div>
 <ion-grid>
         <ion-row text-center>
@@ -110,7 +110,7 @@
       </ion-grid>
 </ion-header>
 
-<ion-content no-bounce class="card-background-page">
+<ion-content class="card-background-page">
 
 <div padding>
       <p text-justify>
