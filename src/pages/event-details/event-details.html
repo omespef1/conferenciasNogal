@@ -16,8 +16,14 @@
     </div>
 
   </div>
-
-
+  <!-- <ion-item-divider>
+    <p class="titulo">Patrocinadores</p>
+  </ion-item-divider> -->
+  <div class="marquee-content">
+    <marquee style="width:100%;height:55px;" scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
+       <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
+    </marquee>
+  </div>
 
 
 <!-- <div class="mar-border-up"> -->
@@ -118,14 +124,8 @@
             </ion-col>
             </ion-row>
         </ion-grid>
-<ion-item-divider>
-  <p class="titulo">Patrocinadores</p>
-</ion-item-divider>
-<div class="marquee-content">
-  <marquee style="width:100%;height:55px;" scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
-     <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
-  </marquee>
-</div>
+
+
 
 <div padding>
   <p text-justify>
