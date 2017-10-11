@@ -35,23 +35,15 @@ $app-direction: ltr;
 
 $colors: (
 primary:    #488aff,
-// secondary:  #32db64,
-// danger:     #f53d3d,
-// light:      #f4f4f4,
-// dark:       #002063,
-// favorite:   #69BB7B,
 twitter:    #1da1f4,
 google:     #dc4a38,
 vimeo:      #23b6ea,
 facebook:   #3b5998,
-// botonPrimario:red,
-// negro: black,
-primarydw:#051467,
-secondarydw:#00B1C0,
-thirddw:#E9DCBE,
+primarydw:#00B1C0,
+secondarydw:#051467,
+thirddw:#8e9093,
 fourthdw:#f4f4f4,
 linesdw:#F8B195,
-fontprimary:#4A4A4A,
 
 );
 
@@ -90,33 +82,55 @@ $item-ios-detail-push-color :white;
  font-style: normal;
 }
 @font-face {
- font-family: 'Lobster';
- src:url('../assets/Lobster-Regular.ttf') format('truetype');
- font-weight: normal;
- font-style: normal;
-}
-@font-face {
- font-family: 'DeliusSwashCaps';
- src:url('../assets/DeliusSwashCaps-Regular.ttf') format('truetype');
- font-weight: normal;
- font-style: normal;
-}
-
-
-@font-face {
- font-family: 'Handlee';
- src:url('../assets/Handlee-Regular.ttf') format('truetype');
- font-weight: normal;
- font-style: normal;
-}
-@font-face {
  font-family: 'Poppins';
  src:url('../assets/Poppins-Regular.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }
 
-$font-family-base: "Poppins";
+@font-face {
+ font-family: 'Montserrat-Light';
+ src:url('../assets/Montserrat-Light.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Montserrat';
+ src:url('../assets/Montserrat-Regular.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'OpenSans-Light';
+ src:url('../assets/OpenSans-Light.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'OpenSans';
+ src:url('../assets/OpenSans-Regular.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Roboto-Light';
+ src:url('../assets/Roboto-Light.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Roboto';
+ src:url('../assets/Roboto.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Handlee';
+ src:url('../assets/Handlee-Regular.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+$font-family-base: "OpenSans-Light";
 $font-family-ios-base: $font-family-base;
 $font-family-md-base: $font-family-base;
 $font-family-wp-base: $font-family-base;

@@ -1,4 +1,8 @@
 page-register {
+  ion-content{
+     background-color: color($colors,secondarydw) !important;
+  }
+   background-color: color($colors,secondarydw) !important;
   .logo{
 		min-width: 250px;
 	}

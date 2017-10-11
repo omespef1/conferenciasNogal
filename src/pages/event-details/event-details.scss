@@ -1,24 +1,16 @@
 page-event-details{
-
+  ion-content {
+    background-color: whitesmoke !important;
+  }
 
 .grid{
 padding: 0px;
 
 }
-ion-card{
- border:0px !important;
- margin: 0px !important ;
- margin-top: 20px !important;
- border-radius: 0px !important;
- width: 100% !important;
+ion-item-divider{
  background-color: transparent !important;
- box-shadow: none !important;
- img{
-   width: 50%;
-   //border-radius: 40%;
-   border:5px solid;
-   border-color: color($colors,fourthdw);
- }
+ border-bottom: 0px !important;
+  // color:white !important ;
 }
   .mar-border-up{
     width:100%;
@@ -48,9 +40,9 @@ ion-card{
     font-family: handlee;
     }
   }
-  marquee{
-    margin-bottom: 0px;
-background-color: color($colors,fourthdw);
+marquee{
+margin-bottom: 0px;
+background-color: color($colors,primarydw);
 border-radius: 20px;
 margin-top: 5px;
     img{
@@ -62,72 +54,44 @@ margin-top: 5px;
 
   }
 
-
-[col-4].agenda {
-  background-color: #84FFFF;
+[col-4]{
+  border:2px solid white;
+}
+[col-4].menuOption-light {
+  background-color: color($colors,primarydw);
   height: 70%;
   padding: 0px;
+  border-radius: 10px;
   .menuImage{
-    height: 70%;
     i{
-      color:#89695E;
+      color:color($colors,fourthdw);
     }
   }
   .menuTitle{
-    background-color: #03A9F4;
+    background-color: color($colors,thirddw);
     height: 30%;
     color:white !important;
+    border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
   }
 }
-[col-4].speakers {
-  background-color: #FF8A80;
+[col-4].menuOption-dark {
+  background-color: color($colors, secondarydw);
   height: 70%;
   padding: 0px;
   .menuImage{
     height: 70%;
     i{
-      color:#18FFFF;
+      color:color($colors,fourthdw);
     }
   }
   .menuTitle{
     background-color: #FF5252;
     height: 30%;
-    color:white !important;
+    color:color($colors,fourthdw) !important;
   }
 }
 
-[col-4].location {
-  background-color: #FFFF8D;
-  height: 70%;
-  padding: 0px;
-  .menuImage{
-    height: 70%;
-    i{
-      color:#FF6E40;
-    }
-  }
-  .menuTitle{
-    background-color: #FFEB3B;
-    height: 30%;
-    color:#5A5B62 !important;
-  }
-}
-[col-4].sponsors {
-  background-color: #B9F6CA;
-  height: 70%;
-  padding: 0px;
-  .menuImage{
-    height: 70%;
-    i{
-      color:#8D6E63;
-    }
-  }
-  .menuTitle{
-    background-color: #1DE9B6;
-    height: 30%;
-    color:#5A5B62 !important;
-  }
-}
 
 // [col-4].col-left-up{
 //     border-left: 0px !important;
@@ -172,12 +136,6 @@ margin-top: 5px;
     text-align: center;
   }
 
-  p{
-    color:color($colors,fourthdw) !important;
-  }
-  .menu{
-    font-family: ptsans !important;
-    font-size: 1.3rem;
-  }
+
 
 }

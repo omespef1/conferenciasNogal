@@ -34,8 +34,8 @@
     <ion-avatar item-start *ngIf="speaker.con_foto">
       <img [src]="'data:image/jpg;base64,'+speaker.con_foto | image" />
     </ion-avatar>
-    <h3>{{speaker.ter_noco}}</h3>
-     <p>{{speaker.con_perf}}</p>
+    <p class="titulo">{{speaker.ter_noco}}</p>
+     <p class="texto">{{speaker.con_perf}}</p>
   </button>
 
 </ion-list>

@@ -27,6 +27,7 @@ export class UserDataProvider {
     this.events.publish('user:signup');
   };
   logout(): void {
+    console.log("borrando usuario");
   this.storage.remove(this.HAS_LOGGED_IN);
   this.storage.remove('username');
     this.storage.remove('userinfo');

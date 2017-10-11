@@ -1,22 +1,60 @@
 // http://ionicframework.com/docs/v2/theming/
-
-ion-menu{
-  ion-label{
+p{
+  font-family: OpenSans-Light;
+  text-align: justify;
+  color:#8e9093;
+}
+.titulo{
+  font-family: OpenSans;
+}
+.texto{
+font-family:  OpenSans-Light;
+}
+.dividerOption{
+    background-color: color($colors,primarydw) !important;
+  p{
       color:color($colors,fourthdw) !important;
   }
-p{
-  color: color($colors,fourthdw) !important;
+
+
 }
+.profile-media {
+min-height: 150px;
+overflow: hidden;
+position: relative;
+text-align: center;
+background-color: color($colors,secondarydw);
+  .avatar{
+    margin-top: 25px;
+  img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid white;
+  }
+  }
+}
+ion-menu{
+  .item-block{
+    border-bottom: 1px solid lightgray !important;
+  }
+  ion-label{
+      color:gray !important;
+  }
+  ion-icon {
+    margin-right: 15px !important;
+  }
+
 }
 .login-box {
  padding:0;
  margin-top: 0px;
- background-color: color($colors,primarydw);
+ background-color: color($colors,secondarydw);
  border-radius: 10px;
 }
 
 .submit-btn {
-  background-color: color($colors,secondarydw);
+  background-color: color($colors,primarydw);
  border-radius: 10px !important;
  color: color($colors,fourthdw) !important;
 }
@@ -25,25 +63,33 @@ p{
 font-size: 0.9em;
 text-decoration: underline;
 }
+.item-divider-md{
+      background-color: #f7f7f7;
+}
 ion-title{
   font-family: Handlee;
   font-weight: 400 !important;
+  text-align: center;
 }
-h3{
+h1,h2{
   font-family: handlee;
+  color:color($colors,fourthdw);
 }
 body{
   font-size: 1.7rem;
 }
-p{
-  font-family: Poppins;
-  text-align: justify;
-}
-.element{
-  font-family: handlee;
-}
+
+.element {
+padding-left: 5px;
+padding-right: 5px;
+background-color: color($colors,secondarydw);
+font-size: 20px;
+color:color($colors,fourthdw) !important;
+font-family: OpenSans-Light;
+  }
+
 .searchbar-input{
-  font-family: arial;
+  font-family:OpenSans-Light;
 }
 .toolbar-title-md {
   overflow: visible;
@@ -60,6 +106,9 @@ p{
     font-weight: 400;
 }
  .menu-inner{
+   ion-title{
+     padding: 0px !important;
+   }
   .item-ios {
  background-color: transparent;
  }
@@ -81,7 +130,7 @@ p{
 
 ion-content {
 //background-image: url('../assets/fondodigital3.jpg');
-background-color:color($colors,secondarydw) !important;
+background-color:whitesmoke !important;
 }
 .dw-footer{
   font-family: ptSans;

@@ -13,18 +13,18 @@
   </ion-refresher>
   <ion-list>
     <ion-item-group *ngFor="let schedule of schedules">
-      <div class="element">
-        <ion-label>{{schedule.date}}</ion-label>
-      </div>
+    <ion-item-divider class="dividerOption">
+        <p class="titulo">{{schedule.date}}</p>
+      </ion-item-divider>
       <div *ngFor="let activity of schedule.agendas">
-      <ion-item-divider sticky>
-        <ion-label class="HourSeparator">
+      <ion-item-divider>
+        <p class="titulo">
           {{activity.age_hori}}
-        </ion-label>
+        </p>
       </ion-item-divider>
       <ion-item tappable (click)="openSchedule(activity)">
-          <h3>  {{activity.age_acti}}</h3>
-          <p>
+          <p class="titulo">  {{activity.age_acti}}</p>
+          <p class="texto">
            Hasta las {{activity.age_horf}}
           </p>
       </ion-item>
@@ -33,7 +33,7 @@
         <ion-avatar item-start>
         <img [src]="'data:image/jpg;base64,'+activity.con_foto | image" />
         </ion-avatar>
-        <h3>{{activity.ter_noco}}</h3>
+          <p class="titulo">{{activity.ter_noco}}</p>
       </button>
       </ion-item-sliding>
       </div>

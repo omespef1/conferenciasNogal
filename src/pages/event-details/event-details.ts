@@ -32,6 +32,7 @@ export class EventDetailsPage {
     this.thisEvent = this.navParams.get("event");
     this.userdata.hasLoggedIn().then(login=>{
       this.loggued=login;
+      console.log(login);
     })
     this.userdata.setDataAgend(this.thisEvent.agend);
     console.log(this.thisEvent.agend);

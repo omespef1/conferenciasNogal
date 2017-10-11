@@ -1,7 +1,4 @@
 page-sponsor-detaill {
-  h2{
-    color:color($colors,fourthdw) !important;
-  }
   ion-content {
       background-color: #F1F2F2 !important;
       background-image: none;
@@ -10,22 +7,7 @@ page-sponsor-detaill {
     background-color: transparent !important;
   }
 //aa
-  .profile-media {
-    min-height: 250px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  background-color: color($colors,secondarydw);
-    .avatar{
-      margin-top: 25px;
-    img {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          border: 5px solid white;
-    }
-    }
-  }
+
   .profile-body{
     .social{
       width:100%;

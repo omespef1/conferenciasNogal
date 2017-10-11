@@ -7,113 +7,126 @@
 
 <ion-header>
   <ion-navbar color="primarydw">
-    <ion-title>{{thisEvent.rev_desc}}</ion-title>
+    <ion-title>{{thisEvent.rev_desc}} </ion-title>
   </ion-navbar>
-  <!-- <ion-card>
-    <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
-</ion-card> -->
+  <div class="profile-media">
+    <div class="avatar">
+      <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
+
+    </div>
+
+  </div>
 
 
 
-<marquee style="width:100%;height:55px;" scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
-   <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
-</marquee>
-<div class="mar-border-up">
+
+<!-- <div class="mar-border-up"> -->
     <!-- <div class="mar-sponsors">
 <h3>Menú de evento</h3>
 </div> -->
-</div>
-<ion-grid>
-        <ion-row text-center>
-          <ion-col col-4 class="agenda">
-            <div class="menuImage">
-            <button ion-item detail-none (click)="goAgenda()">
-              <div>
-          <i class="fa fa-book fa-3x" aria-hidden="true"></i>
+<!-- </div> -->
 
-          </div>
-          </button>
-        </div>
-        <div class="menuTitle">
-            <label class="menu">Agenda</label>
-        </div>
-          </ion-col>
-          <ion-col col-4 class="speakers">
-              <div class="menuImage">
-                <button ion-item detail-none  (click)="goPonents()">
-                  <div>
-                <i class="fa fa-user fa-3x" aria-hidden="true"></i>
-                  <br>
-                </div>
-                </button>
-              </div>
-              <div class="menuTitle">
-                <label class="menu">Speakers</label>
-              </div>
 
-          </ion-col>
-          <ion-col col-4 class="location">
-            <div class="menuImage">
-            <button ion-item detail-none (click)="goLocation()">
-              <div>
-         <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i>
-        <br>
-</div>
-    </button>
-  </div>
-    <div class="menuTitle">
-        <label class="menu">Ubicación</label>
-    </div>
-          </ion-col>
-        </ion-row>
-        <ion-row text-center>
-            <ion-col col-4 class="sponsors">
-              <div class="menuImage">
-                <button ion-item detail-none (click)="goSponsors()">
-                      <div>
-                    <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
-                    </div>
-            </button>
-              </div>
-              <div class="menuTitle">
-                  <label class="menu">Patrocinadores</label>
-              </div>
-
-          </ion-col>
-          <ion-col col-4 class="agenda" *ngIf="loggued">
-<div class="menuImage">
-            <button ion-item detail-none (click)="goChat()">
-              <div>
-          <i class="fa fa-weixin fa-3x" aria-hidden="true"></i>
-            <br>
-
-            </div>
-          </button>
-        </div>
-        <div class="menuTitle">
-            <label class="menu">Chat</label>
-        </div>
-          </ion-col>
-            <ion-col col-4 *ngIf="loggued" class="speakers">
-              <div class="menuImage">
-              <button ion-item detail-none (click)="goEncuesta()">
-              <div>
-              <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
-              </div>
-          </button>
-          </div>
-          <div class="menuTitle">
-              <label class="menu">Encuesta</label>
-          </div>
-          </ion-col>
-          </ion-row>
-      </ion-grid>
 </ion-header>
 
 <ion-content class="card-background-page">
+  <ion-item-divider>
+    <p class="titulo"> Menú del evento</p>
+  </ion-item-divider>
+  <ion-grid>
+          <ion-row text-center>
+            <ion-col col-4 class="menuOption-light">
+              <div class="menuImage">
+              <button ion-item detail-none (click)="goAgenda()">
+                <div>
+            <i class="fa fa-book fa-3x" aria-hidden="true"></i>
+
+            </div>
+            </button>
+          </div>
+          <div class="menuTitle">
+              <label class="menu">Agenda</label>
+          </div>
+            </ion-col>
+            <ion-col col-4 class="menuOption-light">
+                <div class="menuImage">
+                  <button ion-item detail-none  (click)="goPonents()">
+                    <div>
+                  <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                    <br>
+                  </div>
+                  </button>
+                </div>
+                <div class="menuTitle">
+                  <label class="menu">Speakers</label>
+                </div>
+
+            </ion-col>
+            <ion-col col-4 class="menuOption-light">
+              <div class="menuImage">
+              <button ion-item detail-none (click)="goLocation()">
+                <div>
+           <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i>
+          <br>
+  </div>
+      </button>
+    </div>
+      <div class="menuTitle">
+          <label class="menu">Ubicación</label>
+      </div>
+            </ion-col>
+          </ion-row>
+          <ion-row text-center>
+              <ion-col col-4 class="menuOption-light">
+                <div class="menuImage">
+                  <button ion-item detail-none (click)="goSponsors()">
+                        <div>
+                      <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
+                      </div>
+              </button>
+                </div>
+                <div class="menuTitle">
+                    <label class="menu">Patrocinadores</label>
+                </div>
+
+            </ion-col>
+            <ion-col col-4 class="menuOption-light" *ngIf="loggued">
+  <div class="menuImage">
+              <button ion-item detail-none (click)="goChat()">
+                <div>
+            <i class="fa fa-weixin fa-3x" aria-hidden="true"></i>
+              <br>
+
+              </div>
+            </button>
+          </div>
+          <div class="menuTitle">
+              <label class="menu">Chat</label>
+          </div>
+            </ion-col>
+              <ion-col col-4 *ngIf="loggued" class="menuOption-light">
+                <div class="menuImage">
+                <button ion-item detail-none (click)="goEncuesta()">
+                <div>
+                <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
+                </div>
+            </button>
+            </div>
+            <div class="menuTitle">
+                <label class="menu">Encuesta</label>
+            </div>
+            </ion-col>
+            </ion-row>
+        </ion-grid>
+<ion-item-divider>
+  <p class="titulo">Patrocinadores</p>
+</ion-item-divider>
+  <marquee style="width:100%;height:55px;" scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
+     <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
+  </marquee>
 
 <div padding>
-      <p text-justify>
+  <p text-justify>
         {{thisEvent.rev_obse}}
 </p>
 

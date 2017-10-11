@@ -2,7 +2,7 @@
 
 <ion-menu id="loggedInMenu" [content]="content" >
   <ion-header>
-    <ion-toolbar color="primarydw">
+      <ion-toolbar color="primarydw">
       <ion-title>Club El Nogal</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -12,18 +12,23 @@
       <img src="assets/digital.png">
     </div>
     </div> -->
-    <ion-item>
+    <ion-item class="no-lines" no-lines>
        <ion-avatar item-start>
        <img src="assets/user.jpg">
        </ion-avatar>
-       <h2>{{user}}</h2>
+       <p class="titulo">{{user}}</p>
     <p>Club El Nogal</p>
      </ion-item>
+
     <ion-list no-lines>
+
       <div padding>
      </div>
+     <ion-item-divider>
+       Menú
+     </ion-item-divider>
       <button  *ngFor="let menu of pages" ion-item (click)="abrirPagina(menu)">
-        <ion-icon name='{{menu.icon}}' color="fourthdw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
+        <ion-icon name='{{menu.icon}}' color="primarydw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
 
@@ -46,8 +51,11 @@
     <ion-list no-lines>
       <div padding>
      </div>
+     <ion-item-divider>
+       Menú
+     </ion-item-divider>
       <button  *ngFor="let menu of pagesOut" ion-item (click)="abrirPagina(menu)">
-        <ion-icon name='{{menu.icon}}' color="fourthdw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
+        <ion-icon name='{{menu.icon}}' color="primarydw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
 
