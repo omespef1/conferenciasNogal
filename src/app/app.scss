@@ -3,6 +3,7 @@ p{
   font-family: OpenSans-Light;
   text-align: justify;
   color:#8e9093;
+  font-size: 1.2rem !important ;
 }
 .titulo{
   font-family: OpenSans;
@@ -19,20 +20,17 @@ font-family:  OpenSans-Light;
 
 }
 .profile-media {
-min-height: 150px;
 overflow: hidden;
 position: relative;
-text-align: center;
 background-color: color($colors,secondarydw);
-  .avatar{
-    margin-top: 25px;
-  img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 5px solid white;
-  }
-  }
+img{
+     margin:5px;
+     max-width:50%;
+     height: auto;
+     // max-height: 50%;
+     border-radius: 50%;
+     border: 5px solid white;
+}
 }
 ion-menu{
   .item-block{
@@ -49,12 +47,7 @@ p{
   color:color($colors,fourthdw) !important;
 }
 }
-.login-box {
- padding:0;
- margin-top: 0px;
- background-color: color($colors,secondarydw);
- //border-radius: 10px;
-}
+
 
 .submit-btn {
   background-color: color($colors,primarydw);
@@ -75,9 +68,7 @@ ion-title{
   text-align: center;
 }
 
-body{
-  font-size: 1.7rem;
-}
+
 
 .element {
 padding-left: 5px;
@@ -94,14 +85,14 @@ font-family: OpenSans-Light;
 .toolbar-title-md {
   overflow: visible;
     padding: 0 12px;
-    font-size: 3rem;
+  //  font-size: 3rem;
     color: #424242;
     font-weight: 400;
 }
 .toolbar-title-ios {
     overflow: visible;
     padding: 0 12px;
-    font-size: 3rem;
+    //font-size: 3rem;
     color: #424242;
     font-weight: 400;
 }
@@ -132,16 +123,8 @@ ion-content {
 //background-image: url('../assets/fondodigital3.jpg');
 background-color:color($colors,primarydw) !important;
 }
-.footer{
-  p{
-  font-size: 0.8rem;
-  font-family: OpenSans;
-  color:color($colors,fourthdw);
-  text-align: center;
-  margin-top: 1px;
-  margin-bottom: 0px;
-}
-}
+
+
 .faGreen {
    color: #28a54c;
 }
@@ -154,10 +137,6 @@ background-color:color($colors,primarydw) !important;
 .faYellow{
    color: #f2c100;
 }
-ion-footer{
-  border-top: 1px solid lightgray;
-}
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -176,19 +155,23 @@ border-top: 0px;
 }
 .footer{
   .img{
-    //margin-bottom: 5px;
         text-align: center;
-        //margin-top: 5px;
     img{
       width: 24%;
-      height: 24%;
+      height:auto;
     }
   }
+  p{
+   font-size: 0.8rem !important;
+   font-family: OpenSans;
+   color:color($colors,fourthdw);
+   text-align: center;
+   margin-top: 1px;
+   margin-bottom: 0px;
+ }
 }
+
 .login-content {
-  .logo{
-    min-width: 250px;
-  }
   ion-icon {
       display: inline-block;
       font-size: 1.8em;
@@ -208,10 +191,7 @@ border-top: 0px;
        box-shadow: none !important;
    }
 
-   .signup-col {
-     margin: 0px 16px 0px 16px;
-     padding-bottom: 20px;
-   }
+
 
    .item-inner {
      border-bottom-color: #ffffff !important;

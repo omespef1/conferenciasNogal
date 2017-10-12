@@ -1,19 +1,19 @@
 
 <ion-content no-bounce class="login-content" padding>
-  <ion-row class="logo-row">
-    <ion-col></ion-col>
-    <ion-col width-67>
+  <ion-grid>
+  <ion-row>
+    <ion-col>
       <img class="logo" src="assets/splash.png"/>
     </ion-col>
-    <ion-col></ion-col>
   </ion-row>
-  <div class="login-box">
-    <img src="assets/title.png">
+  <ion-row>
+    <ion-col>
+        <img class="logoTitle" src="assets/title.png">
+    </ion-col>
+  </ion-row>
     <form  #registerForm="ngForm">
       <ion-row>
         <ion-col>
-          <ion-list inset>
-
             <ion-item>
               <ion-label><ion-icon name="ios-person"></ion-icon></ion-label>
               <ion-input type="text" placeholder="Usuario" name="email" [(ngModel)]="login.username" required></ion-input>
@@ -23,18 +23,23 @@
               <ion-label><ion-icon name="ios-lock"></ion-icon></ion-label>
               <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="login.password" required></ion-input>
             </ion-item>
-
-          </ion-list>
         </ion-col>
       </ion-row>
-
       <ion-row>
-        <ion-col class="signup-col">
+        <ion-col>
           <button ion-button class="submit-btn" full (click)="loginUser()" [disabled]="!registerForm.form.valid">Ingresar</button>
           <button ion-button class="register-btn" block clear (click)="openRegister()">Registro</button>
         </ion-col>
       </ion-row>
-
     </form>
-  </div>
+  </ion-grid>
 </ion-content>
+<ion-footer>
+  <div class="footer">
+    <div class="img">
+  <img src="assets/logooscuro.png"><br>
+  <p>SEVEN ERP©1992-2017 Digital Ware</p>
+    <p>Versión 17.10.01.01</p>
+</div>
+</div>
+</ion-footer>

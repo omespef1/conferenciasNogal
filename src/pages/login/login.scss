@@ -1,6 +1,17 @@
+
 page-login {
+  ion-footer{
+    background-color: color($colors,secondarydw);
+  }
  ion-content{
 	 background-color: color($colors,secondarydw) !important;
  }
-
+.logo{
+  width: 80%;
+  height: auto;
+  margin-top: -30px;
+}
+.logoTitle{
+    margin-top: -30px;
+}
 }

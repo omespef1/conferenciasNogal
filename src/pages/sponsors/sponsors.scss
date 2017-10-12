@@ -1,4 +1,10 @@
 page-sponsors {
+  ion-footer{
+    background-color: color($colors,primarydw);
+  }
+  ion-content{
+  //  background-color: whitesmoke !important;
+  }
   ion-avatar{
     img{
       width:55px !important;

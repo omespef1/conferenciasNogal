@@ -11,34 +11,45 @@
   <ion-icon name="menu"></ion-icon>
 </button>
   </ion-navbar>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-12 text-center>
+          <div class="profile-media">
+        <img [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" />
+          <h2>{{sponsor.pat_nomb}}</h2>
+      </div>
 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
 
 
 <ion-content no-bounce>
-  <div class="profile-media">
-    <div class="avatar">
-      <img [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" />
-        <h2>{{sponsor.pat_nomb}}</h2>
-    </div>
-
-  </div>
-  <div class="profile-body">
-    <div class="social">
-<div padding>
-<ion-item *ngFor="let link of sponsor.lin_link"  (click)="openUrl(link.lin_urla)">
-  <ion-icon [name]= "link.lin_urla | social" [color]="link.lin_urla | colors" item-start></ion-icon>
-  {{link.lin_nomb}}
-</ion-item>
-
-<p>
-  {{sponsor.pat_desc}}
-</p>
-</div>
-</div>
-
-  </div>
-
-
-
+  <ion-grid padding>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item *ngFor="let link of sponsor.lin_link"  (click)="openUrl(link.lin_urla)">
+          <ion-icon [name]= "link.lin_urla | social" [color]="link.lin_urla | colors" item-start></ion-icon>
+          {{link.lin_nomb}}
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <p>
+          {{sponsor.pat_desc}}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<ion-footer>
+  <div class="footer">
+    <div class="img">
+  <img src="assets/logooscuro.png"><br>
+  <p>SEVEN ERP©1992-2017 Digital Ware</p>
+    <p>Versión 17.10.01.01</p>
+</div>
+</div>
+</ion-footer>

@@ -13,6 +13,7 @@ import {SevenProvider} from '../providers/seven/seven';
 
 export class MyApp {
   @ViewChild(Nav) nav: Nav
+  version:string="2017";
   rootPage:any = LoginPage ;
   pagePonientes = PonentesPage;
   pageLogin = LoginPage;

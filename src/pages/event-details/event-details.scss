@@ -1,149 +1,58 @@
+
+
 page-event-details{
-  p{
-    color:color($colors,fourthdw) !important;
-  }
-  ion-content {
-    background-color: color($colors,primarydw) !important;
-  }
-
-.grid{
-padding: 0px;
-
-}
-ion-item-divider{
- background-color: transparent !important;
- border-bottom: 0px !important;
-  // color:white !important ;
-}
-  .mar-border-up{
-    width:100%;
-    background-color: color($colors,primarydw);
-    height: 25px;
-  }
-  .mar-border-down{
-    height: 5px;
+  ion-footer{
     background-color: color($colors,primarydw);
   }
-  .mar-power{
-    color: color($colors,fourthdw);
-    font-size: 10pt;
-    margin-right: 5px;
-    text-align: right;
-    padding-top: 2px;
-    font-family: PtSans;
-  }
-  .mar-sponsors{
-    color: color($colors,fourthdw);
-    margin-left: 5px;
-    text-align: left;
-    text-align: center;
-    margin-bottom: 0px;
-    h3{
-    margin-top: -1px;
-    font-family: handlee;
-    }
-  }
-marquee{
-background-color: color($colors,fourthdw);
-border-radius: 20px;
-    margin-bottom: -4px;
-    img{
-        height:55px;
-        max-width:160px;
-       animation: marquee 20s linear infinite;
-    //   border-right: 1px solid color($colors,primarydw);
-    }
-
-  }
-
-
-[col-4].menuOption-light {
-  .menuButton{
-    background-color: color($colors,primarydw);
-    height: 70%;
-    padding: 0px;
-    border-radius: 10px;
-    .menuImage{
-      i{
-        color:color($colors,fourthdw);
+      p{
+      color:color($colors,fourthdw) !important;
       }
-    }
-    .menuTitle{
+      ion-content {
+      background-color: color($colors,primarydw) !important;
+      }
+      ion-item-divider{
+      background-color: transparent !important;
+      border-bottom: 0px !important;
+      // color:white !important ;
+      }
+
+      marquee{
+      height: 40px;
+      width: 100%;
       background-color: color($colors,fourthdw);
-      height: 30%;
+      border-radius: 20px;
+      img{
+      height:40px;
+      width:auto;
+      animation: marquee 20s linear infinite;
+      //   border-right: 1px solid color($colors,primarydw);
+      }
+      }
+      .menuTitle{
+      background-color: color($colors,fourthdw);
       color:color($colors,thirddw);
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
-    }
-  }
+      font-weight: bold;
+      }
+      .menu{
+      font-weight: bold;
+      }
+      .marquee-content {
+      background-color: color($colors,fourthdw);
+      }
 
+      .item-ios.activated{
+      background-color: transparent;
+      opacity: 0.5 !important;
 
-}
-[col-4].menuOption-dark {
-  background-color: color($colors, secondarydw);
-  height: 70%;
-  padding: 0px;
-  .menuImage{
-    height: 70%;
-    i{
-      color:color($colors,fourthdw);
-    }
-  }
-  .menuTitle{
-    background-color: #FF5252;
-    height: 30%;
-    color:color($colors,fourthdw) !important;
-  }
-}
-.menu{
-  font-weight: bold;
-}
-.marquee-content {
-  background-color: color($colors,fourthdw);
-}
-// [col-4].col-left-up{
-//     border-left: 0px !important;
-//     border-top: 0px !important;
-// }
-// [col-4].col-left-down{
-//     border-left: 0px !important;
-//       border-bottom: 0px !important;
-//       border-top: 0px !important;
-// }
-// [col-4].center-up{
-//       border-left:0px;
-//       border-top: 0px !important;
-// }
-// [col-4].center-down{
-//       border-left:0px;
-//       border-top: 0px !important;
-//       border-bottom: 0px !important;
-// }
-// [col-4].col-right-up{
-//         border-right: 0px !important;
-//         border-top: 0px !important;
-//         border-left: 0px !important;
-// }
-// [col-4].col-right-down{
-//         border-right: 0px !important;
-//         border-bottom: 0px !important;
-//           border-left: 0px !important;
-//           border-top: 0px !important;
-// }
-
-  .item-ios.activated{
-    background-color: transparent;
-    opacity: 0.5 !important;
-
-  }
-  .item-inner{
-    border-bottom: 0px !important;
-  }
-  .item-block{
-    background-color: transparent !important;
-    text-align: center;
-  }
-
-
+      }
+      .item-inner{
+      border-bottom: 0px !important;
+      }
+      .item-block{
+      background-color: transparent !important;
+      text-align: center;
+      }
 
 }

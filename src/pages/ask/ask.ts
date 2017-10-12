@@ -47,22 +47,27 @@ export class AskPage {
   }
 
   send(){
-var answers:any[]=[];
-for (var _i = 0; _i < this.rspas.length; _i++) {
-  // let answer: eerspas={rev_cont:0,asi_codi:"0",enc_cont:0,den_cont:0};
-  let answer:any = {'rev_cont': `${this.event.rev_cont}`,  'asi_codi':`${this.asi_codi}`,'enc_cont':`${Number(_i +1)}`,'den_cont':`${Number(this.rspas[_i])}`,'cab_cont':`${this.questions[0].cab_cont}`};
-  answers.push(answer);
-}
+          let loading = this.loadingCtrl.create({
+          content:'Enviando...'
+          });
+          loading.present();
+          var answers:any[]=[];
+          for (var _i = 0; _i < this.rspas.length; _i++) {
+          // let answer: eerspas={rev_cont:0,asi_codi:"0",enc_cont:0,den_cont:0};
+          let answer:any = {'rev_cont': `${this.event.rev_cont}`,  'asi_codi':`${this.asi_codi}`,'enc_cont':`${Number(_i +1)}`,'den_cont':`${Number(this.rspas[_i])}`,'cab_cont':`${this.questions[0].cab_cont}`};
+          answers.push(answer);
+          }
 
-this.seven.setEeRspas(answers).then(resp=>{
- if(resp.retorno==1){
-     this.showToast(resp.txtError);
-     return;
- }
- this.showToast("Gracias!");
-}).catch(err=>{
-  this.showToast(err);
-})
+          this.seven.setEeRspas(answers).then(resp=>{
+          loading.dismiss();
+          if(resp.retorno==1){
+          this.showToast(resp.txtError);
+          return;
+          }
+          this.showToast("Gracias!");
+          }).catch(err=>{
+          this.showToast(err);
+          })
   }
 
   showConfirm(title:string,msg:string){

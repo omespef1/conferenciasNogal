@@ -1,6 +1,9 @@
 page-schedule-details {
+  ion-footer{
+    background-color: color($colors,primarydw);
+  }
   .content-ios {
-      background-color: whitesmoke !important;
+    //  background-color: whitesmoke !important;
 
   }
   .element{
