@@ -32,16 +32,16 @@
               Agenda
             </div>
             </ion-col>
-            <ion-col col-4 text-center>
-                  <button  ion-button clear color="fourthdw"  (click)="goPonents()">
+            <ion-col col-4 text-center  (click)="goPonents()">
+                  <button  ion-button clear color="fourthdw" >
                   <i class="fa fa-user fa-3x" aria-hidden="true"></i>
                   </button>
                   <div class="menuTitle">
                     Speakers
                   </div>
             </ion-col>
-            <ion-col col-4 text-center>
-                <button  ion-button clear color="fourthdw" (click)="goLocation()">
+            <ion-col col-4 text-center (click)="goLocation()">
+                <button  ion-button clear color="fourthdw" >
                 <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i>
                 </button>
                 <div class="menuTitle">
@@ -50,24 +50,24 @@
             </ion-col>
           </ion-row>
           <ion-row>
-              <ion-col col-4 text-center>
-                  <button  ion-button clear color="fourthdw"  (click)="goSponsors()">
+              <ion-col col-4 text-center (click)="goSponsors()">
+                  <button  ion-button clear color="fourthdw">
                       <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
               </button>
               <div class="menuTitle">
               Sponsors
               </div>
             </ion-col>
-            <ion-col col-4 text-center *ngIf="loggued">
-              <button  ion-button clear color="fourthdw" (click)="goChat()">
+            <ion-col col-4 text-center *ngIf="loggued" (click)="goChat()">
+              <button  ion-button clear color="fourthdw" >
             <i class="fa fa-weixin fa-3x" aria-hidden="true"></i>
             </button>
             <div class="menuTitle">
             Chat
             </div>
             </ion-col>
-              <ion-col col-4 *ngIf="loggued" text-center>
-                <button  ion-button clear color="fourthdw" (click)="goEncuesta()">
+              <ion-col col-4 *ngIf="loggued" text-center (click)="goEncuesta()">
+                <button  ion-button clear color="fourthdw" >
                 <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
             </button>
             <div class="menuTitle">

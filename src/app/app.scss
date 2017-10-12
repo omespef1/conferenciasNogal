@@ -1,4 +1,9 @@
 // http://ionicframework.com/docs/v2/theming/
+ion-toolbar{
+  padding-top: 0px !important;
+  min-height: 44px !important;
+  height: 44px !important;
+}
 p{
   font-family: OpenSans-Light;
   text-align: justify;
@@ -66,6 +71,8 @@ ion-title{
   font-family: Handlee;
   font-weight: 400 !important;
   text-align: center;
+  padding-top: 0px !important;
+  min-height: 5px;
 }
 
 
