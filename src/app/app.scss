@@ -36,21 +36,24 @@ background-color: color($colors,secondarydw);
 }
 ion-menu{
   .item-block{
-    border-bottom: 1px solid lightgray !important;
+    border-bottom: 1px solid !important;
+    border-color: color($colors,fourthdw) !important;
   }
   ion-label{
-      color:gray !important;
+      color:color($colors,fourthdw) !important;
   }
   ion-icon {
     margin-right: 15px !important;
   }
-
+p{
+  color:color($colors,fourthdw) !important;
+}
 }
 .login-box {
  padding:0;
  margin-top: 0px;
  background-color: color($colors,secondarydw);
- border-radius: 10px;
+ //border-radius: 10px;
 }
 
 .submit-btn {
@@ -71,10 +74,7 @@ ion-title{
   font-weight: 400 !important;
   text-align: center;
 }
-h1,h2{
-  font-family: handlee;
-  color:color($colors,fourthdw);
-}
+
 body{
   font-size: 1.7rem;
 }
@@ -130,25 +130,17 @@ font-family: OpenSans-Light;
 
 ion-content {
 //background-image: url('../assets/fondodigital3.jpg');
-background-color:whitesmoke !important;
+background-color:color($colors,primarydw) !important;
 }
-.dw-footer{
-  font-family: ptSans;
-  width: 100%;
+.footer{
+  p{
+  font-size: 0.8rem;
+  font-family: OpenSans;
+  color:color($colors,fourthdw);
   text-align: center;
-  //opacity: 0.5;
-  font-size: 6pt;
-  background-color: white;
-  .copyright{
-
-    img{
-  height: 20px;
-  width: 60px;
-  text-align: right;
-
-    }
-  }
-
+  margin-top: 1px;
+  margin-bottom: 0px;
+}
 }
 .faGreen {
    color: #28a54c;
@@ -179,3 +171,54 @@ ion-footer{
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-footer{
+border-top: 0px;
+}
+.footer{
+  .img{
+    //margin-bottom: 5px;
+        text-align: center;
+        //margin-top: 5px;
+    img{
+      width: 24%;
+      height: 24%;
+    }
+  }
+}
+.login-content {
+  .logo{
+    min-width: 250px;
+  }
+  ion-icon {
+      display: inline-block;
+      font-size: 1.8em;
+  }
+  ion-row {
+     align-items: center;
+     text-align: center;
+   }
+
+   ion-item {
+       border-radius: 10px !important;
+       padding-left: 10px !important;
+       font-size: 0.9em;
+       margin-bottom: 10px;
+       border: 1px solid #ffffff;
+       border-bottom: 0px !important;
+       box-shadow: none !important;
+   }
+
+   .signup-col {
+     margin: 0px 16px 0px 16px;
+     padding-bottom: 20px;
+   }
+
+   .item-inner {
+     border-bottom-color: #ffffff !important;
+     box-shadow: none !important;
+   }
+
+   button[disabled], [ion-button][disabled] {
+       opacity: 0.8 !important;
+   }
+}

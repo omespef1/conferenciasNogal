@@ -7,11 +7,6 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <!-- <div class="logoSeven">
-      <div class="logoSevenApp">
-      <img src="assets/digital.png">
-    </div>
-    </div> -->
     <ion-item class="no-lines" no-lines>
        <ion-avatar item-start>
        <img src="assets/user.jpg">
@@ -28,7 +23,7 @@
        Menú
      </ion-item-divider>
       <button  *ngFor="let menu of pages" ion-item (click)="abrirPagina(menu)">
-        <ion-icon name='{{menu.icon}}' color="primarydw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
+        <ion-icon name='{{menu.icon}}' color="fourthdw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
 
@@ -55,13 +50,22 @@
        Menú
      </ion-item-divider>
       <button  *ngFor="let menu of pagesOut" ion-item (click)="abrirPagina(menu)">
-        <ion-icon name='{{menu.icon}}' color="primarydw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
+        <ion-icon name='{{menu.icon}}' color="fourthdw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
 
   </ion-content>
 </ion-menu>
 <ion-footer>
+  <div class="footer">
+    <div class="img">
+  <img src="assets/logooscuro.png"><br>
+  <p>SEVEN ERP©1992-2017 Digital Ware</p>
+    <p>Versión 17.10.01.01</p>
+</div>
+
+
+</div>
   <!-- <div class="dw-footer">
     <div class="copyright">
         <img src="assets/digital.png">

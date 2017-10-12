@@ -1,7 +1,13 @@
 page-ponente-detalle {
-
+h1,h2{
+  font-family: handlee;
+  color:color($colors,fourthdw);
+}
   ion-content{
- background-color: whitesmoke !important;
+    p {
+      color: color($colors,fourthdw);
+    }
+// background-color: whitesmoke !important;
   }
 .rating{
   background-color: transparent !important;
@@ -21,28 +27,28 @@ img {
       border-radius: 50%;
       border: 5px solid white;
 }
-h2{
-margin-top: 0px;
-font-size: 2.4rem;
-margin-bottom: 0;
-font-weight: bold;
-color:color($colors,fourthdw) !important;
-}
+// h2{
+// margin-top: 0px;
+// font-size: 2.4rem;
+// margin-bottom: 0;
+// font-weight: bold;
+// color:color($colors,fourthdw) !important;
+// }
 
 }
-.container {
-  overflow: scroll;
-  .input-wrapper{
-    text-align: center;
-  }
-}
+// .container {
+//   overflow: scroll;
+//   .input-wrapper{
+//     text-align: center;
+//   }
+// }
 ul {
   padding: 0px;
 
   &.rating li {
     padding: 5px 10px !important;
     background: none;
-    color: color($colors,primarydw) !important;
+    color: color($colors,fourthdw) !important;
     ion-icon {
       font-size: 40px;
     }

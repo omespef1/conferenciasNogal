@@ -1,10 +1,11 @@
 page-chat {
+
 	.innerMessage {
 		display: inline-block;
 		padding: 5px 10px;
-		background-color: color($colors,primarydw);
+		background-color: color($colors,fourthdw);
 		margin: 5px;
-		color: color($colors,fourthdw);
+		color: color($colors,thirddw);
 		border-radius: 3px;
 		min-width: 200px;
 
@@ -40,7 +41,7 @@ page-chat {
 	    display: flex;
 	    flex-direction: row;
 	    align-items: stretch;
-			height: 40px;
+			height: 60px;
 	}
 
 	ion-input{

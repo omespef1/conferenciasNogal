@@ -19,11 +19,7 @@
   <!-- <ion-item-divider>
     <p class="titulo">Patrocinadores</p>
   </ion-item-divider> -->
-  <div class="marquee-content">
-    <marquee style="width:100%;height:55px;" scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
-       <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
-    </marquee>
-  </div>
+
 
 
 <!-- <div class="mar-border-up"> -->
@@ -35,13 +31,12 @@
 
 </ion-header>
 
-<ion-content class="card-background-page">
-  <ion-item-divider>
-    <p class="titulo"> Menú del evento</p>
-  </ion-item-divider>
+<ion-content class="card-background-page" padding>
+
   <ion-grid>
           <ion-row text-center>
             <ion-col col-4 class="menuOption-light">
+              <div class="menuButton">
               <div class="menuImage">
               <button ion-item detail-none (click)="goAgenda()">
                 <div>
@@ -53,8 +48,10 @@
           <div class="menuTitle">
               <label class="menu">Agenda</label>
           </div>
+        </div>
             </ion-col>
             <ion-col col-4 class="menuOption-light">
+                <div class="menuButton">
                 <div class="menuImage">
                   <button ion-item detail-none  (click)="goPonents()">
                     <div>
@@ -66,9 +63,10 @@
                 <div class="menuTitle">
                   <label class="menu">Speakers</label>
                 </div>
-
+</div>
             </ion-col>
             <ion-col col-4 class="menuOption-light">
+                <div class="menuButton">
               <div class="menuImage">
               <button ion-item detail-none (click)="goLocation()">
                 <div>
@@ -80,10 +78,12 @@
       <div class="menuTitle">
           <label class="menu">Ubicación</label>
       </div>
+    </div>
             </ion-col>
           </ion-row>
           <ion-row text-center>
               <ion-col col-4 class="menuOption-light">
+                  <div class="menuButton">
                 <div class="menuImage">
                   <button ion-item detail-none (click)="goSponsors()">
                         <div>
@@ -94,9 +94,10 @@
                 <div class="menuTitle">
                     <label class="menu">Patrocinadores</label>
                 </div>
-
+</div>
             </ion-col>
             <ion-col col-4 class="menuOption-light" *ngIf="loggued">
+                <div class="menuButton">
   <div class="menuImage">
               <button ion-item detail-none (click)="goChat()">
                 <div>
@@ -109,8 +110,10 @@
           <div class="menuTitle">
               <label class="menu">Chat</label>
           </div>
+        </div>
             </ion-col>
               <ion-col col-4 *ngIf="loggued" class="menuOption-light">
+                  <div class="menuButton">
                 <div class="menuImage">
                 <button ion-item detail-none (click)="goEncuesta()">
                 <div>
@@ -121,17 +124,21 @@
             <div class="menuTitle">
                 <label class="menu">Encuesta</label>
             </div>
+          </div>
             </ion-col>
             </ion-row>
         </ion-grid>
 
 
 
-<div padding>
-  <p text-justify>
-        {{thisEvent.rev_obse}}
-</p>
 
-</div>
+          <p text-justify>
+                {{thisEvent.rev_obse}}
+        </p>
+        <div class="marquee-content">
+          <marquee style="width:100%;height:55px;" scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
+             <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
+          </marquee>
+        </div>
 
 </ion-content>

@@ -1,6 +1,9 @@
 page-event-details{
+  p{
+    color:color($colors,fourthdw) !important;
+  }
   ion-content {
-    background-color: whitesmoke !important;
+    background-color: color($colors,primarydw) !important;
   }
 
 .grid{
@@ -41,7 +44,7 @@ ion-item-divider{
     }
   }
 marquee{
-background-color: color($colors,primarydw);
+background-color: color($colors,fourthdw);
 border-radius: 20px;
     margin-bottom: -4px;
     img{
@@ -53,26 +56,28 @@ border-radius: 20px;
 
   }
 
-[col-4]{
-  border:2px solid white;
-}
+
 [col-4].menuOption-light {
-  background-color: color($colors,primarydw);
-  height: 70%;
-  padding: 0px;
-  border-radius: 10px;
-  .menuImage{
-    i{
-      color:color($colors,fourthdw);
+  .menuButton{
+    background-color: color($colors,primarydw);
+    height: 70%;
+    padding: 0px;
+    border-radius: 10px;
+    .menuImage{
+      i{
+        color:color($colors,fourthdw);
+      }
+    }
+    .menuTitle{
+      background-color: color($colors,fourthdw);
+      height: 30%;
+      color:color($colors,thirddw);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
-  .menuTitle{
-    background-color: color($colors,thirddw);
-    height: 30%;
-    color:white !important;
-    border-bottom-left-radius: 10px;
-border-bottom-right-radius: 10px;
-  }
+
+
 }
 [col-4].menuOption-dark {
   background-color: color($colors, secondarydw);
@@ -90,9 +95,11 @@ border-bottom-right-radius: 10px;
     color:color($colors,fourthdw) !important;
   }
 }
-
+.menu{
+  font-weight: bold;
+}
 .marquee-content {
-  background-color: color($colors,thirddw);
+  background-color: color($colors,fourthdw);
 }
 // [col-4].col-left-up{
 //     border-left: 0px !important;
