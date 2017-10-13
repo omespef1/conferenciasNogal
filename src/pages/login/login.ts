@@ -107,17 +107,17 @@ export class LoginPage {
      this.keychainTouchId.has("passwordCodeAssistant").then(()=>{
        this.keychainTouchId.verify("passwordCodeAssistant","Ingrese su huella dactilar para ingresar").then(pass=>{
           this.login.password = pass;
-          if(this.platform.is("ios")){
-          this.keychain.get("username").then(user=>{
-            this.login.username =user;
-             this.validUser();
-          })}
-          if(this.platform.is("android")){
+          // if(this.platform.is("ios")){
+          // this.keychain.get("username").then(user=>{
+          //   this.login.username =user;
+          //    this.validUser();
+          // })}
+        
             this.secureObject.get("username").then(data=>{
               this.login.username = data;
                this.validUser();
             })
-          }
+
        })
      }
    ).catch(err=>{
@@ -128,11 +128,11 @@ export class LoginPage {
 
  setTouchIdAccess(){
    try{
-     if(this.platform.is("ios"))
-     this.keychain.set("username",this.login.username,false);
-     if (this.platform.is("android"))
+     //if(this.platform.is("ios"))
+    // this.keychain.set("username",this.login.username,false);
+     if (this.platform.is("cordova"))
      this.secureObject.set("username",this.login.username).then(()=>{
-       console.log("key android guardada");
+       console.log("key username guardada");
      })
      this.keychainTouchId.save("passwordCodeAssistant",this.login.password);
    }
@@ -161,7 +161,7 @@ export class LoginPage {
         ]
       });
 
-        if(this.platform.is("cordova") && (this.platform.is("ios") && this.platform.is("android")) ){
+        if(this.platform.is("cordova") ){
               this.keychainTouchId.has("passwordCodeAssistant").catch(err=>{
                 this.keychainTouchId.isAvailable().then(()=>{
                     confirm.present();
