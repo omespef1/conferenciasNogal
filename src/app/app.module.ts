@@ -36,6 +36,7 @@ import { BrowserTab } from '@ionic-native/browser-tab';
 import { ColorsPipe } from '../pipes/colors/colors';
 import { KeychainTouchId } from '@ionic-native/keychain-touch-id';
 import { Keychain } from '@ionic-native/keychain';
+import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
 enableProdMode();
 var config = {
     apiKey: "AIzaSyCprGg7FOPeoUN849WGOPAegmX5IIEDsKM",
@@ -110,7 +111,8 @@ var config = {
     InAppBrowser,
     BrowserTab,
     Keychain,
-    KeychainTouchId
+    KeychainTouchId,
+    SecureStorage
   ]
 })
 export class AppModule {}

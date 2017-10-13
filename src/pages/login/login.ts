@@ -8,6 +8,7 @@ import  {asise} from '../../shared/models';
 import {UserDataProvider} from '../../providers/user-data/user-data';
 import { KeychainTouchId } from '@ionic-native/keychain-touch-id';
 import { Keychain } from '@ionic-native/keychain';
+import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
 /**
  * Generated class for the LoginPage page.
  *
@@ -23,6 +24,7 @@ export class LoginPage {
   login: any = { username: '', password: '' };
   message:string="";
   returnedAsise:asise;
+  private secureObject: SecureStorageObject;
 
   public rutaImg:string;
   constructor(public navCtrl: NavController,
@@ -33,9 +35,21 @@ export class LoginPage {
     private keychainTouchId: KeychainTouchId,
     private keychain: Keychain,
     private platform:Platform,
-    private toast:ToastController
+    private toast:ToastController,
+    private secureStorage: SecureStorage
   )
   {
+    this.platform.ready().then(()=>{
+      this.createSecureStorage();
+
+    })
+  }
+  createSecureStorage(){
+    if(this.platform.is("cordova")){
+    this.secureStorage.create('Secure_storage').then((secure:SecureStorageObject)=>{
+      this.secureObject= secure;
+    })
+  }
   }
   ionViewDidLoad() {
     this.rutaImg = "assets/icon/seven.png";
@@ -89,14 +103,20 @@ export class LoginPage {
     alert.present();
   }
  getAccessTouchId(){
-   if(this.platform.is("ios")){
+   if(this.platform.is("cordova")){
      this.keychainTouchId.has("passwordCodeAssistant").then(()=>{
        this.keychainTouchId.verify("passwordCodeAssistant","Ingrese su huella dactilar para ingresar").then(pass=>{
           this.login.password = pass;
+          if(this.platform.is("ios")){
           this.keychain.get("username").then(user=>{
             this.login.username =user;
              this.validUser();
-          })
+          })}
+          if(this.platform.is("android")){
+            this.secureObject.get("username").then(data=>{
+              this.login.username = data;
+            })
+          }
        })
      }
    ).catch(err=>{
@@ -107,7 +127,12 @@ export class LoginPage {
 
  setTouchIdAccess(){
    try{
+     if(this.platform.is("ios"))
      this.keychain.set("username",this.login.username,false);
+     if (this.platform.is("android"))
+     this.secureObject.set("username",this.login.username).then(()=>{
+       console.log("key android guardada");
+     })
      this.keychainTouchId.save("passwordCodeAssistant",this.login.password);
    }
    catch(ex){
@@ -135,7 +160,7 @@ export class LoginPage {
         ]
       });
 
-        if(this.platform.is("ios") && this.platform.is("cordova") ){
+        if(this.platform.is("cordova") && (this.platform.is("ios") && this.platform.is("android")) ){
               this.keychainTouchId.has("passwordCodeAssistant").catch(err=>{
                 this.keychainTouchId.isAvailable().then(()=>{
                     confirm.present();
