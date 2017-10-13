@@ -3,7 +3,7 @@ page-sponsors {
     background-color: color($colors,primarydw);
   }
   ion-content{
-  //  background-color: whitesmoke !important;
+  background-color: color($colors,primarydw) !important;
   }
   ion-avatar{
     img{

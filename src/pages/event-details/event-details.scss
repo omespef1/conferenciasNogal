@@ -17,6 +17,7 @@ page-event-details{
       }
 
       marquee{
+      margin:5px 5px 0px 5px;
       height: 55px;
       width: 100%;
       background-color: color($colors,fourthdw);
@@ -54,5 +55,15 @@ page-event-details{
       background-color: transparent !important;
       text-align: center;
       }
+    .profile-media{
+      img{
+        margin:5px;
+        max-width: 90% !important;
+        // max-height: 50%;
+        border-radius: 10%;
+        border: 5px solid;
+        border-color: color($colors,primarydw);
+      }
+    }
 
 }

@@ -6,9 +6,14 @@
 -->
 
 <ion-header>
-  <ion-navbar color="primarydw">
+  <!-- <ion-navbar color="primarydw">
     <ion-title>{{thisEvent.rev_desc}} </ion-title>
-  </ion-navbar>
+  </ion-navbar> -->
+
+</ion-header>
+
+<ion-content>
+
   <ion-grid no-padding>
     <ion-row>
       <ion-col col-12 text-center>
@@ -18,10 +23,15 @@
       </ion-col>
 
     </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <marquee  scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
+           <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
+        </marquee>
+      </ion-col>
+    </ion-row>
   </ion-grid>
-</ion-header>
 
-<ion-content padding>
   <ion-grid>
           <ion-row>
             <ion-col col-4 text-center (click)="goAgenda()">
@@ -81,9 +91,7 @@
                       {{thisEvent.rev_obse}}
               </p>
 
-                <marquee  scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
-                   <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
-                </marquee>
+
               </ion-col>
             </ion-row>
         </ion-grid>
