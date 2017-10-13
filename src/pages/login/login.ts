@@ -115,6 +115,7 @@ export class LoginPage {
           if(this.platform.is("android")){
             this.secureObject.get("username").then(data=>{
               this.login.username = data;
+               this.validUser();
             })
           }
        })
