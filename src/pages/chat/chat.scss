@@ -65,6 +65,8 @@ page-chat {
 	.messageRight {
 		float: right;
 		font-size: 15pt;
+		background-color: color($colors,primary);
+		color:white;
 	}
 
 	.message.special .innerMessage .messageContent{

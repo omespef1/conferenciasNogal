@@ -57,11 +57,11 @@ page-event-details{
       }
     .profile-media{
       img{
-        margin:5px;
-        max-width: 90% !important;
+        margin:0px;
+        max-width: 100% !important;
         // max-height: 50%;
-        border-radius: 10%;
-        border: 5px solid;
+        border-radius: 0% !important;
+        border: 0px solid !important;
         border-color: color($colors,primarydw);
       }
     }

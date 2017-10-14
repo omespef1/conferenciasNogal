@@ -42,6 +42,7 @@ export class AskPage {
     loading.present();
     this.userdata.getDataAsk(this.event.rev_cont).then(data=>{
     this.questions= data;
+    console.log(data);
     loading.dismiss();
     })
   }

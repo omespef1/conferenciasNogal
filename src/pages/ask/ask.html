@@ -36,7 +36,7 @@
       </div>
     </ion-list>
     </ion-item-group>
-  <button class="enviar" ion-button block color="secondarydw"  (click)="send()">Enviar
+  <button *ngIf="rspas" class="enviar" ion-button block color="secondarydw"  (click)="send()">Enviar
 <ion-icon name="ios-send"></ion-icon>
   </button>
 </ion-content>

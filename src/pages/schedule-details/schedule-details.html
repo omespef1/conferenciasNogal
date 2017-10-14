@@ -14,12 +14,21 @@
 
 
 <ion-content padding>
-  <p>  <ion-icon start color="primarydw" name='md-calendar' item-start></ion-icon>
-     {{session.age_fech}}</p>
-  <p>    <ion-icon start color="primarydw" name='ios-clock' item-start></ion-icon>
-      {{session.age_hori}} - {{session.age_horf}}</p>
-<p> <ion-icon start color="primarydw" name='ios-locate' item-start></ion-icon>{{session.age_luga}}</p>
-  <p>  Descripción:{{session.age_acti}}</p>
+  <ion-list>
+    <ion-item>
+      <ion-icon start color="primarydw" name='md-calendar' item-start></ion-icon>
+
+           {{session.age_fech}}
+    </ion-item>
+    <ion-item>
+      <ion-icon start color="primarydw" name='ios-clock' item-start></ion-icon>
+        {{session.age_hori}} - {{session.age_horf}}
+    </ion-item>
+    <ion-item>
+      <ion-icon start color="primarydw" name='ios-locate' item-start></ion-icon>{{session.age_luga}}
+     Descripción:{{session.age_acti}}
+    </ion-item>
+  </ion-list>
 </ion-content>
 <ion-footer>
   <div class="footer">
