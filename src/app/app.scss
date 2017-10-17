@@ -1,5 +1,9 @@
 // http://ionicframework.com/docs/v2/theming/
+.item-ios.activated{
+background-color: transparent;
+opacity: 0.5 !important;
 
+}
 p{
   font-family: OpenSans-Light;
   text-align: justify;
@@ -66,7 +70,6 @@ text-decoration: underline;
 ion-title{
   font-family: Handlee;
   font-weight: 400 !important;
-  text-align: center;
 }
 
 .element {
@@ -83,12 +86,17 @@ font-family: OpenSans-Light;
 }
 .toolbar-title-md {
   overflow: visible;
-    padding: 0 12px;
+    padding: 0px;
   //  font-size: 3rem;
     color: #424242;
     font-weight: 400;
 }
+.toolbar-md {
+    padding: 4px;
+    min-height: 44px;
+}
 .toolbar-title-ios {
+  text-align: center;
     overflow: visible;
     padding: 0 12px;
     //font-size: 3rem;
@@ -124,6 +132,7 @@ background-color:color($colors,primarydw) !important;
 
 ion-footer{
 border-top: 0px;
+border-bottom: 2px solid color($colors,secondarydw);
 }
 .footer{
   .img{

@@ -1,12 +1,9 @@
 page-schedule-details {
+  p{
+    color:color($colors,fourthdw);
+  }
   ion-footer{
     background-color: color($colors,primarydw);
   }
-  .content-ios {
-    //  background-color: whitesmoke !important;
 
-  }
-  .element{
-    min-width: 100%;
-  }
 }

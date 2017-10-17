@@ -68,7 +68,7 @@ export class ChatPage {
       //  this.hasLogOutChat();
     }
     scrollToBottom() {
-    this.content.scrollToBottom(300);
+     this.scrollToBottom();
 
   }
 

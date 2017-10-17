@@ -40,6 +40,8 @@ public listEvents :eerevet[]=[];
     this.userdata.getDataCalendar().then((data)=>{
     this.listEvents = data;
     load.dismiss();
+    }).catch(err=>{
+        this.showMessage(err);
     })
   }
   goDetails (event:eerevet){
@@ -50,6 +52,9 @@ public listEvents :eerevet[]=[];
     this.userdata.getDataCalendar(true).then(data=>{
         this.listEvents = data;
         refresher.complete();
+        this.showMessage("La lista de eventos disponibles ha sido actualiada!");
+    }).catch(err=>{
+        this.showMessage(err);
     })
     }
     showMessage(msg:string){

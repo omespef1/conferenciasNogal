@@ -44,8 +44,8 @@ export class SchedulePage {
   doRefresh(refresher: Refresher) {
         this.userdata.getDataAgend(this.event.rev_cont,true).then(data=>{
         this.schedules = data;
-        refresher.complete();
         this.showMessage("La agenda ha sido actualizada!");
+        refresher.complete();
         });
 
     }
