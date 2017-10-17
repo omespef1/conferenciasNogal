@@ -23,12 +23,12 @@
     <ion-label>{{event.rev_desc}}</ion-label>
     </div>
 
-  <ion-card button (click)="goDetails(event)">
+  <button tappable (click)="goDetails(event)">
     <!-- <img src="assets/icon/card-saopaolo.png"/> -->
    <img [src]="'data:image/jpg;base64,'+event.rev_foto | image" />
     <!-- <div class="card-title">{{event.rev_desc}}</div>
     <div class="card-subtitle">{{event.rev_luga}}</div> -->
-  </ion-card>
+  </button>
 
 </div>
 </ion-content>

@@ -1,6 +1,12 @@
 
 
 page-event-details{
+  .label-ios {
+      margin: 5px 8px 5px 0;
+  }
+  .label-md {
+      margin: 5px 8px 5px 0;
+  }
   ion-footer{
     background-color: color($colors,primarydw);
   }
@@ -20,7 +26,7 @@ page-event-details{
       margin:5px 5px 0px 5px;
       height: 55px;
       width: 100%;
-      background-color: color($colors,fourthdw);
+      background-color: color($colors,secondarydw);
       border-radius: 20px;
       img{
       height:55px;

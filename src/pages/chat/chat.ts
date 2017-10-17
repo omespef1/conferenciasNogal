@@ -44,8 +44,8 @@ export class ChatPage {
       }).catch( () => {
         // some error. maybe firebase is unreachable
       });
-    this.scrollToBottom();
     this.message="";
+    this.scrollToBottom();
     }
   }
 
@@ -53,22 +53,18 @@ export class ChatPage {
   this.loadInfo();
     }
     loadInfo(){
-      let loading = this.load.create({
-        'content':'Cargando chats'
-      })
-      loading.present();
       this.userdata.getUserInfo().then(nomb=>{
        this.username = nomb;
       //   this.hasLogginChat();
          this.loadMessagues();
-         loading.dismiss();
+         this.scrollToBottom();
      })
     }
     ionViewWillLeave(){
       //  this.hasLogOutChat();
     }
     scrollToBottom() {
-     this.scrollToBottom();
+    this.scrollToBottom();
 
   }
 
@@ -79,7 +75,6 @@ export class ChatPage {
       rev_cont: this.ee_revet.rev_cont,
       time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
     });
-    this.scrollToBottom();
   }
   hasLogOutChat(){
     this._chatSubscription.unsubscribe();
@@ -91,16 +86,18 @@ export class ChatPage {
     });
   }
   loadMessagues(){
+    let loading = this.load.create({
+      'content':'Cargando chats'
+    })
+    loading.present();
     this._chatSubscription = this.db.list('/ee_chats',{
       query:{
         orderByChild:'rev_cont',
         equalTo:this.ee_revet.rev_cont
       }
     }).subscribe( data => {
+      loading.dismiss();
      this.messages = data;
-
-      this.scrollToBottom();
-
     });
 
   }

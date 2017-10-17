@@ -22,12 +22,14 @@
           {{activity.age_hori}}
         </p>
       </ion-item-divider>
-      <ion-item tappable (click)="openSchedule(activity)">
+      <ion-item-sliding (click)="openSchedule(activity)">
+        <button ion-item>
           <p class="titulo">  {{activity.age_acti}}</p>
           <p class="texto">
            Hasta las {{activity.age_horf}}
           </p>
-      </ion-item>
+        </button>
+      </ion-item-sliding>
       <ion-item-sliding  [hidden] ="activity.ter_codi==0" (click)="openSpeaker(activity)">
         <button ion-item class="itemSpeaker">
         <ion-avatar item-start>

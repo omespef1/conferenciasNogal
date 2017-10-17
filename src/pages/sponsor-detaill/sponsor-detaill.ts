@@ -27,13 +27,13 @@ export class SponsorDetaillPage {
   ionViewDidLoad() {
   }
  openUrl(url:string){
-
+ console.log(url);
    this.browserTab.isAvailable()
     .then((isAvailable: boolean) => {
       if (isAvailable) {
         this.browserTab.openUrl(url);
       } else {
-      
+
       }
 
  })
