@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.nogalevents95050104568" version="17.10.02.01" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.digitalware.com.co.NogalEventos" version="17.10.02.01" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Nogal eventos</name>
     <description>App para conocer todo sobre los eventos organizados por el club el nogal. Agenda,actividades,conferencistas,calificaciones, chat entre socios y mucho más!</description>
     <author email="omarp@digitalware.com.co" href="http://digitalware.com.co">Digital Ware S.A</author>
