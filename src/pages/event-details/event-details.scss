@@ -1,9 +1,11 @@
 
 
 page-event-details{
+
   .label-ios {
       margin: 5px 8px 5px 0;
   }
+
   .label-md {
       margin: 5px 8px 5px 0;
   }
@@ -30,17 +32,18 @@ page-event-details{
       border-radius: 20px;
       img{
       height:55px;
-      width:auto;
+      width:auto !important;
       animation: marquee 20s linear infinite;
       //   border-right: 1px solid color($colors,primarydw);
       }
       }
       .menuTitle{
-      background-color: color($colors,fourthdw);
-      color:color($colors,thirddw);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
+    //  background-color: color($colors,fourthdw);
+      color:color($colors,fourthdw);
+    //  border-bottom-left-radius: 10px;
+  //    border-bottom-right-radius: 10px;
       font-weight: bold;
+      margin-top: -35px;
       }
       .menu{
       font-weight: bold;
@@ -71,5 +74,34 @@ page-event-details{
         border-color: color($colors,primarydw);
       }
     }
-
+    .logo-agenda {
+    background: url(../assets/agenda.svg) no-repeat top left;
+    background-size: contain;
+    font-size: 4rem;
+}
+.logo-speaker {
+background: url(../assets/speaker.svg) no-repeat top left;
+background-size: contain;
+font-size: 4rem;
+}
+.logo-chat {
+background: url(../assets/chat.svg) no-repeat top left;
+background-size: contain;
+font-size: 4rem;
+}
+.logo-encuesta {
+background: url(../assets/encuesta.svg) no-repeat top left;
+background-size: contain;
+font-size: 4rem;
+}
+.logo-localizacion {
+background: url(../assets/localizacion.svg) no-repeat top left;
+background-size: contain;
+font-size: 4rem;
+}
+.logo-patrocinador {
+background: url(../assets/patrocinador.svg) no-repeat top left;
+background-size: contain;
+font-size: 4rem;
+}
 }

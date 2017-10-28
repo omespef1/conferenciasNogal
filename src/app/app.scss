@@ -13,14 +13,21 @@ p{
 }
 .titulo{
   font-family: OpenSans;
+  color:black !important;
+}
+.titulo-claro{
+  font-family: OpenSans;
+  //color:black !important;
 }
 .texto{
 font-family:  OpenSans-Light;
 }
 .dividerOption{
-    background-color: color($colors,primarydw) !important;
+    background-color: color($colors,secondarydw) !important;
+    font-weight: bold;
   p{
       color:color($colors,fourthdw) !important;
+      font-size: 1.8rem !important;
   }
 
 
@@ -109,7 +116,7 @@ font-family: OpenSans-Light;
   text-align: center;
     overflow: visible;
     padding: 0 12px;
-    //font-size: 3rem;
+    font-size: 2.5rem;
     color: #424242;
     font-weight: 400;
 }

@@ -24,7 +24,7 @@
     <ion-grid no-padding>
       <ion-row>
         <ion-item-divider>
-          <p class="titulo">
+          <p class="titulo-claro">
           Patrocinadores del evento
         </p>
         </ion-item-divider>
@@ -39,34 +39,27 @@
   </ion-grid>
 
   <ion-grid>
-    <ion-row>
-      <ion-item-divider>
-        <p class="titulo">
-            Menú
-        </p>
-
-      </ion-item-divider>
-    </ion-row>
+    
           <ion-row>
             <ion-col col-4 text-center (click)="goAgenda()">
-            <button ion-button clear color="fourthdw">
-            <i class="fa fa-book fa-3x" aria-hidden="true"></i>
+            <button ion-button clear  class="logo-agenda">
+
             </button>
             <div class="menuTitle">
               Agenda
             </div>
             </ion-col>
             <ion-col col-4 text-center  (click)="goPonents()">
-                  <button  ion-button clear color="fourthdw" >
-                  <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                  <button  ion-button clear class="logo-speaker">
+                  <!-- <i class="fa fa-user fa-3x" aria-hidden="true"></i> -->
                   </button>
                   <div class="menuTitle">
                     Speakers
                   </div>
             </ion-col>
             <ion-col col-4 text-center (click)="goLocation()">
-                <button  ion-button clear color="fourthdw" >
-                <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i>
+                <button  ion-button clear class="logo-localizacion">
+                <!-- <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i> -->
                 </button>
                 <div class="menuTitle">
                 Ubicación
@@ -75,24 +68,24 @@
           </ion-row>
           <ion-row>
               <ion-col col-4 text-center (click)="goSponsors()">
-                  <button  ion-button clear color="fourthdw">
-                      <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
+                  <button  ion-button clear class="logo-patrocinador">
+                      <!-- <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i> -->
               </button>
               <div class="menuTitle">
               Sponsors
               </div>
             </ion-col>
             <ion-col col-4 text-center *ngIf="loggued" (click)="goChat()">
-              <button  ion-button clear color="fourthdw" >
-            <i class="fa fa-weixin fa-3x" aria-hidden="true"></i>
+              <button  ion-button clear class="logo-chat">
+            <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
             </button>
             <div class="menuTitle">
             Chat
             </div>
             </ion-col>
               <ion-col col-4 *ngIf="loggued" text-center (click)="goEncuesta()">
-                <button  ion-button clear color="fourthdw" >
-                <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>
+                <button  ion-button clear class="logo-encuesta">
+                <!-- <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i> -->
             </button>
             <div class="menuTitle">
               Encuesta
