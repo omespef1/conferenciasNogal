@@ -54,7 +54,7 @@ this.pagesOut = [
   new page('Registro','ios-key',false,RegisterPage,true),
   new page('Chat de eventos','chatboxes',false,LoginPage,true),
   new page('Encuestas','md-help',false,LoginPage,true),
-  new page ('Patrocinadores', 'person',false,SponsorsPage,true)
+  new page ('Patrocinadores', 'person',false,LoginPage,true)
 ]
     });
 
