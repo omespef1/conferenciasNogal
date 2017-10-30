@@ -1,11 +1,19 @@
 page-ask {
   ion-footer{
-    background-color: color($colors,primarydw);
+  //  background-color: color($colors,primarydw);
+  }
+  .content-ios{
+    background-color:inherit !important;
+  }
+  .content-md{
+    background-color:inherit !important;
   }
   button.enviar{
-font-size: 2rem;
+font-size: 1.5rem;
 font-weight: bold;
-    color:color($colors,fourthdw);
+color:color($colors,fourthdw);
+bottom: 0px;
+position: absolute;
   }
 
   ion-label{

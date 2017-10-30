@@ -10,14 +10,14 @@ page-event-details{
       margin: 5px 8px 5px 0;
   }
   ion-footer{
-    background-color: color($colors,primarydw);
+  //  background-color: color($colors,primarydw);
   }
       p{
       color:color($colors,fourthdw) !important;
       }
-      ion-content {
-      background-color: color($colors,primarydw) !important;
-      }
+      // ion-content {
+      // background-color: color($colors,primarydw) !important;
+      // }
       ion-item-divider{
       background-color: transparent !important;
       border-bottom: 0px !important;
@@ -80,7 +80,7 @@ page-event-details{
     font-size: 4rem;
 }
 .logo-speaker {
-background: url(../assets/speaker.svg) no-repeat top left;
+background: url(../assets/speakers.svg) no-repeat top left;
 background-size: contain;
 font-size: 4rem;
 }
@@ -95,12 +95,22 @@ background-size: contain;
 font-size: 4rem;
 }
 .logo-localizacion {
-background: url(../assets/localizacion.svg) no-repeat top left;
+background: url(../assets/location.svg) no-repeat top left;
 background-size: contain;
 font-size: 4rem;
 }
 .logo-patrocinador {
-background: url(../assets/patrocinador.svg) no-repeat top left;
+background: url(../assets/sponsors.svg) no-repeat top left;
+background-size: contain;
+font-size: 4rem;
+}
+.logo-login {
+background: url(../assets/login.svg) no-repeat top left;
+background-size: contain;
+font-size: 4rem;
+}
+.logo-sign {
+background: url(../assets/sign.svg) no-repeat top left;
 background-size: contain;
 font-size: 4rem;
 }

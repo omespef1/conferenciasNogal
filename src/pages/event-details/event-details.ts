@@ -9,6 +9,8 @@ import {UserDataProvider} from '../../providers/user-data/user-data';
 import {ImagePipe} from '../../pipes/image/image';
 import {LocationPage} from '../location/location';
 import {SponsorsPage} from '../sponsors/sponsors';
+import {RegisterPage} from '../register/register';
+import {LoginPage} from '../login/login';
 import {SevenProvider} from '../../providers/seven/seven';
 import {SponsorDetaillPage} from '../sponsor-detaill/sponsor-detaill';
 /**
@@ -83,5 +85,11 @@ export class EventDetailsPage {
   }
   goSponsor(sponsor:sponsors){
     this.navCtrl.push(SponsorDetaillPage, {'sponsor':sponsor})
+  }
+  goSign(){
+    this.navCtrl.push(RegisterPage)
+  }
+  goLogin(){
+    this.navCtrl.push(LoginPage)
   }
 }

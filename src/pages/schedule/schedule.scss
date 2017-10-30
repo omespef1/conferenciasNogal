@@ -1,6 +1,6 @@
 page-schedule {
   ion-footer{
-    background-color: color($colors,primarydw);
+    //background-color: color($colors,primarydw);
   }
   ion-content{
     //  background-color: whitesmoke !important;
@@ -8,5 +8,11 @@ page-schedule {
   ion-label{
     margin:0px !important;
     padding-top: 5px;
+  }
+  .content-ios{
+    background-color:inherit !important;
+  }
+  .content-md{
+    background-color:inherit !important;
   }
  }

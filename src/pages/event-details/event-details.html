@@ -9,16 +9,16 @@
   <!-- <ion-navbar color="primarydw">
     <ion-title>{{thisEvent.rev_desc}} </ion-title>
   </ion-navbar> -->
-
+  <div class="profile-media">
+  <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
+</div>
 </ion-header>
 
 <ion-content>
 
 
 
-        <div class="profile-media">
-        <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
-      </div>
+
 
 
     <ion-grid no-padding>
@@ -39,7 +39,7 @@
   </ion-grid>
 
   <ion-grid>
-    
+
           <ion-row>
             <ion-col col-4 text-center (click)="goAgenda()">
             <button ion-button clear  class="logo-agenda">
@@ -83,6 +83,22 @@
             Chat
             </div>
             </ion-col>
+            <ion-col col-4 text-center *ngIf="!loggued" (click)="goLogin()">
+              <button  ion-button clear class="logo-login">
+            <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
+            </button>
+            <div class="menuTitle">
+            Acceso
+            </div>
+            </ion-col>
+            <ion-col col-4 text-center *ngIf="!loggued" (click)="goSign()">
+              <button  ion-button clear class="logo-sign">
+            <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
+            </button>
+            <div class="menuTitle">
+            Registro
+            </div>
+            </ion-col>
               <ion-col col-4 *ngIf="loggued" text-center (click)="goEncuesta()">
                 <button  ion-button clear class="logo-encuesta">
                 <!-- <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i> -->
@@ -94,11 +110,11 @@
             </ion-row>
             <ion-row>
               <ion-col col-12>
+                <div padding>
                 <p text-justify>
                       {{thisEvent.rev_obse}}
               </p>
-
-
+            </div>
               </ion-col>
             </ion-row>
         </ion-grid>

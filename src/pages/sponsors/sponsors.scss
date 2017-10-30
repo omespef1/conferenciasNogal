@@ -1,6 +1,6 @@
 page-sponsors {
   ion-footer{
-    background-color: color($colors,primarydw);
+  //  background-color: color($colors,primarydw);
   }
   ion-content{
   background-color: color($colors,primarydw) !important;
@@ -25,7 +25,12 @@ page-sponsors {
       background-color: transparent !important;
     }
   }
-
+  .content-ios{
+    background-color:inherit !important;
+  }
+  .content-md{
+    background-color:inherit !important;
+  }
 
 
 }

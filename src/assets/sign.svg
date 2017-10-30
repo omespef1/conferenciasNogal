@@ -719,8 +719,6 @@
 <glyph unicode="&#xF500;" horiz-adv-x="1792"/>
 </font>
 
-	<g>
 	<circle class="st0" cx="26" cy="26" r="25"/>
-	<text transform="matrix(1 0 0 1 16.9004 37.7385)" class="st1 st2 st3"></text>
-</g>
+<text transform="matrix(1 0 0 1 12.3515 37.7385)" class="st1 st2 st3"></text>
 </svg>

@@ -1,6 +1,6 @@
 page-calendario{
   ion-footer{
-    background-color: color($colors,primarydw);
+    //background-color: color($colors,primarydw);
   }
   .element {
 font-weight: bold;
@@ -16,36 +16,15 @@ ion-label{
 }
   }
 ion-content{
-  background-color: COLOR($colors,secondarydw) !important;
-  .card-md {
-    width: 100%;
-    margin:0px;
-    font-size: 1.4rem;
-    background: #f2f2f2;
-    height: 35%;
-}
-
-.card-ios {
-    margin: 0px;
-    border-radius: 2px;
-    min-width: 100%;
-    font-size: 1.4rem;
-    height: 40%;
-    background: #f2f2f2;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    border: 0px;
-}
-
-}
-.card-background-page {
-
-  ion-card {
-    position: relative;
-    text-align: center;
-  }
+//  background-color: COLOR($colors,secondarydw) !important;
 
 
 
 }
-
+.content-ios{
+  background-color:inherit !important;
+}
+.content-md{
+  background-color:inherit !important;
+}
 }

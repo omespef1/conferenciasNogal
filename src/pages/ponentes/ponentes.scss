@@ -1,9 +1,16 @@
 page-ponentes {
 ion-footer{
-  background-color: color($colors,primarydw);
+  //background-color: color($colors,primarydw);
 }
   ion-content{
+
   //  background-color: whitesmoke !important;
+  }
+  .content-ios{
+    background-color:inherit !important;
+  }
+  .content-md{
+    background-color:inherit !important;
   }
 
   ion-avatar{
