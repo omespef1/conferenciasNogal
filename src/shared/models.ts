@@ -130,3 +130,15 @@ export class eerspas{
 
   }
 }
+export class message{
+  constructor(
+    public username:string,
+    public message:string,
+    public time:string,
+    public img:string,
+    public rev_cont:number,
+    public key?:string
+  ){
+
+  }
+}

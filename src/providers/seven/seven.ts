@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { Http,RequestOptions,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-import {eecalco,eerspas} from '../../shared/models';
+import {eecalco,eerspas,message} from '../../shared/models';
 import {ApiProvider} from '../api/api';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
+import {AngularFireDatabase} from 'angularfire2/database';
+import * as firebase from 'firebase';
 /*
   Generated class for the SevenProvider provider.
 
@@ -125,6 +127,8 @@ load(): any {
   this.data = data.json();
     return this.data;
   }
-
+  sendMessageDatabase(msg:message){
+  //  let promesa = new Promise
+  }
 
 }
