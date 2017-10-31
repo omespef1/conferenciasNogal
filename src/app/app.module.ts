@@ -24,9 +24,9 @@ import {SponsorDetaillPage} from '../pages/sponsor-detaill/sponsor-detaill';
 import {UploadPage} from '../pages/upload/upload';
 //providers
 import { SevenProvider } from '../providers/seven/seven';
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireDatabase,AngularFireDatabaseModule} from 'angularfire2/database';
-import {AngularFireAuthModule}  from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { UserDataProvider } from '../providers/user-data/user-data';
 import { Storage, IonicStorageModule } from '@ionic/storage';
 import { ImagePipe } from '../pipes/image/image';
@@ -38,6 +38,11 @@ import { ColorsPipe } from '../pipes/colors/colors';
 import { KeychainTouchId } from '@ionic-native/keychain-touch-id';
 import { Keychain } from '@ionic-native/keychain';
 import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
+
+
+//plugins
+import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
 enableProdMode();
 var config = {
     apiKey: "AIzaSyCprGg7FOPeoUN849WGOPAegmX5IIEDsKM",
@@ -75,12 +80,11 @@ var config = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(config),
-   AngularFireAuthModule,
-   AngularFireDatabaseModule,
+      AngularFireDatabaseModule,
+      AngularFireAuthModule,
     IonicModule.forRoot(MyApp,{
         backButtonText: 'Atrás'
     }),
-   AngularFireDatabaseModule,
     HttpModule,
     Ionic2RatingModule ,
       IonicStorageModule.forRoot(),
@@ -115,7 +119,10 @@ var config = {
     BrowserTab,
     Keychain,
     KeychainTouchId,
-    SecureStorage
+    SecureStorage,
+     AngularFireDatabase,
+     Camera,
+     ImagePicker
   ]
 })
 export class AppModule {}

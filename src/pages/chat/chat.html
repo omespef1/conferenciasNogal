@@ -14,11 +14,16 @@ Ionic pages and navigation.
 
 </ion-header>
 
-<ion-content padding scrollDownOnLoad>
+<ion-content padding>
 
 
   <div id="chatMessages">
-    <div *ngFor="let message of messages" class= "message">
+    <!-- <ion-list>
+		<ion-item class="text" *ngFor="let message of messages | async">
+			{{message.message | json}}
+		</ion-item>
+	</ion-list> -->
+    <div *ngFor="let message of messages | async">
       <ion-item>
 
         <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">

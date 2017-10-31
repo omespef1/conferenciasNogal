@@ -159,4 +159,12 @@ getDataAsk(rev_cont:number,refresh:boolean=false):Promise<any>{
     })
   })
 }
+setUserImage(photo:string):void{
+    this.storage.set('userImage', photo);
+}
+getUserImage(): Promise<string> {
+  return this.storage.get('userImage').then((value) => {
+    return value;
+  });
+};
 }

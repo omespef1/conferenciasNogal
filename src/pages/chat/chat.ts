@@ -1,9 +1,9 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams ,LoadingController} from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
 import {UserDataProvider} from '../../providers/user-data/user-data';
 import {eerevet} from '../../shared/models';
-import { Content } from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 /**
 * Generated class for the ChatPage page.
 *
@@ -16,20 +16,21 @@ import { Content } from 'ionic-angular';
   templateUrl: 'chat.html',
 })
 export class ChatPage {
- @ViewChild(Content) content: Content;
+  messages: Observable<any[]>;
   username: string = '';
   message: string = '';
   time:"";
-  _chatSubscription;
-  messages: object[] = [];
+  // messages: object[] = [];
   ee_revet:eerevet;
 
   constructor(public db: AngularFireDatabase,
     private userdata:UserDataProvider,
     private load: LoadingController,
-    public navCtrl: NavController, private nav: NavParams) {
-      this.ee_revet = this.nav.get('event');
-
+    public navCtrl: NavController, private nav: NavParams,
+    afDB: AngularFireDatabase) {
+      this.messages = afDB.list('ee_chats').valueChanges();
+      // console.log(this.messages);
+      // this.ee_revet = this.nav.get('event');
     }
 
     sendMessage() {
@@ -56,8 +57,8 @@ export class ChatPage {
       this.userdata.getUserInfo().then(nomb=>{
        this.username = nomb;
       //   this.hasLogginChat();
-         this.loadMessagues();
-         this.scrollToBottom();
+        //  this.loadMessagues();
+        //  this.scrollToBottom();
      })
     }
     ionViewWillLeave(){
@@ -77,13 +78,13 @@ export class ChatPage {
     });
   }
   hasLogOutChat(){
-    this._chatSubscription.unsubscribe();
-    this.db.list('/ee_chats').push({
-      specialMessage: true,
-      message: `${this.username} ha abandonado  la conversación del evento.`,
-      rev_cont:this.ee_revet.rev_cont,
-      time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
-    });
+    // this._chatSubscription.unsubscribe();
+    // this.db.list('/ee_chats').push({
+    //   specialMessage: true,
+    //   message: `${this.username} ha abandonado  la conversación del evento.`,
+    //   rev_cont:this.ee_revet.rev_cont,
+    //   time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
+    // });
   }
   loadMessagues(){
     // let loading = this.load.create({

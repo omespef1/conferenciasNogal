@@ -7,9 +7,14 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-title>
+      Foto de perfil
+    </ion-title>
     <ion-buttons>
-      <button ion-button clear color="primary" (click)="closeModal()">
+      <button ion-button solid color="primarydw" (click)="closeModal()">
         Cerrar
+        <!-- <ion-icon name="ion-close">
+        </ion-icon> -->
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -18,17 +23,26 @@
 
 
 <ion-content padding>
+  <ion-card>
+
  <ion-grid>
    <ion-row>
+     <ion-col col-12>
+       <div *ngIf="imagenPreview" text-center>
+           <img [src]="imagenPreview">
+       </div>
+     </ion-col>
+   </ion-row>
+   <ion-row>
      <ion-col>
-       <button ion-button block icon-left>
+       <button ion-button block icon-left color="primarydw" (click)="selectPhoto()">
          <ion-icon name="photos">
          </ion-icon>
           Fotos
        </button>
      </ion-col>
      <ion-col>
-       <button ion-button block icon-left>
+       <button ion-button block icon-left  color="primarydw" (click)="showCamera()">
          <ion-icon name="camera">
          </ion-icon>
          Cámara
@@ -37,5 +51,6 @@
    </ion-row>
 
   </ion-grid>
+</ion-card>
 
 </ion-content>
