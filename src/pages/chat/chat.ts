@@ -33,20 +33,20 @@ export class ChatPage {
     }
 
     sendMessage() {
-      if(this.message!=""){
-      this.db.list('/ee_chats').push({
-        username: this.username,
-        message: this.message,
-        rev_cont:this.ee_revet.rev_cont,
-        time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
-      }).then( () => {
-        // message is sent
-      }).catch( () => {
-        // some error. maybe firebase is unreachable
-      });
-    this.message="";
-    this.scrollToBottom();
-    }
+    //   if(this.message!=""){
+    //   this.db.list('/ee_chats').push({
+    //     username: this.username,
+    //     message: this.message,
+    //     rev_cont:this.ee_revet.rev_cont,
+    //     time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
+    //   }).then( () => {
+    //     // message is sent
+    //   }).catch( () => {
+    //     // some error. maybe firebase is unreachable
+    //   });
+    // this.message="";
+    // this.scrollToBottom();
+    // }
   }
 
     ionViewDidLoad() {
@@ -86,19 +86,19 @@ export class ChatPage {
     });
   }
   loadMessagues(){
-    let loading = this.load.create({
-      'content':'Cargando chats'
-    })
-    loading.present();
-    this._chatSubscription = this.db.list('/ee_chats',{
-      query:{
-        orderByChild:'rev_cont',
-        equalTo:this.ee_revet.rev_cont
-      }
-    }).subscribe( data => {
-      loading.dismiss();
-     this.messages = data;
-    });
+    // let loading = this.load.create({
+    //   'content':'Cargando chats'
+    // })
+    // loading.present();
+    // this._chatSubscription = this.db.list('/ee_chats',{
+    //   query:{
+    //     orderByChild:'rev_cont',
+    //     equalTo:this.ee_revet.rev_cont
+    //   }
+    // }).subscribe( data => {
+    //   loading.dismiss();
+    //  this.messages = data;
+    // });
 
   }
 

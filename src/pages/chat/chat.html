@@ -18,12 +18,19 @@ Ionic pages and navigation.
 
 
   <div id="chatMessages">
-    <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
-      <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
-        <div class="username">{{ message.username }}</div>
-        <div class="messageContent">{{ message.message }}</div>
-        <div class="messagetime">{{ message.time }}</div>
-      </div>
+    <div *ngFor="let message of messages" class= "message">
+      <ion-item>
+
+        <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+          <ion-avatar item-start>
+              <img src="assets/user.jpg">
+            </ion-avatar>
+          <div class="username">{{ message.username }}</div>
+          <div class="messageContent"><p>{{ message.message }}</p></div>
+          <div class="messagetime">{{ message.time }}</div>
+        </div>
+      </ion-item>
+
     </div>
   </div>
 

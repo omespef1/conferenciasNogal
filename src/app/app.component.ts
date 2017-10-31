@@ -1,11 +1,12 @@
 import { Component,ViewChild } from '@angular/core';
-import { Platform ,MenuController,NavParams,Events,AlertController,ToastController,Nav} from 'ionic-angular';
+import { Platform ,MenuController,NavParams,Events,AlertController,ToastController,Nav,ModalController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {CalendarioPage,LoginPage,PonentesPage,RegisterPage,SettingsPage,EventDetailsPage,SponsorsPage} from '../shared/pagesPackage';
 import {page} from '../shared/models';
 import {UserDataProvider} from '../providers/user-data/user-data';
 import {SevenProvider} from '../providers/seven/seven';
+import {UploadPage} from '../pages/upload/upload';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,6 +34,7 @@ export class MyApp {
     private userdata:UserDataProvider,
     private seven:SevenProvider,
     private toast:ToastController,
+    private modal:ModalController,
   ) {
       platform.ready().then(() => {
       statusBar.styleDefault();
@@ -112,5 +114,9 @@ showMessage(msg:string){
    message: msg,
    duration: 3000
  }).present();
+}
+openModal(){
+  let mymodal = this.modal.create(UploadPage);
+  mymodal.present();
 }
 }
