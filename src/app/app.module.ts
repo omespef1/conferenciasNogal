@@ -22,6 +22,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import {LocationPage} from '../pages/location/location';
 import {SponsorDetaillPage} from '../pages/sponsor-detaill/sponsor-detaill';
 import {UploadPage} from '../pages/upload/upload';
+import {ContactProfilePage} from '../pages/contact-profile/contact-profile';
 //providers
 import { SevenProvider } from '../providers/seven/seven';
 import { AngularFireModule } from 'angularfire2';
@@ -75,7 +76,8 @@ var config = {
     SponsorDetaillPage,
     SocialPipe,
     ColorsPipe,
-    UploadPage
+    UploadPage,
+    ContactProfilePage
   ],
   imports: [
     BrowserModule,
@@ -106,7 +108,8 @@ var config = {
     LocationPage,
     SponsorsPage,
     SponsorDetaillPage,
-    UploadPage
+    UploadPage,
+    ContactProfilePage
   ],
   providers: [
     StatusBar,
