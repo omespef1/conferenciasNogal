@@ -42,6 +42,7 @@ page-chat {
 	    flex-direction: row;
 	    align-items: stretch;
 			height: 60px;
+			background-color: white;
 	}
 
 	ion-input{
@@ -65,7 +66,7 @@ page-chat {
 	.messageRight {
 		float: right;
 		font-size: 15pt;
-		background-color: color($colors,primary);
+		background-color: color($colors,secondarydw);
 		color:white;
 	}
 

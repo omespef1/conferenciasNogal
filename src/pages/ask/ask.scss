@@ -2,12 +2,12 @@ page-ask {
   ion-footer{
   //  background-color: color($colors,primarydw);
   }
-  .content-ios{
-    background-color:inherit !important;
-  }
-  .content-md{
-    background-color:inherit !important;
-  }
+  // .content-ios{
+  //   background-color:inherit !important;
+  // }
+  // .content-md{
+  //   background-color:inherit !important;
+  // }
   button.enviar{
 font-size: 1.5rem;
 font-weight: bold;
@@ -25,9 +25,9 @@ position: absolute;
   ion-list{
     margin:0px !important;
   }
-  .item-divider-md{
-        background-color: #f7f7f7 !important;
-  }
+  // .item-divider-md{
+  //       background-color: #f7f7f7 !important;
+  // }
   ion-item{
   //  background-color: color($colors,light) !important;
   }

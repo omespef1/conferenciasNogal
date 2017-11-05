@@ -19,7 +19,7 @@ import {ContactProfilePage} from '../contact-profile/contact-profile';
 })
 export class ChatPage {
   @ViewChild(Content) content: Content;
-  messages: Observable<any[]>;
+  messages: any[];
   username: string = '';
   message: string = '';
   time:"";
@@ -53,7 +53,6 @@ export class ChatPage {
         this.afDB.list(`/ee_chats/${this.ee_revet.rev_cont}`).push({
           username: this.username,
           message: this.message,
-          photo: this.image,
           time:new Date().toLocaleDateString() + " " + new Date().getHours() +":" + new Date().getMinutes()
         }).then(()=>{
           this.content.scrollToBottom();
@@ -65,7 +64,6 @@ this.message="";
 
     ionViewDidLoad() {
       this.loadMessagues();
-      this.content.scrollToBottom();
 
     }
 
@@ -84,9 +82,12 @@ openUser(message:any){
       'content':'Cargando chats'
     })
     loading.present();
-      this.messages=this.afDB.list(`/ee_chats/${this.ee_revet.rev_cont}`).valueChanges();
-  loading.dismiss();
-
+    this.afDB.list(`/ee_chats/${this.ee_revet.rev_cont}`).valueChanges().subscribe(res=>{
+      this.messages = res;
+      console.log(res);
+      loading.dismiss();
+      this.content.scrollToBottom();
+    })
   }
 
 

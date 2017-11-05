@@ -23,18 +23,18 @@ Ionic pages and navigation.
 			{{message.message | json}}
 		</ion-item>
 	</ion-list> -->
-    <div *ngFor="let message of messages | async">
-      <ion-item>
+    <div *ngFor="let message of messages">
+
 
         <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
-          <ion-avatar button item-start (click)="openUser(message)">
+          <!-- <ion-avatar button item-start (click)="openUser(message)">
               <img src={{message.photo}}>
-            </ion-avatar>
+            </ion-avatar> -->
           <div class="username">{{ message.username }}</div>
           <div class="messageContent">{{ message.message }}</div>
           <div class="messagetime">{{ message.time }}</div>
         </div>
-      </ion-item>
+
 
     </div>
   </div>
@@ -44,7 +44,7 @@ Ionic pages and navigation.
   <ion-toolbar>
     <div id="footer">
       <div class="elem"><ion-input type="text" [(ngModel)]="message"></ion-input></div>
-      <div class="elem"><button ion-button icon-only (click)="sendMessage()"><ion-icon name="send"></ion-icon> </button></div>
+      <div class="elem"><button color="secondarydw" ion-button icon-only (click)="sendMessage()"><ion-icon name="send"></ion-icon> </button></div>
     </div>
   </ion-toolbar>
 </ion-footer>

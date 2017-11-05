@@ -18,102 +18,131 @@
   <div class="profile-media">
   <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
 </div>
+<ion-grid no-padding>
+  <ion-row>
+    <ion-item-divider>
+      <p text-center class="titulo-claro">
+      RESTAURANTES
+    </p>
+    </ion-item-divider>
+    <ion-item-divider>
+      <marquee  scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
+         <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
+      </marquee>
+      </ion-item-divider>
+  </ion-row>
+  <ion-row>
+  <ion-col col-12>
+
+  </ion-col>
+</ion-row>
+</ion-grid>
+
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 text-center (click)="goAgenda()">
+      <button ion-button clear  class="logo-agenda">
 
-
-
-
-
-
-    <ion-grid no-padding>
-      <ion-row>
-        <ion-item-divider>
-          <p class="titulo-claro">
-          Patrocinadores del evento
-        </p>
-        </ion-item-divider>
-      </ion-row>
-      <ion-row>
-      <ion-col col-12>
-        <marquee  scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
-           <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
-        </marquee>
+      </button>
+      <div class="menuTitle">
+        Agenda
+      </div>
+      </ion-col>
+      <ion-col col-4 text-center  (click)="goPonents()">
+            <button  ion-button clear class="logo-speaker">
+            <!-- <i class="fa fa-user fa-3x" aria-hidden="true"></i> -->
+            </button>
+            <div class="menuTitle">
+              Speakers
+            </div>
+      </ion-col>
+      <ion-col col-4 text-center (click)="goLocation()">
+          <button  ion-button clear class="logo-localizacion">
+          <!-- <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i> -->
+          </button>
+          <div class="menuTitle">
+          Ubicación
+          </div>
       </ion-col>
     </ion-row>
-  </ion-grid>
+    <ion-row>
+        <ion-col col-4 text-center (click)="goSponsors()">
+            <button  ion-button clear class="logo-patrocinador">
+                <!-- <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i> -->
+        </button>
+        <div class="menuTitle">
+        Restaurantes
+        </div>
+      </ion-col>
+      <ion-col col-4 text-center *ngIf="loggued" (click)="goChat()">
+        <button  ion-button clear class="logo-chat">
+      <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
+      </button>
+      <div class="menuTitle">
+      Chat
+      </div>
+      </ion-col>
+      <ion-col col-4 text-center *ngIf="!loggued" (click)="goLogin()">
+        <button  ion-button clear class="logo-login">
+      <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
+      </button>
+      <div class="menuTitle">
+      Acceso
+      </div>
+      </ion-col>
+      <ion-col col-4 text-center *ngIf="!loggued" (click)="goSign()">
+        <button  ion-button clear class="logo-sign">
+      <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
+      </button>
+      <div class="menuTitle">
+      Registro
+      </div>
+      </ion-col>
+        <ion-col col-4 *ngIf="loggued" text-center (click)="goEncuesta()">
+          <button  ion-button clear class="logo-encuesta">
 
-  <ion-grid>
-
-          <ion-row>
-            <ion-col col-4 text-center (click)="goAgenda()">
-            <button ion-button clear  class="logo-agenda">
-
-            </button>
-            <div class="menuTitle">
-              Agenda
-            </div>
-            </ion-col>
-            <ion-col col-4 text-center  (click)="goPonents()">
-                  <button  ion-button clear class="logo-speaker">
-                  <!-- <i class="fa fa-user fa-3x" aria-hidden="true"></i> -->
-                  </button>
-                  <div class="menuTitle">
-                    Speakers
-                  </div>
-            </ion-col>
-            <ion-col col-4 text-center (click)="goLocation()">
-                <button  ion-button clear class="logo-localizacion">
-                <!-- <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i> -->
-                </button>
-                <div class="menuTitle">
-                Ubicación
-                </div>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col col-4 text-center (click)="goSponsors()">
-                  <button  ion-button clear class="logo-patrocinador">
-                      <!-- <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i> -->
+      </button>
+      <div class="menuTitle">
+        Encuesta
+      </div>
+      </ion-col>
+      </ion-row>
+      <ion-row *ngIf="loggued">
+        <ion-col col-4 text-center>
+            <button  ion-button clear class="logo-brochure">
               </button>
               <div class="menuTitle">
-              Sponsors
+                Brochure
               </div>
-            </ion-col>
-            <ion-col col-4 text-center *ngIf="loggued" (click)="goChat()">
-              <button  ion-button clear class="logo-chat">
-            <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
-            </button>
-            <div class="menuTitle">
-            Chat
-            </div>
-            </ion-col>
-            <ion-col col-4 text-center *ngIf="!loggued" (click)="goLogin()">
-              <button  ion-button clear class="logo-login">
-            <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
-            </button>
-            <div class="menuTitle">
-            Acceso
-            </div>
-            </ion-col>
-            <ion-col col-4 text-center *ngIf="!loggued" (click)="goSign()">
-              <button  ion-button clear class="logo-sign">
-            <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
-            </button>
-            <div class="menuTitle">
-            Registro
-            </div>
-            </ion-col>
-              <ion-col col-4 *ngIf="loggued" text-center (click)="goEncuesta()">
-                <button  ion-button clear class="logo-encuesta">
-                <!-- <i class="fa fa-question-circle fa-3x" aria-hidden="true"></i> -->
-            </button>
-            <div class="menuTitle">
-              Encuesta
-            </div>
-            </ion-col>
-            </ion-row>
+        </ion-col>
+        <ion-col col-4 text-center>
+            <button  ion-button clear class="logo-resena">
+              </button>
+              <div class="menuTitle">
+                Reseña
+              </div>
+        </ion-col>
+        <ion-col col-4 text-center>
+            <button  ion-button clear class="logo-power" (click)="goOut()">
+              </button>
+              <div class="menuTitle">
+                Salir
+              </div>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+
+
+
+
+
+  <ion-grid no-padding>
+
+
             <ion-row>
               <ion-col col-12>
                 <div padding>

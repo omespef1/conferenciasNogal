@@ -23,6 +23,7 @@ export class MyApp {
   pageRegister = RegisterPage;
   pageEventDetails = EventDetailsPage;
   pageSponsors: SponsorsPage;
+  photo:string;
    public userData:string;
    public user:string;
  public pages:page[];
@@ -41,9 +42,16 @@ export class MyApp {
       splashScreen.hide();
       this.userdata.hasLoggedIn().then((hasLoggedIn) => {
           this.enableMenu(hasLoggedIn === true);
-          this.enableMenu(true);
+        //  this.enableMenu(true);
           this.listenToLoginEvents();
           this.validLogin();
+          this.userdata.getUserImage().then(res=>{
+            if(res!=undefined){
+            this.photo = res;
+          }else{
+            this.photo = "../assets/user.jpg";
+          }
+          })
         });
 
 this.pages = [

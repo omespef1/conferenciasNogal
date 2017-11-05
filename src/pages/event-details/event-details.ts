@@ -92,4 +92,9 @@ export class EventDetailsPage {
   goLogin(){
     this.navCtrl.push(LoginPage)
   }
+  goOut(){
+    this.userdata.logout();
+    this.showMessage('Su sesión se ha cerrado!');
+    this.navCtrl.setRoot(LoginPage);
+  }
 }

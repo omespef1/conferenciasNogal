@@ -4,7 +4,8 @@ page-register {
   }
    background-color: color($colors,secondarydw) !important;
   .logo{
-		min-width: 250px;
+    width: 80%;
+   height: auto;
 	}
 	.login-content {
 		ion-icon {
@@ -39,11 +40,7 @@ page-register {
 		 button[disabled], [ion-button][disabled] {
 		     opacity: 0.8 !important;
 		 }
-     .register-btn {
-       color: #ffffff;
-       font-size: 0.8em;
-			 text-decoration: underline;
-     }
+  
    }
  }
 //   .logoSeven{

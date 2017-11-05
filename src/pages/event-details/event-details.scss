@@ -23,19 +23,20 @@ page-event-details{
       // background-color: color($colors,primarydw) !important;
       // }
       ion-item-divider{
-      background-color: transparent !important;
+      background-color: color($colors,secondarydw) !important;
       border-bottom: 0px !important;
+      font-family: MyriadPro;
       // color:white !important ;
       }
 
       marquee{
-      margin:5px 5px 0px 5px;
-      height: 55px;
+      margin:0px 0px 0px 0px;
+      height: 35px;
       width: 100%;
-      background-color: color($colors,secondarydw);
-      border-radius: 20px;
+      //background-color: color($colors,secondarydw);
+    //  border-radius: 20px;
       img{
-      height:55px;
+      height:40px;
       width:auto !important;
       animation: marquee 20s linear infinite;
       //   border-right: 1px solid color($colors,primarydw);
@@ -47,13 +48,13 @@ page-event-details{
     //  border-bottom-left-radius: 10px;
   //    border-bottom-right-radius: 10px;
       font-weight: bold;
-      margin-top: -35px;
+      margin-top: -30px;
       }
       .menu{
       font-weight: bold;
       }
       .marquee-content {
-      background-color: color($colors,fourthdw);
+    //  background-color: color($colors,fourthdw);
       }
 
       .item-ios.activated{
@@ -81,41 +82,56 @@ page-event-details{
     .logo-agenda {
     background: url(../assets/agenda.svg) no-repeat top left;
     background-size: contain;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .logo-speaker {
 background: url(../assets/speakers.svg) no-repeat top left;
 background-size: contain;
-font-size: 4rem;
+font-size: 3rem;
 }
 .logo-chat {
 background: url(../assets/chat.svg) no-repeat top left;
 background-size: contain;
-font-size: 4rem;
+font-size: 3rem;
 }
 .logo-encuesta {
 background: url(../assets/encuesta.svg) no-repeat top left;
 background-size: contain;
-font-size: 4rem;
+font-size: 3rem;
 }
 .logo-localizacion {
 background: url(../assets/location.svg) no-repeat top left;
 background-size: contain;
-font-size: 4rem;
+font-size: 3rem;
 }
 .logo-patrocinador {
 background: url(../assets/sponsors.svg) no-repeat top left;
 background-size: contain;
-font-size: 4rem;
+font-size: 3rem;
 }
 .logo-login {
 background: url(../assets/login.svg) no-repeat top left;
 background-size: contain;
-font-size: 4rem;
+font-size: 3rem;
 }
 .logo-sign {
 background: url(../assets/sign.svg) no-repeat top left;
 background-size: contain;
-font-size: 4rem;
+font-size: 3rem;
+}
+.logo-brochure {
+background: url(../assets/brochure.svg) no-repeat top left;
+background-size: contain;
+font-size: 3rem;
+}
+.logo-resena {
+background: url(../assets/resena.svg) no-repeat top left;
+background-size: contain;
+font-size: 3rem;
+}
+.logo-power {
+background: url(../assets/power.svg) no-repeat top left;
+background-size: contain;
+font-size: 3rem;
 }
 }
