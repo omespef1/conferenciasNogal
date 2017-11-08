@@ -55,7 +55,7 @@
               Expositores
             </div>
       </ion-col>
-      <ion-col col-4 text-center (click)="goLocation()">
+      <ion-col col-4 text-center (click)="downloadMap()">
           <button  ion-button clear class="logo-localizacion">
           <!-- <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i> -->
           </button>
@@ -108,7 +108,7 @@
       </ion-row>
       <ion-row *ngIf="loggued">
         <ion-col col-4 text-center>
-            <button  ion-button clear class="logo-brochure" (click)="noAvailable()">
+            <button  ion-button clear class="logo-brochure" (click)="downloadBrochure()">
               </button>
               <div class="menuTitle">
                 Brochure

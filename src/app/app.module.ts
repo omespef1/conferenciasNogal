@@ -127,7 +127,9 @@ var config = {
     SecureStorage,
      AngularFireDatabase,
      Camera,
-     ImagePicker
+     ImagePicker,
+     FileTransfer,
+     File
   ]
 })
 export class AppModule {}

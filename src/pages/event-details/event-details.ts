@@ -13,6 +13,9 @@ import {RegisterPage} from '../register/register';
 import {LoginPage} from '../login/login';
 import {SevenProvider} from '../../providers/seven/seven';
 import {SponsorDetaillPage} from '../sponsor-detaill/sponsor-detaill';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { ApiProvider} from '../../providers/api/api';
 /**
  * Generated class for the EventDetailsPage page.
  *
@@ -30,7 +33,9 @@ export class EventDetailsPage {
   username:string;
   loggued:boolean=false;
   constructor(public navCtrl: NavController, public navParams: NavParams,private userdata:UserDataProvider,
-  private loading :LoadingController,private seven:SevenProvider,private toast:ToastController) {
+  private loading :LoadingController,private seven:SevenProvider,private toast:ToastController,
+  private transfer: FileTransfer, private file: File,
+private api:ApiProvider) {
     this.thisEvent = this.navParams.get("event");
     this.userdata.hasLoggedIn().then(login=>{
       this.loggued=login;
@@ -41,7 +46,7 @@ export class EventDetailsPage {
     this.userdata.setDataSpekaers(this.thisEvent.speakers);
     this.userdata.setDataSponsors(this.thisEvent.sponsors);
     this.userdata.setDataAsk(this.thisEvent.ask);
-
+    this.api.chargue();
   }
   ionViewDidLoad() {
     this.load();
@@ -99,5 +104,20 @@ export class EventDetailsPage {
   }
   noAvailable(){
     this.showMessage('Esta opción aún no se encuentra disponible.');
+  }
+
+  downloadMap(){
+    this.downloadFile(this.api.data.mapa,'mapa.pdf');
+  }
+  downloadBrochure(){
+    this.downloadFile(this.api.data.brochure,'brochure.pdf');
+  }
+  downloadFile(url:string,fileName:string){
+  const fileTransfer: FileTransferObject = this.transfer.create();
+   fileTransfer.download(url, this.file.dataDirectory + 'fileName').then((entry) => {
+       console.log('download complete: ' + entry.toURL());
+     }, (error) => {
+         this.showMessage('Error descargando archivo pdf' + error);
+     });
   }
 }

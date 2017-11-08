@@ -1,4 +1,6 @@
 {
-  "api":"http://erp.clubelnogal.com/NogalEventosApi/api/"
+  "api":"http://erp.clubelnogal.com/NogalEventosApi/api/",
+  "pdf": "http://erp.clubelnogal.com/NogalEventosApi/pdf/mapa.pdf",
+  "brochure": "http://erp.clubelnogal.com/NogalEventosApi/pdf/brochure.pdf"
 
 }
