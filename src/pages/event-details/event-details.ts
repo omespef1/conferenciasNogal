@@ -97,4 +97,7 @@ export class EventDetailsPage {
     this.showMessage('Su sesión se ha cerrado!');
     this.navCtrl.setRoot(LoginPage);
   }
+  noAvailable(){
+    this.showMessage('Esta opción aún no se encuentra disponible.');
+  }
 }

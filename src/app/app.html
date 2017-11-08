@@ -7,9 +7,9 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-item class="no-lines" no-lines>
+    <ion-item class="no-lines" no-lines (click)="openModal()">
        <ion-avatar item-start>
-       <img [src]="photo" (click)="openModal()">
+       <img [src]="photo" >
        </ion-avatar>
        <p class="titulo-claro">{{user}}</p>
     <p>Club El Nogal</p>

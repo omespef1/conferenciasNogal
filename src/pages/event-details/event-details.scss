@@ -1,6 +1,16 @@
 
 
 page-event-details{
+  .button-md{
+    height: 2em !important;
+      font-size: 2em !important;
+  }
+
+.button-ios {
+  font-size: 3rem;
+  height: 2em;
+}
+
   .toolbar-ios{
     min-height: 44px !important;
     padding: 4px !important;
@@ -30,10 +40,11 @@ page-event-details{
       }
 
       marquee{
-      margin:0px 0px 0px 0px;
+      margin: 0px 0px 0px 0px !important;
+      padding: 0px 0px 0px 0px !important;
       height: 35px;
       width: 100%;
-      //background-color: color($colors,secondarydw);
+      background-color: color($colors,secondarydw);
     //  border-radius: 20px;
       img{
       height:40px;
@@ -48,7 +59,7 @@ page-event-details{
     //  border-bottom-left-radius: 10px;
   //    border-bottom-right-radius: 10px;
       font-weight: bold;
-      margin-top: -30px;
+    //  margin-top: -30px;
       }
       .menu{
       font-weight: bold;
@@ -80,58 +91,60 @@ page-event-details{
       }
     }
     .logo-agenda {
-    background: url(../assets/agenda.svg) no-repeat top left;
+    background: url(../assets/agenda.svg) no-repeat top center;
     background-size: contain;
-    font-size: 3rem;
+
+  //  height: 3rem !important;
 }
+
 .logo-speaker {
-background: url(../assets/speakers.svg) no-repeat top left;
+background: url(../assets/speakers.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-chat {
-background: url(../assets/chat.svg) no-repeat top left;
+background: url(../assets/chat.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-encuesta {
-background: url(../assets/encuesta.svg) no-repeat top left;
+background: url(../assets/encuesta.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-localizacion {
-background: url(../assets/location.svg) no-repeat top left;
+background: url(../assets/location.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-patrocinador {
-background: url(../assets/sponsors.svg) no-repeat top left;
+background: url(../assets/sponsors.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-login {
-background: url(../assets/login.svg) no-repeat top left;
+background: url(../assets/login.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-sign {
-background: url(../assets/sign.svg) no-repeat top left;
+background: url(../assets/sign.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-brochure {
-background: url(../assets/brochure.svg) no-repeat top left;
+background: url(../assets/brochure.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-resena {
-background: url(../assets/resena.svg) no-repeat top left;
+background: url(../assets/resena.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 .logo-power {
-background: url(../assets/power.svg) no-repeat top left;
+background: url(../assets/power.svg) no-repeat top center;
 background-size: contain;
-font-size: 3rem;
+
 }
 }
