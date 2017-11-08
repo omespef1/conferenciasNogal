@@ -41,6 +41,7 @@ import { Keychain } from '@ionic-native/keychain';
 import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
 
 
 //plugins
@@ -129,7 +130,8 @@ var config = {
      Camera,
      ImagePicker,
      FileTransfer,
-     File
+     File,
+     FileOpener
   ]
 })
 export class AppModule {}

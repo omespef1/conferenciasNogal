@@ -16,6 +16,7 @@ import {SponsorDetaillPage} from '../sponsor-detaill/sponsor-detaill';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { ApiProvider} from '../../providers/api/api';
+import { FileOpener } from '@ionic-native/file-opener';
 /**
  * Generated class for the EventDetailsPage page.
  *
@@ -34,7 +35,7 @@ export class EventDetailsPage {
   loggued:boolean=false;
   constructor(public navCtrl: NavController, public navParams: NavParams,private userdata:UserDataProvider,
   private loading :LoadingController,private seven:SevenProvider,private toast:ToastController,
-  private transfer: FileTransfer, private file: File,
+  private transfer: FileTransfer, private file: File,private fileOpener: FileOpener,
 private api:ApiProvider) {
     this.thisEvent = this.navParams.get("event");
     this.userdata.hasLoggedIn().then(login=>{
@@ -110,14 +111,30 @@ private api:ApiProvider) {
     this.downloadFile(this.api.data.mapa,'mapa.pdf');
   }
   downloadBrochure(){
-    this.downloadFile(this.api.data.brochure,'brochure.pdf');
+      this.downloadFile(this.api.data.brochure,'brochure.pdf');
   }
   downloadFile(url:string,fileName:string){
+    let load = this.loading.create({
+      content:'Cargando...'
+    });
+   load.present();
+    console.log(url);
   const fileTransfer: FileTransferObject = this.transfer.create();
-   fileTransfer.download(url, this.file.dataDirectory + 'fileName').then((entry) => {
+   fileTransfer.download(url, this.file.dataDirectory + fileName).then((entry) => {
        console.log('download complete: ' + entry.toURL());
+         this.openFile(this.file.dataDirectory + fileName);
+        load.dismiss();
      }, (error) => {
          this.showMessage('Error descargando archivo pdf' + error);
-     });
+           load.dismiss();
+     }).catch(err=>{
+         load.dismiss();
+     })
+  }
+  openFile(url:string){
+    console.log("abriendo " + url);
+    this.fileOpener.open(url, 'application/pdf')
+  .then(() => console.log('File is opened'))
+  .catch(e => console.log('Error openening file', e));
   }
 }
