@@ -39,6 +39,8 @@ import { ColorsPipe } from '../pipes/colors/colors';
 import { KeychainTouchId } from '@ionic-native/keychain-touch-id';
 import { Keychain } from '@ionic-native/keychain';
 import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 
 //plugins
