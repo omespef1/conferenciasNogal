@@ -30,6 +30,13 @@
           <button ion-button class="register-btn" block clear (click)="openRegister()">Registro</button>
         </ion-col>
       </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <div  *ngIf="fingerAvailable" class="fingerprint" button tappable (click)="getAccessTouchId()">
+          <img src="assets/fingerprint.svg">
+        </div>
+        </ion-col>
+      </ion-row>
     </form>
   </ion-grid>
 </ion-header>

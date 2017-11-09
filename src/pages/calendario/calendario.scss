@@ -31,5 +31,14 @@ ion-content{
 
 
 }
+.arrow{
+  height: 50px;
+  width: 50px;
+  z-index: 1000;
+  position: fixed;
+  top:180px;
+  right: 20px;
+
+}
 
 }

@@ -220,5 +220,15 @@ border-bottom: 2px solid color($colors,secondarydw);
    button[disabled], [ion-button][disabled] {
        opacity: 0.8 !important;
    }
+   .fingerprint{
+     img{
+     width: 42%;
+     height: auto;
+   }
+   p{
+     color:white;
+     font-weight: bold;
+   }
+   }
 
 }

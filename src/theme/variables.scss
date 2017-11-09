@@ -77,12 +77,7 @@ $navbar-ios-android:44px;
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
-@font-face {
- font-family: 'PtSans';
- src:url('../assets/PTC55F.ttf') format('truetype');
- font-weight: normal;
- font-style: normal;
-}
+
 @font-face {
  font-family: 'OpenSans-Light';
  src:url('../assets/OpenSans-Light.ttf') format('truetype');
@@ -120,5 +115,4 @@ $font-family-wp-base: $font-family-base;
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
 @import "noto-sans";

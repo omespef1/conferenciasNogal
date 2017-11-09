@@ -24,6 +24,7 @@ export class LoginPage {
   login: any = { username: '', password: '' };
   message:string="";
   returnedAsise:asise;
+  fingerAvailable:boolean;
   private secureObject: SecureStorageObject;
 
   public rutaImg:string;
@@ -105,6 +106,7 @@ export class LoginPage {
  getAccessTouchId(){
    if(this.platform.is("cordova")){
      this.keychainTouchId.has("passwordCodeAssistant").then(()=>{
+       this.fingerAvailable = true;
        this.keychainTouchId.verify("passwordCodeAssistant","Ingrese su huella dactilar para ingresar").then(pass=>{
           this.login.password = pass;
           // if(this.platform.is("ios")){
@@ -112,7 +114,7 @@ export class LoginPage {
           //   this.login.username =user;
           //    this.validUser();
           // })}
-        
+
             this.secureObject.get("username").then(data=>{
               this.login.username = data;
                this.validUser();
