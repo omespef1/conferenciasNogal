@@ -9,7 +9,6 @@ import {UserDataProvider} from '../../providers/user-data/user-data';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-upload',
   templateUrl: 'upload.html',

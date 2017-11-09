@@ -15,10 +15,9 @@ import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html',
+  templateUrl: 'login.html'
 })
 export class LoginPage {
   login: any = { username: '', password: '' };

@@ -10,6 +10,25 @@
   border-style:hidden ;
   border-width: 0px !important;
 }
+.slideR{
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+.slideL{
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+.slideF{
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+}
+.menuicon{
+  width: 25px;
+  height: 25px;
+}
 ion-content{
   background-color: color($colors,secondarydw) !important;
 }

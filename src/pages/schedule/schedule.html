@@ -22,7 +22,7 @@
           {{activity.age_hori}}
         </p>
       </ion-item-divider>
-      <ion-item-sliding (click)="openSchedule(activity)">
+      <ion-item-sliding (tap)="openSchedule(activity)">
         <button ion-item>
           <p class="titulo">  {{activity.age_acti}}</p>
           <p class="texto">
@@ -30,7 +30,7 @@
           </p>
         </button>
       </ion-item-sliding>
-      <ion-item-sliding  [hidden] ="activity.ter_codi==0" (click)="openSpeaker(activity)">
+      <ion-item-sliding  [hidden] ="activity.ter_codi==0" (tap)="openSpeaker(activity)">
         <button ion-item class="itemSpeaker">
         <ion-avatar item-start>
         <img [src]="'data:image/jpg;base64,'+activity.con_foto | image" />

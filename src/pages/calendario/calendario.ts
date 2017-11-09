@@ -5,6 +5,8 @@ import {eerevet} from '../../shared/models';
 import {SevenProvider} from '../../providers/seven/seven';
 import{UserDataProvider} from '../../providers/user-data/user-data';
 import {ImagePipe} from '../../pipes/image/image';
+import { Storage } from '@ionic/storage';
+import { TutorialPage } from '../../pages/tutorial/tutorial';
 
 
 /**
@@ -13,7 +15,6 @@ import {ImagePipe} from '../../pipes/image/image';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-calendario',
   templateUrl: 'calendario.html',
@@ -25,11 +26,19 @@ public listEvents :eerevet[]=[];
     private sevenProvider: SevenProvider,
     private toast:ToastController,
     private loading:LoadingController,
-    private userdata:UserDataProvider
+    private userdata:UserDataProvider,
+    public storage: Storage
   ) {
   }
 
   ionViewDidLoad() {
+    this.storage.get('intro-done').then(done => {
+  if (!done) {
+    console.log(done);
+    this.storage.set('intro-done', true);
+    this.navCtrl.setRoot(TutorialPage);
+  }
+});
     this.getEvents();
   }
   getEvents(){

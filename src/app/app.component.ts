@@ -38,8 +38,10 @@ export class MyApp {
     private modal:ModalController,
   ) {
       platform.ready().then(() => {
-      statusBar.styleDefault();
       splashScreen.hide();
+      statusBar.styleLightContent();
+      statusBar.overlaysWebView(false);
+      statusBar.backgroundColorByHexString("#051467");
       this.userdata.hasLoggedIn().then((hasLoggedIn) => {
           this.enableMenu(hasLoggedIn === true);
         //  this.enableMenu(true);

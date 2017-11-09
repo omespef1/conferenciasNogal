@@ -5,7 +5,7 @@ import {SevenProvider} from '../../providers/seven/seven';
 import {eerevet} from '../../shared/models';
 import {ImagePipe} from '../../pipes/image/image';
 import {SponsorDetaillPage} from '../sponsor-detaill/sponsor-detaill';
-import {UserDataProvider} from '../../providers/user-data/user-data'
+import {UserDataProvider} from '../../providers/user-data/user-data';
 /**
 
 /**
@@ -14,10 +14,10 @@ import {UserDataProvider} from '../../providers/user-data/user-data'
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-sponsors',
-  templateUrl: 'sponsors.html',
+  templateUrl: 'sponsors.html'
+
 })
 export class SponsorsPage {
   public sponsors:sponsors[];
@@ -78,4 +78,5 @@ private userdata:UserDataProvider) {
       //Realiza el filtrado
       this.sponsorsList = this.sponsorsList.filter((v) =>  v.pat_nomb.toLowerCase().indexOf(q.toLowerCase()) > -1);
 }
+
 }

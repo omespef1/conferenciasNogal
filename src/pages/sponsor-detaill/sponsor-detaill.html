@@ -26,7 +26,7 @@
 
 
 <ion-content no-bounce>
-  <ion-item *ngFor="let link of sponsor.lin_link"  (click)="openUrl(link.lin_urla)">
+  <ion-item *ngFor="let link of sponsor.lin_link"  (tap)="openUrl(link.lin_urla)">
     <ion-icon [name]= "link.lin_urla | social" [color]="link.lin_urla | colors" item-start></ion-icon>
     {{link.lin_nomb}}
   </ion-item>

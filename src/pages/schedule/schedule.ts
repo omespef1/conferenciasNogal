@@ -8,7 +8,6 @@ import {ScheduleDetailsPage} from '../schedule-details/schedule-details';
 import {ImagePipe} from '../../pipes/image/image';
 
 
-@IonicPage()
 @Component({
   selector: 'page-schedule',
   templateUrl: 'schedule.html',

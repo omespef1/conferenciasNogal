@@ -8,7 +8,6 @@ import {ee_agend} from '../../shared/models';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-schedule-details',
   templateUrl: 'schedule-details.html',

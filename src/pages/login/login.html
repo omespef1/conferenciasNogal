@@ -32,7 +32,7 @@
       </ion-row>
       <ion-row>
         <ion-col text-center>
-          <div  *ngIf="fingerAvailable" class="fingerprint" button tappable (click)="getAccessTouchId()">
+          <div  *ngIf="fingerAvailable" class="fingerprint" button tappable (tap)="getAccessTouchId()">
           <img src="assets/fingerprint.svg">
         </div>
         </ion-col>

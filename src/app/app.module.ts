@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule,enableProdMode } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -23,6 +23,7 @@ import {LocationPage} from '../pages/location/location';
 import {SponsorDetaillPage} from '../pages/sponsor-detaill/sponsor-detaill';
 import {UploadPage} from '../pages/upload/upload';
 import {ContactProfilePage} from '../pages/contact-profile/contact-profile';
+import {TutorialPage} from '../pages/tutorial/tutorial';
 //providers
 import { SevenProvider } from '../providers/seven/seven';
 import { AngularFireModule } from 'angularfire2';
@@ -47,7 +48,6 @@ import { FileOpener } from '@ionic-native/file-opener';
 //plugins
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
-enableProdMode();
 var config = {
     apiKey: "AIzaSyCprGg7FOPeoUN849WGOPAegmX5IIEDsKM",
     authDomain: "nogalconferencesapp.firebaseapp.com",
@@ -80,7 +80,8 @@ var config = {
     SocialPipe,
     ColorsPipe,
     UploadPage,
-    ContactProfilePage
+    ContactProfilePage,
+    TutorialPage
   ],
   imports: [
     BrowserModule,
@@ -112,7 +113,8 @@ var config = {
     SponsorsPage,
     SponsorDetaillPage,
     UploadPage,
-    ContactProfilePage
+    ContactProfilePage,
+    TutorialPage
   ],
   providers: [
     StatusBar,

@@ -23,7 +23,6 @@ import { FileOpener } from '@ionic-native/file-opener';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-event-details',
   templateUrl: 'event-details.html',

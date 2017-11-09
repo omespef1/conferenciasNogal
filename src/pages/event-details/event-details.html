@@ -8,8 +8,8 @@
 <ion-header>
   <ion-toolbar>
     <!-- <ion-title>  {{thisEvent.rev_desc}}</ion-title> -->
-    <button ion-button solid default color="primarydw"  icon-start menuToggle>
-  <ion-icon name="menu"></ion-icon>
+    <button ion-button solid default color="primarydw"  menuToggle>
+    <img src="assets/menuIcon.svg" class="menuicon" button ion-button icon-only menuToggle>
 </button>
   </ion-toolbar>
   <!-- <ion-navbar color="primarydw">
@@ -26,7 +26,7 @@
     </p>
     </ion-item-divider>
       <marquee  scrolldelay="20" scrollamount="5" direction="left" loop="infinite">
-         <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (click)="goSponsor(sponsor)" />
+         <img *ngFor="let sponsor of sponsors" [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" (tap)="goSponsor(sponsor)" />
       </marquee>
   </ion-row>
   <ion-row>
@@ -39,7 +39,7 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col col-4 text-center (click)="goAgenda()">
+      <ion-col col-4 text-center (tap)="goAgenda()">
       <button ion-button clear  class="logo-agenda">
 
       </button>
@@ -47,7 +47,7 @@
         Agenda
       </div>
       </ion-col>
-      <ion-col col-4 text-center  (click)="goPonents()">
+      <ion-col col-4 text-center  (tap)="goPonents()">
             <button  ion-button clear class="logo-speaker">
             <!-- <i class="fa fa-user fa-3x" aria-hidden="true"></i> -->
             </button>
@@ -55,7 +55,7 @@
               Expositores
             </div>
       </ion-col>
-      <ion-col col-4 text-center (click)="downloadMap()">
+      <ion-col col-4 text-center (tap)="downloadMap()">
           <button  ion-button clear class="logo-localizacion">
           <!-- <i class="fa fa-location-arrow fa-3x" aria-hidden="true"></i> -->
           </button>
@@ -65,7 +65,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-        <ion-col col-4 text-center (click)="goSponsors()">
+        <ion-col col-4 text-center (tap)="goSponsors()">
             <button  ion-button clear class="logo-patrocinador">
                 <!-- <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i> -->
         </button>
@@ -73,7 +73,7 @@
         Restaurantes
         </div>
       </ion-col>
-      <ion-col col-4 text-center *ngIf="loggued" (click)="goChat()">
+      <ion-col col-4 text-center *ngIf="loggued" (tap)="goChat()">
         <button  ion-button clear class="logo-chat">
       <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
       </button>
@@ -81,7 +81,7 @@
       Chat
       </div>
       </ion-col>
-      <ion-col col-4 text-center *ngIf="!loggued" (click)="goLogin()">
+      <ion-col col-4 text-center *ngIf="!loggued" (tap)="goLogin()">
         <button  ion-button clear class="logo-login">
       <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
       </button>
@@ -89,7 +89,7 @@
       Acceso
       </div>
       </ion-col>
-      <ion-col col-4 text-center *ngIf="!loggued" (click)="goSign()">
+      <ion-col col-4 text-center *ngIf="!loggued" (tap)="goSign()">
         <button  ion-button clear class="logo-sign">
       <!-- <i class="fa fa-weixin fa-3x" aria-hidden="true"></i> -->
       </button>
@@ -97,7 +97,7 @@
       Registro
       </div>
       </ion-col>
-        <ion-col col-4 *ngIf="loggued" text-center (click)="goEncuesta()">
+        <ion-col col-4 *ngIf="loggued" text-center (tap)="goEncuesta()">
           <button  ion-button clear class="logo-encuesta">
 
       </button>
