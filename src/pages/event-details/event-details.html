@@ -15,6 +15,11 @@
   <!-- <ion-navbar color="primarydw">
     <ion-title>{{thisEvent.rev_desc}} </ion-title>
   </ion-navbar> -->
+
+
+</ion-header>
+
+<ion-content>
   <div class="profile-media">
   <img [src]="'data:image/jpg;base64,'+thisEvent.rev_foto | image" />
 </div>
@@ -33,10 +38,6 @@
 
 </ion-row>
 </ion-grid>
-
-</ion-header>
-
-<ion-content>
   <ion-grid>
     <ion-row>
       <ion-col col-4 text-center (tap)="goAgenda()">
