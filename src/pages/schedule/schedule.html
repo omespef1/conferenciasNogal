@@ -17,16 +17,16 @@
         <p class="titulo">{{schedule.date}}</p>
       </ion-item-divider>
       <div *ngFor="let activity of schedule.agendas">
-      <ion-item-divider>
+      <!-- <ion-item-divider>
         <p class="titulo">
           {{activity.age_hori}}
         </p>
-      </ion-item-divider>
+      </ion-item-divider> -->
       <ion-item-sliding (tap)="openSchedule(activity)">
         <button ion-item>
           <p class="titulo">  {{activity.age_acti}}</p>
           <p class="texto">
-           Hasta las {{activity.age_horf}}
+          {{activity.age_hori}}-{{activity.age_horf}}
           </p>
         </button>
       </ion-item-sliding>
