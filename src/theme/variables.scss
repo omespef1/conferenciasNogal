@@ -50,6 +50,8 @@ $item-md-detail-push-show:true;
 $grid-padding-width: 5px !default;
 $navbar-ios-height:44px;
 $navbar-ios-android:44px;
+$toolbar-ios-title-text-color:white;
+$toolbar-ios-button-color:white;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -60,6 +62,7 @@ $navbar-ios-android:44px;
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$toolbar-md-title-text-color:white;
 
 
 

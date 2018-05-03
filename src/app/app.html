@@ -6,14 +6,14 @@
       <ion-title>Club El Nogal</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content  [style.background-color]="customColors.rev_colp==undefined? '#002063': customColors.rev_colp">
     <ion-item class="no-lines" no-lines (tap)="openModal()">
        <ion-avatar item-start>
        <img [src]="photo" >
        </ion-avatar>
-       <p class="titulo-claro">{{user}}</p>
-    <p>Club El Nogal</p>
-    <button ion-button color="secondarydw" (click)="openModal()">
+       <p  [style.color] ="customColors.rev_coll"  class="titulo-claro">{{user}}</p>
+    <p  [style.color]="customColors.rev_coll">Club El Nogal</p>
+    <button ion-button [style.color]="customColors.rev_coll" [style.background-color]="customColors.rev_cols" (click)="openModal()">
       Perfil
     </button>
      </ion-item>
@@ -22,10 +22,10 @@
 
       <div padding>
      </div>
-     <ion-item-divider>
+     <ion-item-divider [style.background-color]="customColors.rev_colp==undefined? '#002063': customColors.rev_cols" [style.color]="customColors.rev_coll==undefined? 'white': customColors.rev_coll">
        Menú
      </ion-item-divider>
-      <button  *ngFor="let menu of pages" ion-item (click)="abrirPagina(menu)">
+      <button [style.color] ="customColors.rev_coll" *ngFor="let menu of pages" ion-item (click)="abrirPagina(menu)">
         <ion-icon name='{{menu.icon}}' color="fourthdw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>
@@ -38,7 +38,7 @@
       <ion-title>Club El Nogal</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content  [style.background-color]="customColors.rev_colp==undefined? '#002063': customColors.rev_colp">
     <!-- <div class="logoSeven">
       <div class="logoSevenApp">
       <img src="assets/digital.png">
@@ -49,10 +49,10 @@
     <ion-list no-lines>
       <div padding>
      </div>
-     <ion-item-divider>
+  <ion-item-divider [style.background-color]="customColors.rev_cols==undefined? '#002063': customColors.rev_cols" [style.color]="customColors.rev_coll==undefined? 'white': customColors.rev_coll">
        Menú
      </ion-item-divider>
-      <button  *ngFor="let menu of pagesOut" ion-item (click)="abrirPagina(menu)">
+      <button [style.color] ="customColors.rev_coll==undefined?'white':customColors.rev_coll"  *ngFor="let menu of pagesOut" ion-item (click)="abrirPagina(menu)">
         <ion-icon name='{{menu.icon}}' color="fourthdw" isActive='{{menu.isActive}}'></ion-icon>&nbsp;{{menu.name}}
       </button>
     </ion-list>

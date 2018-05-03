@@ -24,6 +24,8 @@ import {SponsorDetaillPage} from '../pages/sponsor-detaill/sponsor-detaill';
 import {UploadPage} from '../pages/upload/upload';
 import {ContactProfilePage} from '../pages/contact-profile/contact-profile';
 import {TutorialPage} from '../pages/tutorial/tutorial';
+import {ReviewPage} from '../pages/review/review';
+
 //providers
 import { SevenProvider } from '../providers/seven/seven';
 import { AngularFireModule } from 'angularfire2';
@@ -44,10 +46,13 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { File } from '@ionic-native/file';
 import { FileOpener } from '@ionic-native/file-opener';
 
+//Components
+import {FooterComponent} from '../components/footer/footer';
 
 //plugins
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { EventConfigurationProvider } from '../providers/event-configuration/event-configuration';
 var config = {
     apiKey: "AIzaSyCprGg7FOPeoUN849WGOPAegmX5IIEDsKM",
     authDomain: "nogalconferencesapp.firebaseapp.com",
@@ -81,7 +86,9 @@ var config = {
     ColorsPipe,
     UploadPage,
     ContactProfilePage,
-    TutorialPage
+    TutorialPage,
+    ReviewPage,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +121,8 @@ var config = {
     SponsorDetaillPage,
     UploadPage,
     ContactProfilePage,
-    TutorialPage
+    TutorialPage,
+    ReviewPage
   ],
   providers: [
     StatusBar,
@@ -133,7 +141,8 @@ var config = {
      ImagePicker,
      FileTransfer,
      File,
-     FileOpener
+     FileOpener,
+    EventConfigurationProvider
   ]
 })
 export class AppModule {}

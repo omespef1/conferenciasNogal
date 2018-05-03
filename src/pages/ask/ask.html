@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="primarydw">
+  <ion-navbar  [style.background-color]="customColors.rev_colp">
     <ion-title>Encuesta</ion-title>
     <button color="light" ion-button icon-only menuToggle>
   <ion-icon name="menu"></ion-icon>
@@ -14,7 +14,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content  [style.background-color]="customColors.rev_colp" >
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content>
     </ion-refresher-content>
@@ -25,29 +25,24 @@
       </div> -->
 
         <ion-list radio-group [(ngModel)]="rspas[i]">
-          <ion-item-divider class="dividerOption">
-              <p>{{question.enc_preg}}</p>
+          <ion-item-divider [style.background-color]="customColors.rev_cols" class="dividerOption">
+              <p [style.color]="customColors.rev_coll">{{question.enc_preg}}</p>
           </ion-item-divider>
       <div *ngFor="let option of question.options">
-        <ion-item>
-           <ion-label><p>{{option.dep_opci}}</p></ion-label>
+        <ion-item [style.background-color]="customColors.rev_colp">
+           <ion-label><p [style.color]="customColors.rev_coll">{{option.dep_opci}}</p></ion-label>
             <ion-radio color="primarydw" checked="false" value = {{option.den_cont}}></ion-radio>
           </ion-item>
       </div>
     </ion-list>
   </ion-item-group>
 
-  <button *ngIf="rspas" class="enviar" ion-button block color="secondarydw"  (click)="send()">Enviar
+  <button *ngIf="rspas" class="enviar" ion-button block  [style.color] ="customColors.rev_coll" [style.background-color] ="customColors.rev_cols"  (click)="send()">Enviar
 <ion-icon name="ios-send"></ion-icon>
   </button>
 
 </ion-content>
 <ion-footer>
-  <div class="footer">
-    <div class="img">
-  <img src="assets/logooscuro.png"><br>
-  <p>SEVEN ERP©1992-2017 Digital Ware</p>
-    <p>Versión 17.10.01.01</p>
-</div>
-</div>
+<nogal-footer>
+</nogal-footer>
 </ion-footer>

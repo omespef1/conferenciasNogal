@@ -4,6 +4,7 @@ import {sponsors,eelinke} from '../../shared/models';
 import {SocialPipe} from '../../pipes/social/social';
 import {ColorsPipe} from '../../pipes/colors/colors';
 import { BrowserTab } from '@ionic-native/browser-tab';
+ import {EventConfigurationProvider} from '../../providers/event-configuration/event-configuration';
 
 
 
@@ -19,8 +20,10 @@ import { BrowserTab } from '@ionic-native/browser-tab';
 })
 export class SponsorDetaillPage {
  public sponsor:sponsors;
-  constructor(public navParams: NavParams,private browserTab: BrowserTab) {
+  customColors : any={};
+  constructor(public navParams: NavParams,private browserTab: BrowserTab, private _config:EventConfigurationProvider) {
   this.sponsor=  navParams.get("sponsor");
+  this.customColors = _config.GetCustomColors();
   }
 
   ionViewDidLoad() {

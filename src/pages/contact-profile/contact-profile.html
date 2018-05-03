@@ -6,10 +6,10 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar  [style.background-color]="customColors.rev_colp">
     <ion-title>{{infoUser.username}}</ion-title>
     <ion-buttons>
-      <button ion-button solid color="primarydw" (click)="closeModal()">
+      <button ion-button solid  (click)="closeModal()">
         Cerrar
       </button>
     </ion-buttons>
@@ -18,7 +18,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding  [style.background-color]="customColors.rev_colp">
   <div *ngIf="infoUser.photo" text-center>
       <img [src]="infoUser.photo">
   </div>

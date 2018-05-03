@@ -5,7 +5,7 @@ page-chat {
 		padding: 5px 10px;
 		background-color: color($colors,fourthdw);
 		margin: 5px;
-		color: color($colors,thirddw);
+		//color: color($colors,thirddw);
 		border-radius: 3px;
 		min-width: 200px;
 
@@ -14,7 +14,7 @@ page-chat {
 		.messageContent{
 
 		}
-		//background-color: #D6F8C6;
+		background-color: #D6F8C6;
 	}
 	.username {
 		font-weight: 400;
@@ -42,7 +42,7 @@ page-chat {
 	    flex-direction: row;
 	    align-items: stretch;
 			height: 60px;
-			background-color: white;
+		background-color: white;
 	}
 
 	ion-input{
@@ -89,7 +89,7 @@ page-chat {
 
 	.message.special .innerMessage{
 		background: transparent;
-		color: black;
+		//color: black;
 		font-size: 80%;
 		width: 100%;
 		float: none;

@@ -5,6 +5,7 @@ import {SevenProvider} from '../../providers/seven/seven';
 //models
 import {eerevet,eerspas} from '../../shared/models';
 import {UserDataProvider} from '../../providers/user-data/user-data';
+ import {EventConfigurationProvider} from '../../providers/event-configuration/event-configuration';
 /**
  * Generated class for the AskPage page.
  *
@@ -16,6 +17,7 @@ import {UserDataProvider} from '../../providers/user-data/user-data';
   templateUrl: 'ask.html',
 })
 export class AskPage {
+customColors : any;
  public questions: any[];
  public event: eerevet;
  rspas:number[]=[];
@@ -23,8 +25,10 @@ export class AskPage {
   constructor(private seven:SevenProvider, private nav:NavParams,
   private loadingCtrl:LoadingController,private toast:ToastController,
   private alert:AlertController,
-  private userdata:UserDataProvider) {
+  private userdata:UserDataProvider,
+  private _config:EventConfigurationProvider) {
   this.event =  this.nav.get('event');
+  this.customColors = _config.GetCustomColors();
   }
 
   ionViewDidLoad() {

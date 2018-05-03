@@ -6,39 +6,35 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primarydw">
+  <ion-navbar  [style.background-color]="customColors.rev_colp">
+
     <ion-title>{{session.age_luga}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-icon start color="primarydw" name='md-calendar' item-start></ion-icon>
+<ion-content padding  [style.background-color]="customColors.rev_colp">
+  <ion-card *ngIf="session.age_imag!=null">
+     <img [src]="'data:image/jpg;base64,'+session.age_imag | image" />
+  </ion-card>
+  <ion-list no-lines>
+    <ion-item [style.color]="customColors.rev_coll">
+    <ion-icon [style.color]="customColors.rev_coll"  name='md-calendar' item-start></ion-icon>
 
            {{session.age_fech}}
     </ion-item>
-    <ion-item>
-      <ion-icon start color="primarydw" name='ios-clock' item-start></ion-icon>
+    <ion-item [style.color]="customColors.rev_coll">
+      <ion-icon [style.color]="customColors.rev_coll" start  name='ios-clock' item-start></ion-icon>
         {{session.age_hori}} - {{session.age_horf}}
     </ion-item>
-    <ion-item>
-      <ion-icon start color="primarydw" name='ios-locate' item-start></ion-icon>{{session.age_luga}}
-    </ion-item>
-  </ion-list>
 
+  </ion-list>
   <p>
     {{session.age_acti}}
   </p>
 </ion-content>
 <ion-footer>
-  <div class="footer">
-    <div class="img">
-  <img src="assets/logooscuro.png"><br>
-  <p>SEVEN ERP©1992-2017 Digital Ware</p>
-    <p>Versión 17.10.01.01</p>
-</div>
-</div>
+<nogal-footer>
+</nogal-footer>
 </ion-footer>

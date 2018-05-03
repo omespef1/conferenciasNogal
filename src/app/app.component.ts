@@ -7,6 +7,7 @@ import {page} from '../shared/models';
 import {UserDataProvider} from '../providers/user-data/user-data';
 import {SevenProvider} from '../providers/seven/seven';
 import {UploadPage} from '../pages/upload/upload';
+ import {EventConfigurationProvider} from '../providers/event-configuration/event-configuration';
 
 @Component({
   templateUrl: 'app.html'
@@ -24,6 +25,7 @@ export class MyApp {
   pageEventDetails = EventDetailsPage;
   pageSponsors: SponsorsPage;
   photo:string;
+   customColors : any={};
    public userData:string;
    public user:string;
  public pages:page[];
@@ -36,6 +38,7 @@ export class MyApp {
     private seven:SevenProvider,
     private toast:ToastController,
     private modal:ModalController,
+     private _config:EventConfigurationProvider
   ) {
       platform.ready().then(() => {
       splashScreen.hide();
@@ -92,6 +95,10 @@ this.pagesOut = [
 
        this.events.subscribe('user:logout', () => {
          this.enableMenu(false);
+       });
+
+       this.events.subscribe('user:customColor', () => {
+         this.customColors = this._config.GetCustomColors();
        });
      }
   enableMenu(loggedIn: boolean) {

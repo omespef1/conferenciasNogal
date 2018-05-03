@@ -6,6 +6,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { Content ,ModalController,} from 'ionic-angular';
 import {ContactProfilePage} from '../contact-profile/contact-profile';
+import {EventConfigurationProvider} from '../../providers/event-configuration/event-configuration';
 /**
 * Generated class for the ChatPage page.
 *
@@ -24,6 +25,7 @@ export class ChatPage {
   message: string = '';
   time:"";
   image:string;
+  public customColors :any={};
   // messages: object[] = [];
   ee_revet:eerevet;
 
@@ -32,7 +34,8 @@ export class ChatPage {
     private load: LoadingController,
     public navCtrl: NavController, private nav: NavParams,
     private afDB: AngularFireDatabase,
-    private modal:ModalController,) {
+    private modal:ModalController,private _config:EventConfigurationProvider) {
+      this.customColors = _config.GetCustomColors();
       this.userdata.getUserInfo().then(nomb=>{
        this.username = nomb;
      })

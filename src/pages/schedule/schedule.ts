@@ -6,6 +6,8 @@ import { UserDataProvider} from '../../providers/user-data/user-data'
 import {PonenteDetallePage} from '../ponente-detalle/ponente-detalle';
 import {ScheduleDetailsPage} from '../schedule-details/schedule-details';
 import {ImagePipe} from '../../pipes/image/image';
+//providers
+ import {EventConfigurationProvider} from '../../providers/event-configuration/event-configuration';
 
 
 @Component({
@@ -16,15 +18,18 @@ export class SchedulePage {
  schedules: ee_agend[]=[];
  days:string[];
  event:eerevet;
+  customColors : any={};
 
   constructor(private seven:SevenProvider,
   nav:NavParams,
   private navCtrl:NavController,
    private toast:ToastController,
    private loading:LoadingController,
-   private userdata:UserDataProvider
+   private userdata:UserDataProvider,
+    private _config:EventConfigurationProvider
 ) {
   this.event =  nav.get('event')
+      this.customColors = _config.GetCustomColors();
   }
 
   ionViewDidLoad() {

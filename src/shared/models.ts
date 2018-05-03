@@ -20,8 +20,15 @@ public rev_obse:string,
 public sponsors :sponsors[],
 public speakers:eeConfe[],
 public ask: any[],
-public agend : ee_agend[]
-
+public agend : ee_agend[],
+public rev_colp:string,
+public rev_cols:string,
+public rev_coll:string,
+public rev_tiac:string,
+public rev_brch:string,
+public rev_imag:string,
+public rev_decr:string,
+public perso :Array<ee_perso> = new Array<ee_perso>()
 )
 {}
 }
@@ -37,7 +44,8 @@ export class ee_agend {
     public ter_codi:string,
     public ter_noco:string,
     public con_perf:string,
-    public con_foto:string
+    public con_foto:string,
+    public age_imag:string
   ){
   }
 }
@@ -141,4 +149,12 @@ export class message{
   ){
 
   }
+}
+export class ee_perso {
+  constructor(
+    public per_nico:string,
+    public per_visi :string,
+    public per_pupr:string,
+    public per_nnom:string,
+  ){}
 }

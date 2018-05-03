@@ -81,7 +81,6 @@
     </platform>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="ShowSplashScreenSpinner" value="true" />
-    <engine name="android" spec="^6.2.3" />
     <plugin name="com.synconset.imagepicker" spec="~2.1.8">
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="This is used to change and set the user's profile picture from library" />
     </plugin>
@@ -106,4 +105,5 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="cordova-sqlite-storage" spec="^2.1.1" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <engine name="android" spec="^6.2.3" />
 </widget>

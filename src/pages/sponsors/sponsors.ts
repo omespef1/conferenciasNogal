@@ -6,6 +6,7 @@ import {eerevet} from '../../shared/models';
 import {ImagePipe} from '../../pipes/image/image';
 import {SponsorDetaillPage} from '../sponsor-detaill/sponsor-detaill';
 import {UserDataProvider} from '../../providers/user-data/user-data';
+ import {EventConfigurationProvider} from '../../providers/event-configuration/event-configuration';
 /**
 
 /**
@@ -24,10 +25,12 @@ export class SponsorsPage {
   public sponsorsList:sponsors[];
   private event:eerevet;
   public value:string;
+   customColors : any={};
   constructor(private seven:SevenProvider, private nav:NavParams,private toast:ToastController,
   private navCtrl:NavController, private loading:LoadingController,
-private userdata:UserDataProvider) {
+private userdata:UserDataProvider,private _config:EventConfigurationProvider) {
    this.event   = this.nav.get('event');
+   this.customColors = _config.GetCustomColors();
   }
 
   ionViewDidLoad() {

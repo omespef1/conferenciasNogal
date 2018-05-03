@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="secondarydw">
+  <ion-navbar [style.background-color]="customColors.rev_colp">
     <button color="light" ion-button icon-only menuToggle>
   <ion-icon name="menu"></ion-icon>
 </button>
@@ -14,26 +14,25 @@
   <ion-grid no-padding>
     <ion-row>
       <ion-col col-12 text-center>
-          <div class="profile-media">
+          <div class="profile-media"  [style.background-color]="customColors.rev_cols">
         <img [src]="'data:image/jpg;base64,'+sponsor.pat_foto | image" />
-          <h2>{{sponsor.pat_nomb}}</h2>
+          <h2  [style.color]="customColors.rev_coll"  [style.color] ="customColors.rev_coll">{{sponsor.pat_nomb}}</h2>
       </div>
-
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-header>
 
 
-<ion-content no-bounce>
-  <ion-item *ngFor="let link of sponsor.lin_link"  (tap)="openUrl(link.lin_urla)">
+<ion-content no-bounce [style.background-color]="customColors.rev_colp">
+  <ion-item *ngFor="let link of sponsor.lin_link"  (tap)="openUrl(link.lin_urla)"  [style.color] ="customColors.rev_coll">
     <ion-icon [name]= "link.lin_urla | social" [color]="link.lin_urla | colors" item-start></ion-icon>
     {{link.lin_nomb}}
   </ion-item>
   <ion-grid padding>
     <ion-row>
       <ion-col col-12>
-        <p>
+        <p  [style.color] ="customColors.rev_coll">
           {{sponsor.pat_desc}}
         </p>
       </ion-col>
@@ -41,11 +40,6 @@
   </ion-grid>
 </ion-content>
 <ion-footer>
-  <div class="footer">
-    <div class="img">
-  <img src="assets/logooscuro.png"><br>
-  <p>SEVEN ERP©1992-2017 Digital Ware</p>
-    <p>Versión 17.10.01.01</p>
-</div>
-</div>
+<nogal-footer>
+</nogal-footer>
 </ion-footer>

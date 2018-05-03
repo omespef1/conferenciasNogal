@@ -8,15 +8,15 @@
 
 
 <ion-header>
-  <ion-navbar color="primarydw">
+  <ion-navbar  [style.background-color]="customColors.rev_colp">
     <ion-title>Expositores</ion-title>
-    <button color="light" ion-button icon-only menuToggle>
+    <button  ion-button icon-only menuToggle>
   <ion-icon name="menu"></ion-icon>
   </button>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content  [style.background-color]="customColors.rev_colp">
   <ion-searchbar
   [(ngModel)]="value"
   (ionChange)="getItems($event.value)"
@@ -30,22 +30,17 @@
 
 <ion-list>
 
-  <button ion-item *ngFor="let speaker of speakerList" (click)="goToDetalle(speaker)">
+  <button ion-item *ngFor="let speaker of speakerList" (click)="goToDetalle(speaker)"  [style.background-color]="customColors.rev_cols">
     <ion-avatar item-start *ngIf="speaker.con_foto">
       <img [src]="'data:image/jpg;base64,'+speaker.con_foto | image" />
     </ion-avatar>
-    <p class="titulo">{{speaker.ter_noco}}</p>
-     <p class="texto">{{speaker.con_perf}}</p>
+    <p class="titulo"  [style.color] ="customColors.rev_coll">{{speaker.ter_noco}}</p>
+     <p class="texto"  [style.color] ="customColors.rev_coll">{{speaker.con_perf}}</p>
   </button>
 
 </ion-list>
 </ion-content>
 <ion-footer>
-  <div class="footer">
-    <div class="img">
-  <img src="assets/logooscuro.png"><br>
-  <p>SEVEN ERP©1992-2017 Digital Ware</p>
-    <p>Versión 17.10.01.01</p>
-</div>
-</div>
+<nogal-footer>
+</nogal-footer>
 </ion-footer>

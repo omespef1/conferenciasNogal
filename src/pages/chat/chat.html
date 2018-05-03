@@ -5,7 +5,7 @@ Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar color="primarydw">
+  <ion-navbar [style.background-color]="customColors.rev_colp">
     <ion-title>Chat</ion-title>
     <button color="light" ion-button icon-only menuToggle>
   <ion-icon name="menu"></ion-icon>
@@ -14,7 +14,7 @@ Ionic pages and navigation.
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding [style.background-color]="customColors.rev_cols">
 
 
   <div id="chatMessages">
@@ -26,7 +26,7 @@ Ionic pages and navigation.
     <div *ngFor="let message of messages">
 
 
-        <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+        <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'"  [style.background-color]="customColors.rev_colp">
           <!-- <ion-avatar button item-start (click)="openUser(message)">
               <img src={{message.photo}}>
             </ion-avatar> -->
@@ -44,7 +44,7 @@ Ionic pages and navigation.
   <ion-toolbar>
     <div id="footer">
       <div class="elem"><ion-input type="text" [(ngModel)]="message"></ion-input></div>
-      <div class="elem"><button color="secondarydw" ion-button icon-only (click)="sendMessage()"><ion-icon name="send"></ion-icon> </button></div>
+      <div class="elem"><button [style.background-color]="customColors.rev_colp" ion-button icon-only (click)="sendMessage()"><ion-icon name="send"></ion-icon> </button></div>
     </div>
   </ion-toolbar>
 </ion-footer>

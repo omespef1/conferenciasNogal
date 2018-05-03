@@ -6,6 +6,8 @@ import { SevenProvider} from '../../providers/seven/seven';
 import {eeConfe,eecalco} from '../../shared/models';
 import {UserDataProvider} from '../../providers/user-data/user-data';
 import {ImagePipe} from '../../pipes/image/image';
+//providers
+import {EventConfigurationProvider} from '../../providers/event-configuration/event-configuration';
 
 /**
  * Generated class for the PonenteDetallePage page.
@@ -21,6 +23,7 @@ export class PonenteDetallePage {
 public speaker :eeConfe;
 public loggued:boolean;
 public rate:number;
+public customColors :any={};
 imgPreview:string = null;
 ee_calco:eecalco={rev_cont:0,ter_codi:"0",asi_codi:"",cal_valo:0}
   constructor(public navCtrl: NavController,
@@ -29,8 +32,10 @@ private userdata:UserDataProvider,
 private seven:SevenProvider,
 private toast:ToastController,
 private alert:AlertController,
-private loading:LoadingController) {
+private loading:LoadingController,
+private _config:EventConfigurationProvider) {
     this.speaker = this.navParams.get('speaker');
+    this.customColors = _config.GetCustomColors();
     this.imgPreview = 'data:image/jpeg;base64,' + this.speaker.con_foto;
   }
   ionViewDidLoad() {

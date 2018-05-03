@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, ViewController,NavController,NavParams} from 'ionic-angular';
+import {EventConfigurationProvider} from '../../providers/event-configuration/event-configuration';
 
 /**
  * Generated class for the ContactProfilePage page.
@@ -13,9 +14,11 @@ import { IonicPage, ViewController,NavController,NavParams} from 'ionic-angular'
 })
 export class ContactProfilePage {
 infoUser:any;
+   customColors : any={};
   constructor(private viewCtrl:ViewController, private nav:NavController,
-  private navParam:NavParams) {
+  private navParam:NavParams,private _config:EventConfigurationProvider) {
   this.infoUser= navParam.get('msg');
+     this.customColors = _config.GetCustomColors();
   }
 
   ionViewDidLoad() {

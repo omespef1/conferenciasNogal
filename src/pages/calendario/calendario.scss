@@ -1,7 +1,5 @@
 page-calendario{
-  ion-footer{
-    //background-color: color($colors,primarydw);
-  }
+
   .profile-media{
     img{
       margin:0px;
@@ -26,10 +24,7 @@ ion-label{
 }
   }
 ion-content{
-//  background-color: COLOR($colors,secondarydw) !important;
-
-
-
+  background-color: color($colors,primarydw) !important;
 }
 .arrow{
   height: 50px;

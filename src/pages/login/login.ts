@@ -9,6 +9,7 @@ import {UserDataProvider} from '../../providers/user-data/user-data';
 import { KeychainTouchId } from '@ionic-native/keychain-touch-id';
 import { Keychain } from '@ionic-native/keychain';
 import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
+ import {EventConfigurationProvider} from '../../providers/event-configuration/event-configuration';
 /**
  * Generated class for the LoginPage page.
  *
@@ -20,6 +21,7 @@ import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage
   templateUrl: 'login.html'
 })
 export class LoginPage {
+   customColors : any={};
   login: any = { username: '', password: '' };
   message:string="";
   returnedAsise:asise;
@@ -36,7 +38,8 @@ export class LoginPage {
     private keychain: Keychain,
     private platform:Platform,
     private toast:ToastController,
-    private secureStorage: SecureStorage
+    private secureStorage: SecureStorage,
+    private _config:EventConfigurationProvider
   )
   {
     this.platform.ready().then(()=>{
@@ -52,6 +55,7 @@ export class LoginPage {
   }
   }
   ionViewDidLoad() {
+  this.customColors = this._config.GetCustomColors();
     this.rutaImg = "assets/icon/seven.png";
     this.getAccessTouchId();
   }
