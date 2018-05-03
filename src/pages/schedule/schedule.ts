@@ -15,10 +15,11 @@ import {ImagePipe} from '../../pipes/image/image';
   templateUrl: 'schedule.html',
 })
 export class SchedulePage {
- schedules: ee_agend[]=[];
+ schedules: any[]=[];
  days:string[];
  event:eerevet;
   customColors : any={};
+  agendList: any;
 
   constructor(private seven:SevenProvider,
   nav:NavParams,
@@ -42,6 +43,8 @@ export class SchedulePage {
       load.present();
       this.userdata.getDataAgend(this.event.rev_cont).then(data=>{
       this.schedules = data;
+      console.log(this.schedules);
+      this.initializeItems();
       load.dismiss();
       });
   }
@@ -68,5 +71,19 @@ openSpeaker(schedule:ee_agend){
 
 openSchedule(shedule:ee_agend){
   this.navCtrl.push(ScheduleDetailsPage,{'agend':shedule})
+}
+initializeItems(): void {
+  this.agendList = this.schedules
+}
+getItems(q: string) {
+  //Reseteo los items a su estado original
+  this.initializeItems();
+  //Si el valor es vacío ni filtra ndada
+  if (!q || q.trim() === '') {
+    return;
+  }
+
+  //Realiza el filtrado
+  this.agendList = this.agendList.filter((v,index) => v.agendas[index].age_acti.toLowerCase().indexOf(q.toLowerCase()) > -1);
 }
 }

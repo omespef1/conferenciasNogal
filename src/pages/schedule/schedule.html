@@ -7,12 +7,18 @@
   </ion-navbar>
 </ion-header>
 <ion-content  [style.background-color]="customColors.rev_colp">
+  <ion-searchbar
+  [(ngModel)]="value"
+  (ionChange)="getItems($event.value)"
+  [showCancelButton]="shouldShowCancel"
+  placeholder="Buscar">
+</ion-searchbar>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content>
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <ion-item-group *ngFor="let schedule of schedules">
+    <ion-item-group *ngFor="let schedule of agendList">
     <ion-item-divider class="dividerOption">
         <p class="titulo">{{schedule.date}}</p>
       </ion-item-divider>

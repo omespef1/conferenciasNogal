@@ -103,7 +103,7 @@ postAsise(body:any){
   			headers: headers
   		});
       let body:any = param;
-      return this.http.post(this._api.data.api+ this.apiAction,body,options)
+      return this.http.post(global.ClientUrl+ this.apiAction,body,options)
       .toPromise()
 			.then(response => {
         return response.json()}).catch(error =>{
