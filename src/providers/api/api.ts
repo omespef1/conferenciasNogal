@@ -13,7 +13,7 @@ import 'rxjs/add/observable/of';
 export class ApiProvider {
   data: any;
   constructor(public http: Http) {
-    this.chargue();
+    //this.chargue();
   }
  chargue(){
     this.http.get('assets/data/data.json').subscribe(res=>{

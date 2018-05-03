@@ -14,11 +14,14 @@
     <ion-item>
       <h2 [style.color]="customColors.rev_coll" >{{event.rev_desc}}</h2>
     </ion-item>
-     <img [src]="'data:image/jpg;base64,'+event.rev_imag | image" />
-    <ion-card-content>
-      <p [style.color]="customColors.rev_coll" >{{event.rev_decr}}</p>
-    </ion-card-content>
+     <img *ngIf="event.rev_imag" [src]="'data:image/jpg;base64,'+event.rev_imag | image" />
+
+
+
     </ion-card>
+    <div padding>
+      <p [style.color]="customColors.rev_coll" >{{event.rev_decr}}</p>
+    </div>
 </ion-content>
 <ion-footer>
 <nogal-footer>

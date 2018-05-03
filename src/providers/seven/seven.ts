@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 import {AngularFireDatabase} from 'angularfire2/database';
 import * as firebase from 'firebase';
+import {global} from '../../assets/global/global';
 /*
   Generated class for the SevenProvider provider.
 
@@ -18,11 +19,10 @@ import * as firebase from 'firebase';
 @Injectable()
 export class SevenProvider {
   data: any;
-  private apiUrl:string = "http://192.168.137.1/NogalConferencesApi/api/";
    private apiAction :string;
   constructor(private http: Http,
   private _api:ApiProvider) {
-     this._api.chargue();
+
   }
 
   getEvents() {
@@ -77,7 +77,7 @@ return this.requestGet(this.apiAction);
         return  this.requestPost(this.apiAction,body);
     }
     requestGet(url:string){
-      let api = this._api.data.api + this.apiAction;
+      let api =  global.ClientUrl + this.apiAction;
       console.log(api);
       return this.http.get(api)
       .map(res => res.json())
@@ -95,7 +95,7 @@ postAsise(body:any){
 }
  private  requestPost(url:string,param:any){
     this.apiAction = url;
-    console.log(this._api.data.api+ this.apiAction);
+    console.log(global.ClientUrl+ this.apiAction);
       let headers = new Headers({
 			'Content-Type': 'application/json'
 		});
@@ -110,19 +110,19 @@ postAsise(body:any){
            return error.json().message || 'Error en el servicio, intente más tarde';
          });
     }
-    getMap() {
-  return this.load().map((data: any) => {
-    return data.map;
-  });
-}
-load(): any {
-  if (this.data) {
-    return Observable.of(this.data);
-  } else {
-    return this.http.get('assets/data/data.json')
-      .map(this.processData,this);
-  }
-}
+//     getMap() {
+//   return this.load().map((data: any) => {
+//     return data.map;
+//   });
+// }
+// load(): any {
+//   if (this.data) {
+//     return Observable.of(this.data);
+//   } else {
+//     return this.http.get('assets/data/data.json')
+//       .map(this.processData,this);
+//   }
+// }
   processData(data: any) {
   this.data = data.json();
     return this.data;

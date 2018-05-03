@@ -60,7 +60,7 @@ private api:ApiProvider,private _config:EventConfigurationProvider,private platf
     this.userdata.setDataSpekaers(this.thisEvent.speakers);
     this.userdata.setDataSponsors(this.thisEvent.sponsors);
     this.userdata.setDataAsk(this.thisEvent.ask);
-    this.api.chargue();
+
   }
   ionViewDidLoad() {
     this.load();
@@ -84,6 +84,11 @@ private api:ApiProvider,private _config:EventConfigurationProvider,private platf
       this.navCtrl.push(ChatPage,{'event':this.thisEvent});
   }
   goEncuesta(){
+    console.log(this.thisEvent.ask)
+    if(this.thisEvent.ask.length==0){
+    this.showMessage('Encuesta no definida');
+    return;
+  }
       this.navCtrl.push(AskPage,{'event':this.thisEvent});
   }
   goLocation(){
@@ -121,7 +126,7 @@ private api:ApiProvider,private _config:EventConfigurationProvider,private platf
     this.navCtrl.setRoot(LoginPage);
   }
 loadCustomMain(){
-  try{    
+  try{
     if( this.thisEvent.perso==null ||this.thisEvent.perso.length<7)
     throw new Error('Menú no parametrizado completamente. Por favor , realice la parametrización  en el programa SEEREVET ')
     console.log('valida');

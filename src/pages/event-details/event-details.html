@@ -39,13 +39,20 @@
           {{speakersMain.per_nnom}}
         </div>
       </ion-col>
-      <ion-col col-4 text-center (tap)="downloadMap()" *ngIf="mapMain.per_visi!='N' && ( mapMain.per_pupr=='P' || loggued  ) " >
+      <ion-col col-4 text-center  (tap)="goReview()">
+        <button ion-button clear class="logo-resena">
+              </button>
+         <div class="menuTitle" [style.color] ="customColors.rev_coll">
+          RESEÑA
+        </div>
+      </ion-col>
+      <!-- <ion-col col-4 text-center (tap)="downloadMap()" *ngIf="mapMain.per_visi!='N' && ( mapMain.per_pupr=='P' || loggued  ) " >
         <button ion-button clear class="logo-localizacion">
           </button>
           <div class="menuTitle" [style.color] ="customColors.rev_coll">
           {{mapMain.per_nnom}}
         </div>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
     <ion-row>
       <ion-col col-4 text-center (tap)="goSponsors()" *ngIf="sponsorsMain.per_visi!='N' && (sponsorsMain.per_pupr=='P' || loggued  ) ">
@@ -65,14 +72,14 @@
       <ion-col col-4 text-center *ngIf="!loggued" (tap)="goLogin()" >
         <button ion-button clear class="logo-login">
       </button>
-          <div class="menuTitle" [style.color] ="customColors.rev_coll">
+          <div class="menuTitle" [style.color] ="customColors.rev_coll" *ngIf="!loggued">
           ACCESO
         </div>
       </ion-col>
       <ion-col col-4 text-center *ngIf="!loggued" (tap)="goSign()">
         <button ion-button clear class="logo-sign">
       </button>
-        <div class="menuTitle" [style.color] ="customColors.rev_coll">
+        <div class="menuTitle" [style.color] ="customColors.rev_coll" *ngIf="!loggued">
           REGISTRO
         </div>
       </ion-col>
@@ -92,14 +99,8 @@
           {{brochureMain.per_nnom}}
         </div>
       </ion-col>
-      <ion-col col-4 text-center>
-        <button ion-button clear class="logo-resena" (click)="goReview()">
-              </button>
-         <div class="menuTitle" [style.color] ="customColors.rev_coll">
-          RESEÑA
-        </div>
-      </ion-col>
-      <ion-col col-4 text-center>
+
+      <ion-col col-4 text-center *ngIf="loggued">
         <button ion-button clear class="logo-power" (click)="goOut()">
               </button>
           <div class="menuTitle" [style.color] ="customColors.rev_coll">
